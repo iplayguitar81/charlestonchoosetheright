@@ -54,6 +54,7 @@ test:
 
 
 
+
 production:
 adapter: postgresql
 database: blazers_fans_production
