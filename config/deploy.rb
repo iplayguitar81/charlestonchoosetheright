@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'blazers_fans'
-set :repo_url, 'git@github.com:iplayguitar81/charlestonchoosetheright.git'
+set :repo_url, 'https://github.com/iplayguitar81/charlestonchoosetheright.git'
 
 set :user, "deploy"
 set :stages, %w(production staging)
