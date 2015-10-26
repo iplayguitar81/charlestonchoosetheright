@@ -51,10 +51,13 @@ test:
   username: tblazersfans
   password:
 
+
+
+
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: tblazersfans_production
-  pool: 5
-  username: rails
-  password: eheHMsb6Kf
+
+database: blazers_fans_production
+username: deploy
+password: <%= ENV["DATABASE_PASSWORD"] %>
+
+
