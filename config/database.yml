@@ -55,7 +55,7 @@ test:
 
 
 production:
-
+adapter: postgresql
 database: blazers_fans_production
 username: deploy
 password: <%= ENV["DATABASE_PASSWORD"] %>
