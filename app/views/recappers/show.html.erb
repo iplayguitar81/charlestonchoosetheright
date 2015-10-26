@@ -1,0 +1,400 @@
+<% require 'active_support'%>
+<% attendance_percentage=((@recapper.attendance.to_f/@recapper.capacity.strip.to_f)*100).round(2) %>
+<% game_box_recap="" %>
+<% if @recapper.h_initials=='POR' %>
+    <% home_or_away = @recapper.afname.downcase+'<span class="box_total_h2"> '+@recapper.atotal+"</span><br/>at<br/> portland trail blazers <span class='box_total_h2'>"+@recapper.htotal+"</span>" %>
+    <% if @recapper.htotal.to_i > @recapper.atotal.to_i %>
+        <% win_or_loss ="<span class='win_loss_box_show_win'>W</span>" %>
+    <%else %>
+        <% win_or_loss =""%>
+    <%end%>
+    <% if @recapper.htotal.to_i < @recapper.atotal.to_i %>
+        <% win_or_loss ="<span class='win_loss_box_show_loss'>L</span>" %>
+    <%else %>
+    <% end %>
+    <% game_box_recap="The Trail Blazers made "+ @recapper.hometfgma + " shots they attempted resulting in a total team field goal percentage of "+ @recapper.hfgp+"% for the game.  Meanwhile, the "+ @recapper.a_nick+"  made "+ @recapper.awaytfgma+" shots that they attempted resulting in a total team field goal percentage of "+ @recapper.afgp+ "% for the game.  The Trail Blazers hit "+@recapper.hometftma+ " free throws shooting " + @recapper.hftp + "% from the free throw line and the " + @recapper.a_nick+ " hit "+@recapper.awaytftma+" free throws shooting "+ @recapper.aftp+"% from the free throw line.  The Trail Blazers made "+@recapper.homet3fgma+" of the 3-pointers they shot resulting in a total team 3 point field goal percentage of "+@recapper.h3ptp+"% and the "+@recapper.a_nick+" made "+@recapper.awayt3fgma+ " of the 3-pointers they shot resulting in a total team 3 pint field goal percentage of "+@recapper.a3ptp+"%.  The Blazers collected "+ @recapper.hometoreb + " offensive rebounds, "+ @recapper.hometdreb + " defensive rebounds for a total of "+ @recapper.hrebt+" rebounds and the "+@recapper.a_nick+ " scooped up "+@recapper.awaytoreb+" offensive rebounds, "+@recapper.awaytdreb+" defensive rebounds for a total of "+@recapper.arebt+" rebounds.  The Blazers dished out "+@recapper.hastt+" assists while the "+ @recapper.a_nick + " dished out "+@recapper.aastt+".  The Blazers collected "+@recapper.hstlt+" steals and the "+@recapper.a_nick+" collected "+@recapper.astlt+ " steals.  The Blazers blocked "+@recapper.hblkt+" of the "+@recapper.a_nick+" shots.  the "+@recapper.a_nick+" blocked "+@recapper.ablkt+" of the Blazers shots.  The Blazers turned the ball over "+@recapper.hometto+" times.  The"+@recapper.a_nick+" turned the ball over "+@recapper.awaytto+" times."+"  <br/><br/>  The game was officiated by "+@recapper.ref1+", "+@recapper.ref2+" and "+@recapper.ref3+"<br/><br/> There were "+@recapper.attendance+ " out of a possible "+@recapper.capacity+" fans in attendace.  This means that "+@recapper.arena+" was " + attendance_percentage.to_s + "% filled to capacity."%>
+<% end %>
+<% if @recapper.a_initials=='POR' %>
+    <% home_or_away ="portland trail blazers <span class='box_total_h2'>"+@recapper.atotal+"</span> <br/>at</br> "+@recapper.hfname.downcase+ " <span class='box_total_h2'>"+@recapper.htotal+"</span>" %>
+    <% if @recapper.atotal.to_i > @recapper.htotal.to_i %>
+        <% win_or_loss ="<span class='win_loss_box_show_win'>W</span>" %>
+    <%end%>
+    <% if @recapper.atotal.to_i < @recapper.htotal.to_i %>
+        <% win_or_loss ="<span class='win_loss_box_show_loss'>L</span>" %>
+    <% end %>
+    <% game_box_recap="The Trail Blazers made "+ @recapper.awaytfgma + " shots they attempted resulting in a total team field goal percentage of "+ @recapper.afgp+"% for the game.  Meanwhile, the "+ @recapper.h_nick+"  made "+ @recapper.hometfgma+" shots that they attempted resulting in a total team field goal percentage of "+ @recapper.hfgp+ "% for the game.  The Trail Blazers hit "+@recapper.awaytftma+ " free throws shooting " + @recapper.aftp + "% from the free throw line and the " + @recapper.h_nick+ " hit "+@recapper.hometftma+" free throws shooting "+ @recapper.hftp+"% from the free throw line.  The Trail Blazers made "+@recapper.awayt3fgma+" of the 3-pointers they shot resulting in a total team 3 point field goal percentage of "+@recapper.a3ptp+"% and the "+@recapper.h_nick+" made "+@recapper.homet3fgma+ " of the 3-pointers they shot resulting in a total team 3 point field goal percentage of "+@recapper.h3ptp+"%.  The Blazers collected "+ @recapper.awaytoreb + " offensive rebounds and "+ @recapper.awaytdreb + " defensive rebounds for a total of "+ @recapper.arebt+" rebounds and the "+@recapper.h_nick+ " scooped up "+@recapper.hometoreb+" offensive rebounds and "+@recapper.hometdreb+" defensive rebounds for a total of "+@recapper.hrebt+" rebounds.  The Blazers dished out "+@recapper.aastt+" assists while the "+ @recapper.h_nick + " dished out "+@recapper.hastt+".  The Blazers collected "+@recapper.astlt+" steals and the "+@recapper.h_nick+" collected "+@recapper.hstlt+ " steals.  The Blazers blocked "+@recapper.ablkt+" of the "+@recapper.h_nick+" shots.  The "+@recapper.h_nick+" blocked "+@recapper.hblkt+" of the Blazers shots.  The Blazers turned the ball over "+@recapper.awaytto+" times.  The "+@recapper.h_nick+ " turned the ball over "+@recapper.hometto+" times.<br/><br/>  The game was officiated by "+@recapper.ref1+", "+@recapper.ref2+" and "+@recapper.ref3+"<br/><br/> There were "+@recapper.attendance+ " out of a possible "+@recapper.capacity+" fans in attendace.  This means that "+@recapper.arena+" was " + attendance_percentage.to_s + "% filled to capacity."%>
+<% end %>
+
+<% astart_class1='' %>
+<% astart_class2='' %>
+<% astart_class3='' %>
+<% astart_class4='' %>
+<% astart_class5='' %>
+<% astart_class6='' %>
+<% astart_class7='' %>
+<% astart_class8='' %>
+<% astart_class9='' %>
+<% astart_class10='' %>
+<% astart_class11='' %>
+<% astart_class12='' %>
+<% astart_class13='' %>
+
+
+<% hstart_class1='' %>
+<% hstart_class2='' %>
+<% hstart_class3='' %>
+<% hstart_class4='' %>
+<% hstart_class5='' %>
+<% hstart_class6='' %>
+<% hstart_class7='' %>
+<% hstart_class8='' %>
+<% hstart_class9='' %>
+<% hstart_class10='' %>
+<% hstart_class11='' %>
+<% hstart_class12='' %>
+<% hstart_class13='' %>
+
+
+<% if @recapper.ap1_starter =='1'%>
+
+    <!--<%= astart_class1 %>='starter';-->
+    <% astart_class1='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.ap2_starter =='1'%>
+
+    <% astart_class2='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.ap3_starter =='1'%>
+
+    <% astart_class3='starter' %>
+<%else %>
+<% end %>
+<% if @recapper.ap4_starter =='1'%>
+
+    <% astart_class4='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.ap5_starter =='1'%>
+
+    <% astart_class5='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.ap6_starter =='1'%>
+
+    <% astart_class6='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.ap7_starter =='1'%>
+    <% astart_class7='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.ap8_starter =='1'%>
+
+    <% astart_class8='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.ap9_starter =='1'%>
+
+    <% astart_class9='starter' %>
+<%else %>
+
+<% end %>
+
+<% if @recapper.ap10_starter =='1'%>
+    <% astart_class10='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.ap11_starter =='1'%>
+
+    <% astart_class11='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.ap12_starter =='1'%>
+    <% astart_class12='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.ap13_starter =='1'%>
+
+    <% astart_class13='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.hp1_starter =='1'%>
+
+    <!--<%= hstart_class1 %>='starter';-->
+    <% hstart_class1='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.hp2_starter =='1'%>
+
+    <% hstart_class2='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.hp3_starter =='1'%>
+
+    <% hstart_class3='starter' %>
+<%else %>
+<% end %>
+<% if @recapper.hp4_starter =='1'%>
+
+    <% hstart_class4='starter' %>
+<%else %>
+
+
+<% end %>
+
+<% if @recapper.hp5_starter =='1'%>
+    <% hstart_class5='starter' %>
+
+<%else %>
+<% end %>
+
+<% if @recapper.hp6_starter =='1'%>
+
+    <% hstart_class6='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.hp7_starter =='1'%>
+    <% hstart_class7='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.hp8_starter =='1'%>
+
+    <% hstart_class8='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.hp9_starter =='1'%>
+
+    <% hstart_class9='starter' %>
+<%else %>
+
+<% end %>
+
+<% if @recapper.hp10_starter =='1'%>
+    <% hstart_class10='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.hp11_starter =='1'%>
+
+    <% hstart_class11='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.hp12_starter =='1'%>
+    <% hstart_class12='starter' %>
+<%else %>
+<% end %>
+
+<% if @recapper.hp13_starter =='1'%>
+
+    <% hstart_class13='starter' %>
+<%else %>
+<% end %>
+
+
+
+<% date_time =Time.parse(@recapper.datey) %>
+<p id="notice"><%= notice %></p>
+
+<% away_total_to=@recapper.ap1_to.to_i+@recapper.ap2_to.to_i+@recapper.ap3_to.to_i+@recapper.ap4_to.to_i+@recapper.ap5_to.to_i+@recapper.ap6_to.to_i+@recapper.ap7_to.to_i+@recapper.ap8_to.to_i+@recapper.ap9_to.to_i+@recapper.ap10_to.to_i+@recapper.ap11_to.to_i+@recapper.ap12_to.to_i+@recapper.ap13_to.to_i %>
+
+<% home_total_to=@recapper.hp1_to.to_i+@recapper.hp2_to.to_i+@recapper.hp3_to.to_i+@recapper.hp4_to.to_i+@recapper.hp5_to.to_i+@recapper.hp6_to.to_i+@recapper.hp7_to.to_i+@recapper.hp8_to.to_i+@recapper.hp9_to.to_i+@recapper.hp10_to.to_i+@recapper.hp11_to.to_i+@recapper.hp12_to.to_i+@recapper.hp13_to.to_i %>
+
+
+<div class='box_score'><h2 class='story_h2'><span class='article_title'><%=home_or_away.html_safe %>  </span><br/><span class='box_arena_h2'><%=@recapper.arena %> | </span><span class='box_start_date_h2'><%= date_time.strftime("%A %B #{date_time.day.ordinalize} %Y %l:%M%P")%></span><br/><%=win_or_loss.html_safe%></h2>
+
+  <table id='last_game_period_box'>
+    <% away_nick_dash=@recapper.afname.parameterize+'.png' %>
+    <% home_nick_dash=@recapper.hfname.parameterize+'.png' %>
+
+    <tr><th>&nbsp;</th><th>&nbsp;</th><th>1</th><th>2</th><th>3</th><th>4</th><th>T</th></tr>
+    <tr><td class='logo_box' ><%= image_tag(away_nick_dash, style: "float:left;border-top:1px inset #777777;padding-top:10px;", class:"uk-img-preserve")%></td><td><%=@recapper.a_initials %> </td><td> <%=@recapper.aq1 %> <td><%=@recapper.aq2 %></td><td><%=@recapper.aq3 %></td><td><%=@recapper.aq4 %></td><td class='quarters_total'><%=@recapper.atotal%></td></tr>
+    <tr><td class='logo_box'><%= image_tag(home_nick_dash, style: "float:left;border-top:1px inset #777777;padding-top:10px;", class:"uk-img-preserve")%></td><td><%=@recapper.h_initials%></td> <td><%=@recapper.hq1 %></td> <td><%=@recapper.hq2 %></td> <td><%=@recapper.hq3 %></td> <td><%=@recapper.hq4 %></td> <td class='quarters_total'><%=@recapper.htotal%></td></tr>
+  </table>
+
+  <br/>
+  <br/>
+  <br/>
+
+  <table id='boxscore_away'>
+    <tr style='border: 1px inset #000;'><th style='border: 1px inset #000;' colspan='19'><%= @recapper.afname %> <span class='digit_box_total'><%= @recapper.atotal %></span></th></tr>
+    <tr style='border: 1px inset #000;font-weight:800;'><td style='border: 1px inset #000;'>PLAYER</td><td style='border: 1px inset #000;'>MIN</td><td style='border: 1px inset #000;'>PTS</td><td style='border: 1px inset #000;'>FGM-A</td><td style='border: 1px inset #000;' class='hide_box_column'>3PM-A</td><td style='border: 1px inset #000;'>FTM-A</td><td style='border: 1px inset #000;' class='hide_box_column'>O-REB</td><td style='border: 1px inset #000;' class='hide_box_column'>D-REB</td><td style='border: 1px inset #000;'>REB</td><td style='border: 1px inset #000;'>AST</td><td style='border: 1px inset #000;' class='hide_box_column'>STL</td><td style='border: 1px inset #000;' class='hide_box_column'>BLK</td><td style='border: 1px inset #000;' class='hide_box_column'>TO</td><td style='border: 1px inset #000;'>PF</td><td style='border: 1px inset #000;' class='hide_this'>STARTER</td></tr>
+
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class1 %>'> <%=@recapper.ap1_name%></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%=@recapper.ap1_min%></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%=@recapper.ap1_pts%></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%= @recapper.ap1_fgma %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_box_column'><%= @recapper.ap1_3pma %></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%= @recapper.ap1_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_box_column'><%= @recapper.ap1_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_box_column'><%= @recapper.ap1_dreb %></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%= @recapper.ap1_reb %></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%= @recapper.ap1_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_box_column'><%= @recapper.ap1_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_box_column'><%= @recapper.ap1_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_box_column'><%= @recapper.ap1_to %></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%= @recapper.ap1_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_this'>$a_starter0</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class2 %>' ><%=@recapper.ap2_name%></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%=@recapper.ap2_min%></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%=@recapper.ap2_pts%></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%= @recapper.ap2_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_box_column'><%= @recapper.ap2_3pma %></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%= @recapper.ap2_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_box_column'><%= @recapper.ap2_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_box_column'><%= @recapper.ap2_dreb %></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%= @recapper.ap2_reb %></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%= @recapper.ap2_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_box_column'><%= @recapper.ap2_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_box_column'><%= @recapper.ap2_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_box_column'><%= @recapper.ap2_to %></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%= @recapper.ap2_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_this'>$a_starter1</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class3 %>'><%=@recapper.ap3_name%></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%=@recapper.ap3_min%></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%=@recapper.ap3_pts%></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%= @recapper.ap3_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_box_column'><%= @recapper.ap3_3pma %></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%= @recapper.ap3_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_box_column'><%= @recapper.ap3_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_box_column'><%= @recapper.ap3_dreb %></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%= @recapper.ap3_reb %></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%= @recapper.ap3_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_box_column'><%= @recapper.ap3_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_box_column'><%= @recapper.ap3_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_box_column'><%= @recapper.ap3_to %></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%= @recapper.ap3_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_this'>$a_starter2</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class4 %>'><%=@recapper.ap4_name%></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%=@recapper.ap4_min%></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%=@recapper.ap4_pts%></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%= @recapper.ap4_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_box_column'><%= @recapper.ap4_3pma %></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%= @recapper.ap4_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_box_column'><%= @recapper.ap4_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_box_column'><%= @recapper.ap4_dreb %></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%= @recapper.ap4_reb %></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%= @recapper.ap4_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_box_column'><%= @recapper.ap4_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_box_column'><%= @recapper.ap4_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_box_column'><%= @recapper.ap4_to %></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%= @recapper.ap4_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_this'>$a_starter3</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class5 %>'><%=@recapper.ap5_name%></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%=@recapper.ap5_min%></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%=@recapper.ap5_pts%></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%= @recapper.ap5_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_box_column'><%= @recapper.ap5_3pma %></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%= @recapper.ap5_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_box_column'><%= @recapper.ap5_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_box_column'><%= @recapper.ap5_dreb %></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%= @recapper.ap5_reb %></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%= @recapper.ap5_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_box_column'><%= @recapper.ap5_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_box_column'><%= @recapper.ap5_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_box_column'><%= @recapper.ap5_to %></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%= @recapper.ap5_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_this'>$a_starter4</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class6 %>'><%=@recapper.ap6_name%></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%=@recapper.ap6_min%></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%=@recapper.ap6_pts%></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%= @recapper.ap6_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_box_column'><%= @recapper.ap6_3pma %></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%= @recapper.ap6_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_box_column'><%= @recapper.ap6_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_box_column'><%= @recapper.ap6_dreb %></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%= @recapper.ap6_reb %></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%= @recapper.ap6_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_box_column'><%= @recapper.ap6_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_box_column'><%= @recapper.ap6_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_box_column'><%= @recapper.ap6_to %></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%= @recapper.ap6_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_this'>$a_starter5</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class7 %>'><%=@recapper.ap7_name%></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%=@recapper.ap7_min%></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%=@recapper.ap7_pts%></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%= @recapper.ap7_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_box_column'><%= @recapper.ap7_3pma %></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%= @recapper.ap7_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_box_column'><%= @recapper.ap7_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_box_column'><%= @recapper.ap7_dreb %></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%= @recapper.ap7_reb %></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%= @recapper.ap7_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_box_column'><%= @recapper.ap7_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_box_column'><%= @recapper.ap7_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_box_column'><%= @recapper.ap7_to %></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%= @recapper.ap7_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_this'>$a_starter6</td></tr>
+
+
+
+    <% if @recapper.ap8_name !=nil %>
+        <tr style='border: 1px inset #000;'><td class='<%= astart_class8 %>'><%=@recapper.ap8_name%></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%=@recapper.ap8_min%></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%=@recapper.ap8_pts%></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @recapper.ap8_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @recapper.ap8_3pma %></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @recapper.ap8_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @recapper.ap8_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @recapper.ap8_dreb %></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @recapper.ap8_reb %></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @recapper.ap8_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @recapper.ap8_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @recapper.ap8_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @recapper.ap8_to %></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @recapper.ap8_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_this'>$a_starter7</td></tr>
+    <%else%>
+
+    <%end%>
+
+
+    <% if @recapper.ap9_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= astart_class9 %>'><%=@recapper.ap9_name%></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%=@recapper.ap9_min%></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%=@recapper.ap9_pts%></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @recapper.ap9_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @recapper.ap9_3pma %></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @recapper.ap9_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @recapper.ap9_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @recapper.ap9_dreb %></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @recapper.ap9_reb %></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @recapper.ap9_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @recapper.ap9_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @recapper.ap9_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @recapper.ap9_to %></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @recapper.ap9_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_this'>$a_starter8</td></tr>
+    <%else%>
+
+    <%end%>
+
+    <% if @recapper.ap10_name !=nil %>
+        <tr style='border: 1px inset #000;'><td class='<%= astart_class10 %>'><%=@recapper.ap10_name%></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%=@recapper.ap10_min%></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%=@recapper.ap10_pts%></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%= @recapper.ap10_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_box_column'><%= @recapper.ap10_3pma %></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%= @recapper.ap10_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_box_column'><%= @recapper.ap10_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_box_column'><%= @recapper.ap10_dreb %></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%= @recapper.ap10_reb %></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%= @recapper.ap10_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_box_column'><%= @recapper.ap10_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_box_column'><%= @recapper.ap10_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_box_column'><%= @recapper.ap10_to %></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%= @recapper.ap10_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_this'>$a_starter9</td></tr>
+    <%else%>
+
+    <%end%>
+
+
+    <% if @recapper.ap11_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= astart_class11 %>'><%=@recapper.ap11_name%></td><td class='<%= astart_class11 %>' style='border: 1px inset #000;'><%=@recapper.ap11_min%></td><td style='border: 1px inset #000;'><%=@recapper.ap11_pts%></td><td style='border: 1px inset #000;'><%= @recapper.ap11_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_box_column'><%= @recapper.ap11_3pma %></td><td class='<%= astart_class11 %>' style='border: 1px inset #000;'><%= @recapper.ap11_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_box_column'><%= @recapper.ap11_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_box_column'><%= @recapper.ap11_dreb %></td><td class='<%= astart_class11 %>' style='border: 1px inset #000;'><%= @recapper.ap11_reb %></td><td class='<%= astart_class11 %>' style='border: 1px inset #000;'><%= @recapper.ap11_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_box_column'><%= @recapper.ap11_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_box_column'><%= @recapper.ap11_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_box_column'><%= @recapper.ap11_to %></td><td class='<%= astart_class11 %>' style='border: 1px inset #000;'><%= @recapper.ap11_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_this'>$a_starter10</td></tr>
+    <%else%>
+
+    <%end%>
+
+    <% if @recapper.ap12_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= astart_class12 %>'><%=@recapper.ap12_name%></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%=@recapper.ap12_min%></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%=@recapper.ap12_pts%></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%= @recapper.ap12_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_box_column'><%= @recapper.ap12_3pma %></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%= @recapper.ap12_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_box_column'><%= @recapper.ap12_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_box_column'><%= @recapper.ap12_dreb %></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%= @recapper.ap12_reb %></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%= @recapper.ap12_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_box_column'><%= @recapper.ap12_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_box_column'><%= @recapper.ap12_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_box_column'><%= @recapper.ap12_to %></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%= @recapper.ap12_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_this'>$a_starter11</td></tr>
+    <%else%>
+
+    <%end%>
+
+    <% if @recapper.ap13_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= astart_class13 %>'><%=@recapper.ap13_name%></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;'><%=@recapper.ap13_min%></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;'><%=@recapper.ap13_pts%></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;'><%= @recapper.ap13_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_box_column'><%= @recapper.ap13_3pma %></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;'><%= @recapper.ap13_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_box_column'><%= @recapper.ap13_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_box_column'><%= @recapper.ap13_dreb %></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;' ><%= @recapper.ap13_reb %></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;'><%= @recapper.ap13_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_box_column'><%= @recapper.ap13_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_box_column'><%= @recapper.ap13_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_box_column'><%= @recapper.ap13_to %></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;'><%= @recapper.ap13_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_this'>$a_starter12</td></tr>
+    <%else%>
+
+    <%end%>
+    <tr style='border: 1px inset #000;font-weight:800;'>
+      <td  style='border: 1px inset #000;' colspan='2'><%= @recapper.a_nick %> <br/>Totals</td><td style='border: 1px inset #000;'><%= @recapper.atotal %></td><td style='border: 1px inset #000;'><%= @recapper.awaytfgma %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @recapper.awayt3fgma %></td><td style='border: 1px inset #000;'><%= @recapper.awaytftma %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @recapper.awaytoreb %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @recapper.awaytdreb %></td><td style='border: 1px inset #000;'><%= @recapper.arebt %></td><td style='border: 1px inset #000;'><%= @recapper.aastt %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @recapper.astlt %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @recapper.ablkt %></td><td style='border: 1px inset #000;' class='hide_box_column'><%=away_total_to %></td><td colspan='2' style='border: 1px inset #000;'><%= @recapper.awaytpf %></td></tr>
+
+  </table>
+
+  <br/>
+  <br/>
+
+
+
+  <table id="boxscore_key">
+    <tbody><tr>
+      <th>BOXSCORE KEY</th>
+    </tr>
+    <tr><td class="starter2">STARTER</td></tr>
+    </tbody></table>
+
+
+  <br/>
+  <br/>
+
+  <table id='boxscore_home'>
+    <tr style='border: 1px inset #000;'><th style='border: 1px inset #000;' colspan='19'><%= @recapper.hfname %> <span class='digit_box_total'><%= @recapper.htotal %></span></th></tr>
+    <tr style='border: 1px inset #000;font-weight:800;'><td style='border: 1px inset #000;'>PLAYER</td><td style='border: 1px inset #000;'>MIN</td><td style='border: 1px inset #000;'>PTS</td><td style='border: 1px inset #000;'>FGM-A</td><td style='border: 1px inset #000;' class='hide_box_column'>3PM-A</td><td style='border: 1px inset #000;'>FTM-A</td><td style='border: 1px inset #000;' class='hide_box_column'>O-REB</td><td style='border: 1px inset #000;' class='hide_box_column'>D-REB</td><td style='border: 1px inset #000;'>REB</td><td style='border: 1px inset #000;'>AST</td><td style='border: 1px inset #000;' class='hide_box_column'>STL</td><td style='border: 1px inset #000;' class='hide_box_column'>BLK</td><td style='border: 1px inset #000;' class='hide_box_column'>TO</td><td style='border: 1px inset #000;'>PF</td><td style='border: 1px inset #000;' class='hide_this'>STARTER</td></tr>
+
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class1 %>'> <%=@recapper.hp1_name%></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%=@recapper.hp1_min%></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%=@recapper.hp1_pts%></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%= @recapper.hp1_fgma %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_box_column'><%= @recapper.hp1_3pma %></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%= @recapper.hp1_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_box_column'><%= @recapper.hp1_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_box_column'><%= @recapper.hp1_dreb %></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%= @recapper.hp1_reb %></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%= @recapper.hp1_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_box_column'><%= @recapper.hp1_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_box_column'><%= @recapper.hp1_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_box_column'><%= @recapper.hp1_to %></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%= @recapper.hp1_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_this'>$a_starter0</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class2 %>' ><%=@recapper.hp2_name%></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%=@recapper.hp2_min%></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%=@recapper.hp2_pts%></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%= @recapper.hp2_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_box_column'><%= @recapper.hp2_3pma %></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%= @recapper.hp2_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_box_column'><%= @recapper.hp2_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_box_column'><%= @recapper.hp2_dreb %></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%= @recapper.hp2_reb %></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%= @recapper.hp2_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_box_column'><%= @recapper.hp2_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_box_column'><%= @recapper.hp2_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_box_column'><%= @recapper.hp2_to %></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%= @recapper.hp2_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_this'>$a_starter1</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class3 %>'><%=@recapper.hp3_name%></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%=@recapper.hp3_min%></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%=@recapper.hp3_pts%></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%= @recapper.hp3_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_box_column'><%= @recapper.hp3_3pma %></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%= @recapper.hp3_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_box_column'><%= @recapper.hp3_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_box_column'><%= @recapper.hp3_dreb %></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%= @recapper.hp3_reb %></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%= @recapper.hp3_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_box_column'><%= @recapper.hp3_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_box_column'><%= @recapper.hp3_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_box_column'><%= @recapper.hp3_to %></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%= @recapper.hp3_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_this'>$a_starter2</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class4 %>'><%=@recapper.hp4_name%></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%=@recapper.hp4_min%></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%=@recapper.hp4_pts%></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%= @recapper.hp4_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_box_column'><%= @recapper.hp4_3pma %></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%= @recapper.hp4_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_box_column'><%= @recapper.hp4_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_box_column'><%= @recapper.hp4_dreb %></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%= @recapper.hp4_reb %></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%= @recapper.hp4_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_box_column'><%= @recapper.hp4_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_box_column'><%= @recapper.hp4_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_box_column'><%= @recapper.hp4_to %></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%= @recapper.hp4_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_this'>$a_starter3</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class5 %>'><%=@recapper.hp5_name%></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%=@recapper.hp5_min%></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%=@recapper.hp5_pts%></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%= @recapper.hp5_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_box_column'><%= @recapper.hp5_3pma %></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%= @recapper.hp5_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_box_column'><%= @recapper.hp5_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_box_column'><%= @recapper.hp5_dreb %></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%= @recapper.hp5_reb %></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%= @recapper.hp5_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_box_column'><%= @recapper.hp5_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_box_column'><%= @recapper.hp5_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_box_column'><%= @recapper.hp5_to %></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%= @recapper.hp5_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_this'>$a_starter4</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class6 %>'><%=@recapper.hp6_name%></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%=@recapper.hp6_min%></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%=@recapper.hp6_pts%></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%= @recapper.hp6_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_box_column'><%= @recapper.hp6_3pma %></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%= @recapper.hp6_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_box_column'><%= @recapper.hp6_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_box_column'><%= @recapper.hp6_dreb %></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%= @recapper.hp6_reb %></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%= @recapper.hp6_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_box_column'><%= @recapper.hp6_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_box_column'><%= @recapper.hp6_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_box_column'><%= @recapper.hp6_to %></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%= @recapper.hp6_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_this'>$a_starter5</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class7 %>'><%=@recapper.hp7_name%></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%=@recapper.hp7_min%></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%=@recapper.hp7_pts%></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%= @recapper.hp7_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_box_column'><%= @recapper.hp7_3pma %></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%= @recapper.hp7_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_box_column'><%= @recapper.hp7_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_box_column'><%= @recapper.hp7_dreb %></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%= @recapper.hp7_reb %></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%= @recapper.hp7_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_box_column'><%= @recapper.hp7_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_box_column'><%= @recapper.hp7_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_box_column'><%= @recapper.hp7_to %></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%= @recapper.hp7_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_this'>$a_starter6</td></tr>
+
+
+
+    <% if @recapper.hp8_name !=nil %>
+        <tr style='border: 1px inset #000;'><td class='<%= hstart_class8 %>'><%=@recapper.hp8_name%></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%=@recapper.hp8_min%></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%=@recapper.hp8_pts%></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%= @recapper.hp8_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_box_column'><%= @recapper.hp8_3pma %></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%= @recapper.hp8_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_box_column'><%= @recapper.hp8_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_box_column'><%= @recapper.hp8_dreb %></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%= @recapper.hp8_reb %></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%= @recapper.hp8_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_box_column'><%= @recapper.hp8_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_box_column'><%= @recapper.hp8_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_box_column'><%= @recapper.hp8_to %></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%= @recapper.hp8_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_this'>$a_starter7</td></tr>
+    <%else%>
+
+    <%end%>
+
+
+    <% if @recapper.hp9_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= hstart_class9 %>'><%=@recapper.hp9_name%></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%=@recapper.hp9_min%></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%=@recapper.hp9_pts%></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%= @recapper.hp9_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_box_column'><%= @recapper.hp9_3pma %></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%= @recapper.hp9_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_box_column'><%= @recapper.hp9_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_box_column'><%= @recapper.hp9_dreb %></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%= @recapper.hp9_reb %></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%= @recapper.hp9_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_box_column'><%= @recapper.hp9_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_box_column'><%= @recapper.hp9_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_box_column'><%= @recapper.hp9_to %></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%= @recapper.hp9_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_this'>$a_starter8</td></tr>
+    <%else%>
+
+    <%end%>
+
+    <% if @recapper.hp10_name !=nil %>
+        <tr style='border: 1px inset #000;'><td class='<%= hstart_class10 %>'><%=@recapper.hp10_name%></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%=@recapper.hp10_min%></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%=@recapper.hp10_pts%></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%= @recapper.hp10_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_box_column'><%= @recapper.hp10_3pma %></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%= @recapper.hp10_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_box_column'><%= @recapper.hp10_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_box_column'><%= @recapper.hp10_dreb %></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%= @recapper.hp10_reb %></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%= @recapper.hp10_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_box_column'><%= @recapper.hp10_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_box_column'><%= @recapper.hp10_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_box_column'><%= @recapper.hp10_to %></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%= @recapper.hp10_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_this'>$a_starter9</td></tr>
+    <%else%>
+
+    <%end%>
+
+
+    <% if @recapper.hp11_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= hstart_class11 %>'><%=@recapper.hp11_name%></td><td class='<%= hstart_class11 %>' style='border: 1px inset #000;'><%=@recapper.hp11_min%></td><td style='border: 1px inset #000;'><%=@recapper.hp11_pts%></td><td style='border: 1px inset #000;'><%= @recapper.hp11_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_box_column'><%= @recapper.hp11_3pma %></td><td class='<%= hstart_class11 %>' style='border: 1px inset #000;'><%= @recapper.hp11_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_box_column'><%= @recapper.hp11_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_box_column'><%= @recapper.hp11_dreb %></td><td class='<%= hstart_class11 %>' style='border: 1px inset #000;'><%= @recapper.hp11_reb %></td><td class='<%= hstart_class11 %>' style='border: 1px inset #000;'><%= @recapper.hp11_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_box_column'><%= @recapper.hp11_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_box_column'><%= @recapper.hp11_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_box_column'><%= @recapper.hp11_to %></td><td class='<%= hstart_class11 %>' style='border: 1px inset #000;'><%= @recapper.hp11_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_this'>$a_starter10</td></tr>
+    <%else%>
+
+    <%end%>
+
+    <% if @recapper.hp12_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= hstart_class12 %>'><%=@recapper.hp12_name%></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%=@recapper.hp12_min%></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%=@recapper.hp12_pts%></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%= @recapper.hp12_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_box_column'><%= @recapper.hp12_3pma %></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%= @recapper.hp12_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_box_column'><%= @recapper.hp12_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_box_column'><%= @recapper.hp12_dreb %></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%= @recapper.hp12_reb %></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%= @recapper.hp12_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_box_column'><%= @recapper.hp12_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_box_column'><%= @recapper.hp12_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_box_column'><%= @recapper.hp12_to %></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%= @recapper.hp12_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_this'>$a_starter11</td></tr>
+    <%else%>
+
+    <%end%>
+
+    <% if @recapper.hp13_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= hstart_class13 %>'><%=@recapper.hp13_name%></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;'><%=@recapper.hp13_min%></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;'><%=@recapper.hp13_pts%></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;'><%= @recapper.hp13_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_box_column'><%= @recapper.hp13_3pma %></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;'><%= @recapper.hp13_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_box_column'><%= @recapper.hp13_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_box_column'><%= @recapper.hp13_dreb %></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;' ><%= @recapper.hp13_reb %></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;'><%= @recapper.hp13_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_box_column'><%= @recapper.hp13_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_box_column'><%= @recapper.hp13_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_box_column'><%= @recapper.hp13_to %></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;'><%= @recapper.hp13_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_this'>$a_starter12</td></tr>
+    <%else%>
+
+    <%end%>
+    <tr style='border: 1px inset #000;font-weight:800;'>
+      <td  style='border: 1px inset #000;' colspan='2'><%= @recapper.h_nick %> <br/>Totals</td><td style='border: 1px inset #000;'><%= @recapper.htotal %></td><td style='border: 1px inset #000;'><%= @recapper.hometfgma %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @recapper.homet3fgma %></td><td style='border: 1px inset #000;'><%= @recapper.hometftma %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @recapper.hometoreb %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @recapper.hometdreb %></td><td style='border: 1px inset #000;'><%= @recapper.hrebt %></td><td style='border: 1px inset #000;'><%= @recapper.hastt %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @recapper.hstlt %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @recapper.hblkt %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= home_total_to %></td><td colspan='2' style='border: 1px inset #000;'><%= @recapper.hometpf %></td></tr>
+
+  </table>
+
+  <br/>
+  <br/>
+  <table id="box_team_total_percentages">
+    <tbody><tr style="border: 1px inset #000;"><th colspan="11" style="border: 1px inset #000;">Totals</th></tr>
+    <tr style="border: 1px inset #000;font-weight:800;"><td style="border: 1px inset #000;"> </td><td style="border: 1px inset #000;">PTS</td><td style="border: 1px inset #000;">FG%</td><td style="border: 1px inset #000;">FT%</td><td>3PT%</td><td style="border: 1px inset #000;">REB</td><td style="border: 1px inset #000;">AST</td><td style="border: 1px inset #000;">STL</td><td style="border: 1px inset #000;">BLK</td><td style="border: 1px inset #000;">TO</td><td style="border: 1px inset #000;">PF</td></tr>
+    <tr style="border: 1px inset #000;"><td style="border: 1px inset #000;font-weight:800;"><%= @recapper.a_nick %></td><td style="border: 1px inset #000;"><%= @recapper.atotal %></td><td style="border: 1px inset #000;"><%= @recapper.afgp %></td><td style="border: 1px inset #000;"><%= @recapper.aftp %></td><td style="border: 1px inset #000;"><%= @recapper.a3ptp %></td><td style="border: 1px inset #000;"><%= @recapper.arebt %></td><td style="border: 1px inset #000;"><%= @recapper.aastt %></td><td style="border: 1px inset #000;"><%= @recapper.astlt %></td><td style="border: 1px inset #000;"><%= @recapper.ablkt %></td><td style="border: 1px inset #000;"><%= away_total_to %></td><td style="border: 1px inset #000;"><%= @recapper.awaytpf %></td></tr>
+    <tr style="border: 1px inset #000;"><td style="border: 1px inset #000;font-weight:800;"><%= @recapper.h_nick %></td><td style="border: 1px inset #000;"><%= @recapper.htotal %></td><td style="border: 1px inset #000;"><%= @recapper.hfgp %></td><td style="border: 1px inset #000;"><%= @recapper.hftp %></td><td style="border: 1px inset #000;"><%= @recapper.h3ptp %></td><td style="border: 1px inset #000;"><%= @recapper.hrebt %></td><td style="border: 1px inset #000;"><%= @recapper.hastt %></td><td style="border: 1px inset #000;"><%= @recapper.hstlt %></td><td style="border: 1px inset #000;"><%= @recapper.hblkt %></td><td style="border: 1px inset #000;"><%= home_total_to %></td><td style="border: 1px inset #000;"><%= @recapper.hometpf %></td></tr>
+    </tbody></table>
+  <br/>
+
+  <div id="boxscore_writeup_container">
+    <h2 class="story_h2_summary">Box Score Summary</h2>
+    <%= game_box_recap.html_safe %>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+
+
+  <%= link_to 'Edit', edit_recapper_path(@recapper) %> |
+  <%= link_to 'Back to 2014-2015 Recaps', recappers_path %> |
+  <%= link_to 'Home', page_home_path %>
+
+
+
+  <br/>
+  <br/>
+</div>

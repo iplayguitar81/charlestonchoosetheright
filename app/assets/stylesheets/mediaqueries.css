@@ -1,0 +1,459 @@
+@media (max-width: 2560px) {
+
+    #news_show_organize img {
+        margin-left: 15%;
+        margin-right: 15%;
+        height: 575.188px;
+        width: 70%;
+
+    }
+
+    #news_place img {
+        width: 55%;
+        height: 235px;
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-bottom: 1%;
+        border: 2px solid  #D73F3F;
+        float: left;
+        box-shadow: 2px 2px 2px #777777; }
+h2.story_h2 {
+    line-height: 1.4em;
+    padding-bottom: .2em;
+}
+#news_show_organize h2 {
+    line-height: 1.3em;
+}
+
+}
+
+@media (max-width: 1399px) {
+
+
+    #news_show_organize img {
+        margin-left: 20%;
+        margin-right: 20%;
+        height: 493.594px;
+        width: 60%;
+
+    }
+
+    #news_place img {
+        width: 55%;
+        height: 235px;
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-bottom: 1%;
+        border: 2px solid  #D73F3F;
+        float: left;
+        box-shadow: 2px 2px 2px #777777; } }
+
+@media (max-width: 1280px) {
+
+    .story_arrange {
+
+
+    }
+
+    #news_place img {
+        width: 55%;
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-bottom: 6%;
+        border: 2px solid  #D73F3F;
+        float: left;
+        box-shadow: 2px 2px 2px #777777; } }
+
+
+@media (max-width: 930px) {
+    #news_show_organize img {
+
+        height: 447.688px;
+
+
+    }
+}
+
+@media (max-width: 750px) {
+
+    #news_show_organize img {
+
+        height: 355.891px;
+
+
+    }
+
+}
+
+@media (max-width: 720px) {
+
+
+    .nav-btn {
+        display: block;
+        width: 5.725em;
+        height: 3.15em;
+        margin-top: .5%;
+        padding: 0;
+        border: 0;
+        outline: none;
+        background: #333333 url("stripes.png") no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 100%;
+    }
+    .close-btn {
+        display: block;
+        width: 4.925em;
+        height: 2.75em;
+        padding: 0;
+        border: 0;
+        outline: none;
+        background: url("close-btn.png") left center no-repeat;
+        background-size: 1.875em 1.875em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 100%;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .nav-btn {
+        display: block;
+        width: 5.925em;
+        height: 3.15em;
+        padding: 0;
+        border: 0;
+        outline: none;
+        background: #333333 url("stripes.png") no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 100%;
+    }
+    .close-btn {
+        display: block;
+        width: 4.925em;
+        height: 2.75em;
+        padding: 0;
+        border: 0;
+        outline: none;
+        background: url("close-btn.png") left center no-repeat;
+        background-size: 1.875em 1.875em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 100%;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+}
+
+
+
+@media (max-width: 601px) {
+
+    #news_show_organize img {
+        width: 90%;
+         height: 417.859px; /* fix this shite???*/
+        margin-left: 5%;
+
+        border: 2px solid #990000;
+        box-shadow: 2px 2px 2px #777777; }
+  }
+
+@media (max-width: 568px) {
+
+td.hide_box_column {
+    display:none;
+}
+
+    .block {
+        position: relative;
+        margin: 0 auto;
+        padding: 1.5em 1.25em;
+        max-width: 60em;
+    }
+
+    .nav-btn {
+        display: block;
+        width: 4.625em;
+        height: 2.85em;
+        padding: 0;
+        border: 0;
+        outline: none;
+        background: #333333 url("stripes.png") no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 100%;
+    }
+    .close-btn {
+        display: block;
+        width: 3.625em;
+        height: 2.55em;
+        padding: 0;
+        border: 0;
+        outline: none;
+        background: url("close-btn.png") left center no-repeat;
+        background-size: 1.875em 1.875em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 100%;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+
+    .nav-btn {
+        display: block;
+        width: 3.625em;
+        height: 2.15em;
+        padding: 0;
+        border: 0;
+        outline: none;
+        background: #333333 url("stripes.png") no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 100%;
+    }
+    .close-btn {
+        display: block;
+        width: 3.625em;
+        height: 2.55em;
+        padding: 0;
+        border: 0;
+        outline: none;
+        background: url("close-btn.png") left center no-repeat;
+        background-size: 1.875em 1.875em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 100%;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+}
+
+
+@media (max-width: 401px) {
+    .main_links {
+        font-size: 1.02em; } }
+
+
+@media (max-width: 360px) {
+    .block {
+        position: relative;
+        margin: 0 auto;
+        /* padding: 1.5em 1.25em; */
+        max-width: 60em;
+    }
+
+    .img-responsive {
+        width: 350px;
+
+
+    }
+
+    h2.story_h2 {
+        padding-top: .1em;
+        line-height: 1.2em;
+    }
+
+    #main_content {
+
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+
+    }
+
+    #main .block {
+
+        padding: 0em;
+    }
+
+    a.readmore {
+        margin-left: 5%;
+        margin-right: 15%; }
+
+    .main_links {
+        font-size: .92em;
+
+    }
+
+    .img-responsive {
+        width: 100%;
+        margin-left: 28%;
+
+    }
+
+    .nav-btn {
+        display: block;
+        width: 3.625em;
+        height: 1.85em;
+        padding: 0;
+        border: 0;
+        outline: none;
+        background: #333333 url("stripes.png") no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 100%;
+    }
+    .close-btn {
+        display: block;
+        width: 3.625em;
+        height: 1.55em;
+        padding: 0;
+        border: 0;
+        outline: none;
+        background: url("close-btn.png") left center no-repeat;
+        background-size: 1.875em 1.875em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 100%;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+
+    .prose h1 {
+        font-size: 1.1em;
+        line-height: 1.5em;
+        margin-bottom: 0.4em; }
+
+    .article_title {
+        font-size: .92em;
+        text-align: center; }
+
+    .story_pub_info {
+        font-size: .42em;
+        color: #FFFFFF;
+        font-family: 'Trebuchet MS', Tahoma, Arial; }
+
+    #news_show_organize img {
+        width: 90%;
+        margin-left: 5%;
+        height: 250px;
+        border: 2px solid #990000;
+        box-shadow: 2px 2px 2px #777777; }
+
+    #news_place{
+        width: 100%;
+    }
+
+    #news_place img {
+        width: 90%;
+        height: 250px;
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-bottom: 1%;
+
+        float: left;
+        box-shadow: 2px 2px 2px #777777; }
+
+    .s2 {
+        width: 88%; }
+    .back_to_main { font-size: 1em;
+
+    }
+}
+
+@media (max-width: 320px) {
+
+    .nav-btn {
+        display: block;
+        width: 3.3em;
+        height: 1.85em;
+        padding: 0;
+        border: 0;
+        outline: none;
+        background: #333333 url("stripes.png") no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 100%;
+    }
+
+
+    #main_content {
+
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+
+    }
+
+    #main .block {
+
+        padding: 0em;
+    }
+
+    a.readmore {
+        margin-left: 5%;
+        margin-right: 15%; }
+
+    .main_links {
+        font-size: .92em;
+
+    }
+
+    .img-responsive {
+        width: 100%;
+        margin-left: 29%; }
+
+    .prose h1 {
+        font-size: 1.1em;
+        line-height: 1.5em;
+        margin-bottom: 0.4em; }
+
+    .article_title {
+        font-size: .92em;
+        text-align: center; }
+
+    .story_pub_info {
+        font-size: .42em;
+        color: #FFFFFF;
+        font-family: 'Trebuchet MS', Tahoma, Arial; }
+
+    #news_show_organize img {
+        width: 90%;
+        margin-left: 5%;
+        height: 250px;
+        border: 2px solid #990000;
+        box-shadow: 2px 2px 2px #777777; }
+
+    #news_place{
+        width: 100%;
+    }
+
+    #news_place img {
+        width: 90%;
+        height: 250px;
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-bottom: 1%;
+        box-shadow: 2px 2px 2px #777777; }
+
+    .s2 {
+        width: 88%; }
+    .back_to_main { font-size: 1em;
+
+    }
+
+}

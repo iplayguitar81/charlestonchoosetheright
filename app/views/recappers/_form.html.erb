@@ -1,0 +1,1793 @@
+<%= form_for(@recapper) do |f| %>
+  <% if @recapper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recapper.errors.count, "error") %> prohibited this recapper from being saved:</h2>
+
+      <ul>
+      <% @recapper.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br>
+    <%= f.text_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :game_string %><br>
+    <%= f.text_field :game_string %>
+  </div>
+  <div class="field">
+    <%= f.label :datey %><br>
+    <%= f.text_field :datey %>
+  </div>
+  <div class="field">
+    <%= f.label :dashy_date %><br>
+    <%= f.text_field :dashy_date %>
+  </div>
+  <div class="field">
+    <%= f.label :afname %><br>
+    <%= f.text_field :afname %>
+  </div>
+  <div class="field">
+    <%= f.label :hfname %><br>
+    <%= f.text_field :hfname %>
+  </div>
+  <div class="field">
+    <%= f.label :atotal %><br>
+    <%= f.text_field :atotal %>
+  </div>
+  <div class="field">
+    <%= f.label :htotal %><br>
+    <%= f.text_field :htotal %>
+  </div>
+  <div class="field">
+    <%= f.label :arena %><br>
+    <%= f.text_field :arena %>
+  </div>
+  <div class="field">
+    <%= f.label :capacity %><br>
+    <%= f.text_field :capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :attendance %><br>
+    <%= f.text_field :attendance %>
+  </div>
+  <div class="field">
+    <%= f.label :ref1 %><br>
+    <%= f.text_field :ref1 %>
+  </div>
+  <div class="field">
+    <%= f.label :ref2 %><br>
+    <%= f.text_field :ref2 %>
+  </div>
+  <div class="field">
+    <%= f.label :ref3 %><br>
+    <%= f.text_field :ref3 %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_name %><br>
+    <%= f.text_field :hp1_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_min %><br>
+    <%= f.text_field :hp1_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_pts %><br>
+    <%= f.text_field :hp1_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_fgma %><br>
+    <%= f.text_field :hp1_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_3pma %><br>
+    <%= f.text_field :hp1_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_ftma %><br>
+    <%= f.text_field :hp1_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_oreb %><br>
+    <%= f.text_field :hp1_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_dreb %><br>
+    <%= f.text_field :hp1_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_reb %><br>
+    <%= f.text_field :hp1_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_ast %><br>
+    <%= f.text_field :hp1_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_stl %><br>
+    <%= f.text_field :hp1_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_blk %><br>
+    <%= f.text_field :hp1_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_to %><br>
+    <%= f.text_field :hp1_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_pf %><br>
+    <%= f.text_field :hp1_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp1_starter %><br>
+    <%= f.text_field :hp1_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_name %><br>
+    <%= f.text_field :hp2_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_min %><br>
+    <%= f.text_field :hp2_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_pts %><br>
+    <%= f.text_field :hp2_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_fgma %><br>
+    <%= f.text_field :hp2_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_3pma %><br>
+    <%= f.text_field :hp2_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_ftma %><br>
+    <%= f.text_field :hp2_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_oreb %><br>
+    <%= f.text_field :hp2_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_dreb %><br>
+    <%= f.text_field :hp2_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_reb %><br>
+    <%= f.text_field :hp2_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_ast %><br>
+    <%= f.text_field :hp2_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_stl %><br>
+    <%= f.text_field :hp2_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_blk %><br>
+    <%= f.text_field :hp2_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_to %><br>
+    <%= f.text_field :hp2_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_pf %><br>
+    <%= f.text_field :hp2_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp2_starter %><br>
+    <%= f.text_field :hp2_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_name %><br>
+    <%= f.text_field :hp3_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_min %><br>
+    <%= f.text_field :hp3_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_pts %><br>
+    <%= f.text_field :hp3_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_fgma %><br>
+    <%= f.text_field :hp3_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_3pma %><br>
+    <%= f.text_field :hp3_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_ftma %><br>
+    <%= f.text_field :hp3_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_oreb %><br>
+    <%= f.text_field :hp3_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_dreb %><br>
+    <%= f.text_field :hp3_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_reb %><br>
+    <%= f.text_field :hp3_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_ast %><br>
+    <%= f.text_field :hp3_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_stl %><br>
+    <%= f.text_field :hp3_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_blk %><br>
+    <%= f.text_field :hp3_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_to %><br>
+    <%= f.text_field :hp3_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_pf %><br>
+    <%= f.text_field :hp3_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp3_starter %><br>
+    <%= f.text_field :hp3_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_name %><br>
+    <%= f.text_field :hp4_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_min %><br>
+    <%= f.text_field :hp4_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_pts %><br>
+    <%= f.text_field :hp4_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_fgma %><br>
+    <%= f.text_field :hp4_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_3pma %><br>
+    <%= f.text_field :hp4_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_ftma %><br>
+    <%= f.text_field :hp4_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_oreb %><br>
+    <%= f.text_field :hp4_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_dreb %><br>
+    <%= f.text_field :hp4_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_reb %><br>
+    <%= f.text_field :hp4_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_ast %><br>
+    <%= f.text_field :hp4_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_stl %><br>
+    <%= f.text_field :hp4_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_blk %><br>
+    <%= f.text_field :hp4_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_to %><br>
+    <%= f.text_field :hp4_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_pf %><br>
+    <%= f.text_field :hp4_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp4_starter %><br>
+    <%= f.text_field :hp4_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_name %><br>
+    <%= f.text_field :hp5_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_min %><br>
+    <%= f.text_field :hp5_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_pts %><br>
+    <%= f.text_field :hp5_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_fgma %><br>
+    <%= f.text_field :hp5_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_3pma %><br>
+    <%= f.text_field :hp5_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_ftma %><br>
+    <%= f.text_field :hp5_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_oreb %><br>
+    <%= f.text_field :hp5_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_dreb %><br>
+    <%= f.text_field :hp5_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_reb %><br>
+    <%= f.text_field :hp5_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_ast %><br>
+    <%= f.text_field :hp5_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_stl %><br>
+    <%= f.text_field :hp5_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_blk %><br>
+    <%= f.text_field :hp5_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_to %><br>
+    <%= f.text_field :hp5_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_pf %><br>
+    <%= f.text_field :hp5_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp5_starter %><br>
+    <%= f.text_field :hp5_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_name %><br>
+    <%= f.text_field :hp6_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_min %><br>
+    <%= f.text_field :hp6_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_pts %><br>
+    <%= f.text_field :hp6_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_fgma %><br>
+    <%= f.text_field :hp6_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_3pma %><br>
+    <%= f.text_field :hp6_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_ftma %><br>
+    <%= f.text_field :hp6_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_oreb %><br>
+    <%= f.text_field :hp6_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_dreb %><br>
+    <%= f.text_field :hp6_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_reb %><br>
+    <%= f.text_field :hp6_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_ast %><br>
+    <%= f.text_field :hp6_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_stl %><br>
+    <%= f.text_field :hp6_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_blk %><br>
+    <%= f.text_field :hp6_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_to %><br>
+    <%= f.text_field :hp6_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_pf %><br>
+    <%= f.text_field :hp6_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp6_starter %><br>
+    <%= f.text_field :hp6_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_name %><br>
+    <%= f.text_field :hp7_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_min %><br>
+    <%= f.text_field :hp7_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_pts %><br>
+    <%= f.text_field :hp7_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_fgma %><br>
+    <%= f.text_field :hp7_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_3pma %><br>
+    <%= f.text_field :hp7_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_ftma %><br>
+    <%= f.text_field :hp7_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_oreb %><br>
+    <%= f.text_field :hp7_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_dreb %><br>
+    <%= f.text_field :hp7_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_reb %><br>
+    <%= f.text_field :hp7_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_ast %><br>
+    <%= f.text_field :hp7_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_stl %><br>
+    <%= f.text_field :hp7_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_blk %><br>
+    <%= f.text_field :hp7_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_to %><br>
+    <%= f.text_field :hp7_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_pf %><br>
+    <%= f.text_field :hp7_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp7_starter %><br>
+    <%= f.text_field :hp7_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_name %><br>
+    <%= f.text_field :hp8_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_min %><br>
+    <%= f.text_field :hp8_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_pts %><br>
+    <%= f.text_field :hp8_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_fgma %><br>
+    <%= f.text_field :hp8_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_3pma %><br>
+    <%= f.text_field :hp8_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_ftma %><br>
+    <%= f.text_field :hp8_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_oreb %><br>
+    <%= f.text_field :hp8_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_dreb %><br>
+    <%= f.text_field :hp8_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_reb %><br>
+    <%= f.text_field :hp8_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_ast %><br>
+    <%= f.text_field :hp8_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_stl %><br>
+    <%= f.text_field :hp8_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_blk %><br>
+    <%= f.text_field :hp8_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_to %><br>
+    <%= f.text_field :hp8_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_pf %><br>
+    <%= f.text_field :hp8_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp8_starter %><br>
+    <%= f.text_field :hp8_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_name %><br>
+    <%= f.text_field :hp9_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_min %><br>
+    <%= f.text_field :hp9_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_pts %><br>
+    <%= f.text_field :hp9_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_fgma %><br>
+    <%= f.text_field :hp9_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_3pma %><br>
+    <%= f.text_field :hp9_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_ftma %><br>
+    <%= f.text_field :hp9_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_oreb %><br>
+    <%= f.text_field :hp9_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_dreb %><br>
+    <%= f.text_field :hp9_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_reb %><br>
+    <%= f.text_field :hp9_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_ast %><br>
+    <%= f.text_field :hp9_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_stl %><br>
+    <%= f.text_field :hp9_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_blk %><br>
+    <%= f.text_field :hp9_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_to %><br>
+    <%= f.text_field :hp9_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_pf %><br>
+    <%= f.text_field :hp9_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp9_starter %><br>
+    <%= f.text_field :hp9_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_name %><br>
+    <%= f.text_field :hp10_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_min %><br>
+    <%= f.text_field :hp10_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_pts %><br>
+    <%= f.text_field :hp10_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_fgma %><br>
+    <%= f.text_field :hp10_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_3pma %><br>
+    <%= f.text_field :hp10_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_ftma %><br>
+    <%= f.text_field :hp10_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_oreb %><br>
+    <%= f.text_field :hp10_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_dreb %><br>
+    <%= f.text_field :hp10_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_reb %><br>
+    <%= f.text_field :hp10_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_ast %><br>
+    <%= f.text_field :hp10_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_stl %><br>
+    <%= f.text_field :hp10_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_blk %><br>
+    <%= f.text_field :hp10_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_to %><br>
+    <%= f.text_field :hp10_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_pf %><br>
+    <%= f.text_field :hp10_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp10_starter %><br>
+    <%= f.text_field :hp10_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_name %><br>
+    <%= f.text_field :hp11_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_min %><br>
+    <%= f.text_field :hp11_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_pts %><br>
+    <%= f.text_field :hp11_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_fgma %><br>
+    <%= f.text_field :hp11_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_3pma %><br>
+    <%= f.text_field :hp11_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_ftma %><br>
+    <%= f.text_field :hp11_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_oreb %><br>
+    <%= f.text_field :hp11_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_dreb %><br>
+    <%= f.text_field :hp11_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_reb %><br>
+    <%= f.text_field :hp11_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_ast %><br>
+    <%= f.text_field :hp11_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_stl %><br>
+    <%= f.text_field :hp11_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_blk %><br>
+    <%= f.text_field :hp11_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_to %><br>
+    <%= f.text_field :hp11_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_pf %><br>
+    <%= f.text_field :hp11_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp11_starter %><br>
+    <%= f.text_field :hp11_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_name %><br>
+    <%= f.text_field :hp12_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_min %><br>
+    <%= f.text_field :hp12_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_pts %><br>
+    <%= f.text_field :hp12_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_fgma %><br>
+    <%= f.text_field :hp12_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_3pma %><br>
+    <%= f.text_field :hp12_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_ftma %><br>
+    <%= f.text_field :hp12_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_oreb %><br>
+    <%= f.text_field :hp12_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_dreb %><br>
+    <%= f.text_field :hp12_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_reb %><br>
+    <%= f.text_field :hp12_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_ast %><br>
+    <%= f.text_field :hp12_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_stl %><br>
+    <%= f.text_field :hp12_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_blk %><br>
+    <%= f.text_field :hp12_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_to %><br>
+    <%= f.text_field :hp12_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_pf %><br>
+    <%= f.text_field :hp12_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp12_starter %><br>
+    <%= f.text_field :hp12_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_name %><br>
+    <%= f.text_field :hp13_name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_min %><br>
+    <%= f.text_field :hp13_min %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_pts %><br>
+    <%= f.text_field :hp13_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_fgma %><br>
+    <%= f.text_field :hp13_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_3pma %><br>
+    <%= f.text_field :hp13_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_ftma %><br>
+    <%= f.text_field :hp13_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_oreb %><br>
+    <%= f.text_field :hp13_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_dreb %><br>
+    <%= f.text_field :hp13_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_reb %><br>
+    <%= f.text_field :hp13_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_ast %><br>
+    <%= f.text_field :hp13_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_stl %><br>
+    <%= f.text_field :hp13_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_blk %><br>
+    <%= f.text_field :hp13_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_to %><br>
+    <%= f.text_field :hp13_to %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_pf %><br>
+    <%= f.text_field :hp13_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :hp13_starter %><br>
+    <%= f.text_field :hp13_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_name %><br>
+    <%= f.text_field :ap1_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_min %><br>
+    <%= f.text_field :ap1_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_pts %><br>
+    <%= f.text_field :ap1_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_fgma %><br>
+    <%= f.text_field :ap1_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_3pma %><br>
+    <%= f.text_field :ap1_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_ftma %><br>
+    <%= f.text_field :ap1_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_oreb %><br>
+    <%= f.text_field :ap1_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_dreb %><br>
+    <%= f.text_field :ap1_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_reb %><br>
+    <%= f.text_field :ap1_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_ast %><br>
+    <%= f.text_field :ap1_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_stl %><br>
+    <%= f.text_field :ap1_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_blk %><br>
+    <%= f.text_field :ap1_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_to %><br>
+    <%= f.text_field :ap1_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_pf %><br>
+    <%= f.text_field :ap1_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap1_starter %><br>
+    <%= f.text_field :ap1_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_name %><br>
+    <%= f.text_field :ap2_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_min %><br>
+    <%= f.text_field :ap2_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_pts %><br>
+    <%= f.text_field :ap2_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_fgma %><br>
+    <%= f.text_field :ap2_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_3pma %><br>
+    <%= f.text_field :ap2_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_ftma %><br>
+    <%= f.text_field :ap2_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_oreb %><br>
+    <%= f.text_field :ap2_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_dreb %><br>
+    <%= f.text_field :ap2_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_reb %><br>
+    <%= f.text_field :ap2_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_ast %><br>
+    <%= f.text_field :ap2_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_stl %><br>
+    <%= f.text_field :ap2_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_blk %><br>
+    <%= f.text_field :ap2_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_to %><br>
+    <%= f.text_field :ap2_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_pf %><br>
+    <%= f.text_field :ap2_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap2_starter %><br>
+    <%= f.text_field :ap2_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_name %><br>
+    <%= f.text_field :ap3_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_min %><br>
+    <%= f.text_field :ap3_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_pts %><br>
+    <%= f.text_field :ap3_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_fgma %><br>
+    <%= f.text_field :ap3_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_3pma %><br>
+    <%= f.text_field :ap3_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_ftma %><br>
+    <%= f.text_field :ap3_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_oreb %><br>
+    <%= f.text_field :ap3_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_dreb %><br>
+    <%= f.text_field :ap3_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_reb %><br>
+    <%= f.text_field :ap3_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_ast %><br>
+    <%= f.text_field :ap3_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_stl %><br>
+    <%= f.text_field :ap3_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_blk %><br>
+    <%= f.text_field :ap3_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_to %><br>
+    <%= f.text_field :ap3_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_pf %><br>
+    <%= f.text_field :ap3_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap3_starter %><br>
+    <%= f.text_field :ap3_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_name %><br>
+    <%= f.text_field :ap4_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_min %><br>
+    <%= f.text_field :ap4_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_pts %><br>
+    <%= f.text_field :ap4_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_fgma %><br>
+    <%= f.text_field :ap4_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_3pma %><br>
+    <%= f.text_field :ap4_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_ftma %><br>
+    <%= f.text_field :ap4_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_oreb %><br>
+    <%= f.text_field :ap4_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_dreb %><br>
+    <%= f.text_field :ap4_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_reb %><br>
+    <%= f.text_field :ap4_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_ast %><br>
+    <%= f.text_field :ap4_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_stl %><br>
+    <%= f.text_field :ap4_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_blk %><br>
+    <%= f.text_field :ap4_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_to %><br>
+    <%= f.text_field :ap4_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_pf %><br>
+    <%= f.text_field :ap4_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap4_starter %><br>
+    <%= f.text_field :ap4_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_name %><br>
+    <%= f.text_field :ap5_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_min %><br>
+    <%= f.text_field :ap5_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_pts %><br>
+    <%= f.text_field :ap5_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_fgma %><br>
+    <%= f.text_field :ap5_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_3pma %><br>
+    <%= f.text_field :ap5_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_ftma %><br>
+    <%= f.text_field :ap5_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_oreb %><br>
+    <%= f.text_field :ap5_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_dreb %><br>
+    <%= f.text_field :ap5_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_reb %><br>
+    <%= f.text_field :ap5_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_ast %><br>
+    <%= f.text_field :ap5_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_stl %><br>
+    <%= f.text_field :ap5_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_blk %><br>
+    <%= f.text_field :ap5_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_to %><br>
+    <%= f.text_field :ap5_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_pf %><br>
+    <%= f.text_field :ap5_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap5_starter %><br>
+    <%= f.text_field :ap5_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_name %><br>
+    <%= f.text_field :ap6_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_min %><br>
+    <%= f.text_field :ap6_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_pts %><br>
+    <%= f.text_field :ap6_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_fgma %><br>
+    <%= f.text_field :ap6_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_3pma %><br>
+    <%= f.text_field :ap6_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_ftma %><br>
+    <%= f.text_field :ap6_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_oreb %><br>
+    <%= f.text_field :ap6_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_dreb %><br>
+    <%= f.text_field :ap6_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_reb %><br>
+    <%= f.text_field :ap6_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_ast %><br>
+    <%= f.text_field :ap6_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_stl %><br>
+    <%= f.text_field :ap6_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_blk %><br>
+    <%= f.text_field :ap6_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_to %><br>
+    <%= f.text_field :ap6_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_pf %><br>
+    <%= f.text_field :ap6_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap6_starter %><br>
+    <%= f.text_field :ap6_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_name %><br>
+    <%= f.text_field :ap7_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_min %><br>
+    <%= f.text_field :ap7_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_pts %><br>
+    <%= f.text_field :ap7_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_fgma %><br>
+    <%= f.text_field :ap7_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_3pma %><br>
+    <%= f.text_field :ap7_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_ftma %><br>
+    <%= f.text_field :ap7_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_oreb %><br>
+    <%= f.text_field :ap7_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_dreb %><br>
+    <%= f.text_field :ap7_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_reb %><br>
+    <%= f.text_field :ap7_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_ast %><br>
+    <%= f.text_field :ap7_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_stl %><br>
+    <%= f.text_field :ap7_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_blk %><br>
+    <%= f.text_field :ap7_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_to %><br>
+    <%= f.text_field :ap7_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_pf %><br>
+    <%= f.text_field :ap7_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap7_starter %><br>
+    <%= f.text_field :ap7_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_name %><br>
+    <%= f.text_field :ap8_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_min %><br>
+    <%= f.text_field :ap8_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_pts %><br>
+    <%= f.text_field :ap8_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_fgma %><br>
+    <%= f.text_field :ap8_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_3pma %><br>
+    <%= f.text_field :ap8_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_ftma %><br>
+    <%= f.text_field :ap8_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_oreb %><br>
+    <%= f.text_field :ap8_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_dreb %><br>
+    <%= f.text_field :ap8_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_reb %><br>
+    <%= f.text_field :ap8_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_ast %><br>
+    <%= f.text_field :ap8_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_stl %><br>
+    <%= f.text_field :ap8_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_blk %><br>
+    <%= f.text_field :ap8_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_to %><br>
+    <%= f.text_field :ap8_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_pf %><br>
+    <%= f.text_field :ap8_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap8_starter %><br>
+    <%= f.text_field :ap8_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_name %><br>
+    <%= f.text_field :ap9_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_min %><br>
+    <%= f.text_field :ap9_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_pts %><br>
+    <%= f.text_field :ap9_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_fgma %><br>
+    <%= f.text_field :ap9_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_3pma %><br>
+    <%= f.text_field :ap9_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_ftma %><br>
+    <%= f.text_field :ap9_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_oreb %><br>
+    <%= f.text_field :ap9_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_dreb %><br>
+    <%= f.text_field :ap9_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_reb %><br>
+    <%= f.text_field :ap9_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_ast %><br>
+    <%= f.text_field :ap9_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_stl %><br>
+    <%= f.text_field :ap9_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_blk %><br>
+    <%= f.text_field :ap9_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_to %><br>
+    <%= f.text_field :ap9_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_pf %><br>
+    <%= f.text_field :ap9_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap9_starter %><br>
+    <%= f.text_field :ap9_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_name %><br>
+    <%= f.text_field :ap10_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_min %><br>
+    <%= f.text_field :ap10_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_pts %><br>
+    <%= f.text_field :ap10_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_fgma %><br>
+    <%= f.text_field :ap10_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_3pma %><br>
+    <%= f.text_field :ap10_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_ftma %><br>
+    <%= f.text_field :ap10_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_oreb %><br>
+    <%= f.text_field :ap10_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_dreb %><br>
+    <%= f.text_field :ap10_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_reb %><br>
+    <%= f.text_field :ap10_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_ast %><br>
+    <%= f.text_field :ap10_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_stl %><br>
+    <%= f.text_field :ap10_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_blk %><br>
+    <%= f.text_field :ap10_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_to %><br>
+    <%= f.text_field :ap10_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_pf %><br>
+    <%= f.text_field :ap10_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap10_starter %><br>
+    <%= f.text_field :ap10_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_name %><br>
+    <%= f.text_field :ap11_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_min %><br>
+    <%= f.text_field :ap11_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_pts %><br>
+    <%= f.text_field :ap11_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_fgma %><br>
+    <%= f.text_field :ap11_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_3pma %><br>
+    <%= f.text_field :ap11_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_ftma %><br>
+    <%= f.text_field :ap11_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_oreb %><br>
+    <%= f.text_field :ap11_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_dreb %><br>
+    <%= f.text_field :ap11_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_reb %><br>
+    <%= f.text_field :ap11_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_ast %><br>
+    <%= f.text_field :ap11_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_stl %><br>
+    <%= f.text_field :ap11_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_blk %><br>
+    <%= f.text_field :ap11_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_to %><br>
+    <%= f.text_field :ap11_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_pf %><br>
+    <%= f.text_field :ap11_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap11_starter %><br>
+    <%= f.text_field :ap11_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_name %><br>
+    <%= f.text_field :ap12_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_min %><br>
+    <%= f.text_field :ap12_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_pts %><br>
+    <%= f.text_field :ap12_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_fgma %><br>
+    <%= f.text_field :ap12_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_3pma %><br>
+    <%= f.text_field :ap12_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_ftma %><br>
+    <%= f.text_field :ap12_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_oreb %><br>
+    <%= f.text_field :ap12_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_dreb %><br>
+    <%= f.text_field :ap12_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_reb %><br>
+    <%= f.text_field :ap12_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_ast %><br>
+    <%= f.text_field :ap12_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_stl %><br>
+    <%= f.text_field :ap12_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_blk %><br>
+    <%= f.text_field :ap12_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_to %><br>
+    <%= f.text_field :ap12_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_pf %><br>
+    <%= f.text_field :ap12_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap12_starter %><br>
+    <%= f.text_field :ap12_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_name %><br>
+    <%= f.text_field :ap13_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_min %><br>
+    <%= f.text_field :ap13_min %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_pts %><br>
+    <%= f.text_field :ap13_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_fgma %><br>
+    <%= f.text_field :ap13_fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_3pma %><br>
+    <%= f.text_field :ap13_3pma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_ftma %><br>
+    <%= f.text_field :ap13_ftma %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_oreb %><br>
+    <%= f.text_field :ap13_oreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_dreb %><br>
+    <%= f.text_field :ap13_dreb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_reb %><br>
+    <%= f.text_field :ap13_reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_ast %><br>
+    <%= f.text_field :ap13_ast %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_stl %><br>
+    <%= f.text_field :ap13_stl %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_blk %><br>
+    <%= f.text_field :ap13_blk %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_to %><br>
+    <%= f.text_field :ap13_to %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_pf %><br>
+    <%= f.text_field :ap13_pf %>
+  </div>
+  <div class="field">
+    <%= f.label :ap13_starter %><br>
+    <%= f.text_field :ap13_starter %>
+  </div>
+  <div class="field">
+    <%= f.label :h_nick %><br>
+    <%= f.text_field :h_nick %>
+  </div>
+  <div class="field">
+    <%= f.label :a_nick %><br>
+    <%= f.text_field :a_nick %>
+  </div>
+  <div class="field">
+    <%= f.label :h_initials %><br>
+    <%= f.text_field :h_initials %>
+  </div>
+  <div class="field">
+    <%= f.label :a_initials %><br>
+    <%= f.text_field :a_initials %>
+  </div>
+  <div class="field">
+    <%= f.label :aq1 %><br>
+    <%= f.text_field :aq1 %>
+  </div>
+  <div class="field">
+    <%= f.label :aq2 %><br>
+    <%= f.text_field :aq2 %>
+  </div>
+  <div class="field">
+    <%= f.label :aq3 %><br>
+    <%= f.text_field :aq3 %>
+  </div>
+  <div class="field">
+    <%= f.label :aq4 %><br>
+    <%= f.text_field :aq4 %>
+  </div>
+  <div class="field">
+    <%= f.label :hq1 %><br>
+    <%= f.text_field :hq1 %>
+  </div>
+  <div class="field">
+    <%= f.label :hq2 %><br>
+    <%= f.text_field :hq2 %>
+  </div>
+  <div class="field">
+    <%= f.label :hq3 %><br>
+    <%= f.text_field :hq3 %>
+  </div>
+  <div class="field">
+    <%= f.label :hq4 %><br>
+    <%= f.text_field :hq4 %>
+  </div>
+  <div class="field">
+    <%= f.label :afgp %><br>
+    <%= f.text_field :afgp %>
+  </div>
+  <div class="field">
+    <%= f.label :aftp %><br>
+    <%= f.text_field :aftp %>
+  </div>
+  <div class="field">
+    <%= f.label :a3ptp %><br>
+    <%= f.text_field :a3ptp %>
+  </div>
+  <div class="field">
+    <%= f.label :arebt %><br>
+    <%= f.text_field :arebt %>
+  </div>
+  <div class="field">
+    <%= f.label :aastt %><br>
+    <%= f.text_field :aastt %>
+  </div>
+  <div class="field">
+    <%= f.label :astlt %><br>
+    <%= f.text_field :astlt %>
+  </div>
+  <div class="field">
+    <%= f.label :ablkt %><br>
+    <%= f.text_field :ablkt %>
+  </div>
+  <div class="field">
+    <%= f.label :hfgp %><br>
+    <%= f.text_field :hfgp %>
+  </div>
+  <div class="field">
+    <%= f.label :hftp %><br>
+    <%= f.text_field :hftp %>
+  </div>
+  <div class="field">
+    <%= f.label :h3ptp %><br>
+    <%= f.text_field :h3ptp %>
+  </div>
+  <div class="field">
+    <%= f.label :hrebt %><br>
+    <%= f.text_field :hrebt %>
+  </div>
+  <div class="field">
+    <%= f.label :hastt %><br>
+    <%= f.text_field :hastt %>
+  </div>
+  <div class="field">
+    <%= f.label :hstlt %><br>
+    <%= f.text_field :hstlt %>
+  </div>
+  <div class="field">
+    <%= f.label :hblkt %><br>
+    <%= f.text_field :hblkt %>
+  </div>
+  <div class="field">
+    <%= f.label :awaytfgma %><br>
+    <%= f.text_field :awaytfgma %>
+  </div>
+  <div class="field">
+    <%= f.label :awaytftma %><br>
+    <%= f.text_field :awaytftma %>
+  </div>
+  <div class="field">
+    <%= f.label :awayt3fgma %><br>
+    <%= f.text_field :awayt3fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hometfgma %><br>
+    <%= f.text_field :hometfgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hometftma %><br>
+    <%= f.text_field :hometftma %>
+  </div>
+  <div class="field">
+    <%= f.label :homet3fgma %><br>
+    <%= f.text_field :homet3fgma %>
+  </div>
+  <div class="field">
+    <%= f.label :hometoreb %><br>
+    <%= f.text_field :hometoreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hometdreb %><br>
+    <%= f.text_field :hometdreb %>
+  </div>
+  <div class="field">
+    <%= f.label :awaytoreb %><br>
+    <%= f.text_field :awaytoreb %>
+  </div>
+  <div class="field">
+    <%= f.label :awaytdreb %><br>
+    <%= f.text_field :awaytdreb %>
+  </div>
+  <div class="field">
+    <%= f.label :hometto %><br>
+    <%= f.text_field :hometto %>
+  </div>
+  <div class="field">
+    <%= f.label :hometpf %><br>
+    <%= f.text_field :hometpf %>
+  </div>
+  <div class="field">
+    <%= f.label :awaytto %><br>
+    <%= f.text_field :awaytto %>
+  </div>
+  <div class="field">
+    <%= f.label :awaytpf %><br>
+    <%= f.text_field :awaytpf %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
