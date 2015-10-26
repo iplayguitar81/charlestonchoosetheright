@@ -1,3 +1,11 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+
 # PostgreSQL. Versions 8.2 and up are supported.
 #
 # Install the pg driver:
@@ -50,6 +58,14 @@ test:
   pool: 5
   username: tblazersfans
   password:
+
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: tblazersfans_staging
+  pool: 5
+  username: deploy
+  password: <%= ENV["DATABASE_PASSWORD"] %>
 
 
 
