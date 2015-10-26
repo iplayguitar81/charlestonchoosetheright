@@ -171,6 +171,7 @@
     <orderEntry type="jdk" jdkName="RVM: ruby-2.0.0-p643 [rails-4.0]" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.10.6, RVM: ruby-2.0.0-p643 [rails-4.0]) [gem]" level="application" />
+    <orderEntry type="library" name="jquery-latest" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
