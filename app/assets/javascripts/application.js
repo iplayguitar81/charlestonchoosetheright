@@ -12,7 +12,6 @@
 
 //TO ACTUALLY GET JS TO SHOW UP ON APACHE JUST REQUIRE THE FILE AND UPLOAD IT TO SERVER AS I HAVE DONE W/ UIKIT.MIN BELOW!!!!
 //
-//= require jquery2
 //= require jquery_ujs
 //= require uikit.min
 //= require_tree .

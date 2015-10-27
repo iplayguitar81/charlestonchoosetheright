@@ -19581,4 +19581,10 @@
   <data-source name="Rails tblazersfans: production" uuid="cda24e39-c8ca-4733-9b65-cb8cc11a8373">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source name="PostgreSQL - @localhost" uuid="39d78675-d256-44c4-9a23-49401883767f">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="PostgreSQL - blazers_fans_staging@http://104.131.92.186/" uuid="de76f602-a29d-4813-8bbf-85dd76fe2333">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>
