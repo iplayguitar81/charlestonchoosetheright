@@ -1,4 +1,5 @@
 Tblazersfans::Application.routes.draw do
+  devise_for :hackers
   resources :recappers do
 
     collection { post :import}

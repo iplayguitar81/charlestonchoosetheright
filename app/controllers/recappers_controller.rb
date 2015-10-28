@@ -1,5 +1,6 @@
 class RecappersController < ApplicationController
   before_action :set_recapper, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_hacker!, except: [:index, :show]
 
   # GET /recappers
   # GET /recappers.json
