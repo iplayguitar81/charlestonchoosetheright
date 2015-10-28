@@ -1,6 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
+require 'bundler/capistrano'
 set :application, 'blazers_fans'
 set :repo_url, 'https://github.com/iplayguitar81/charlestonchoosetheright.git'
 

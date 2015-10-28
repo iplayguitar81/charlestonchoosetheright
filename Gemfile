@@ -46,10 +46,11 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano-passenger'
+
 group :development do
-  gem 'capistrano', '~> 3.4.0'
-  gem 'capistrano-rails', '~> 1.1'
-  gem 'capistrano-passenger'
+
 
 
 end
@@ -58,6 +59,7 @@ end
 group :production do
   gem 'unicorn'
   gem 'pg'
+
 end
 
 
