@@ -5,6 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
-Hacker.new({:email => "iplayguitar81@yahoo.com", :roles => ["admin"], :password => "wonkawash", :password_confirmation => "wonkawash" }).save(false)
