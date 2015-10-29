@@ -912,15 +912,12 @@
         <td><%= link_to 'Show', recapper %></td>
         <td><%= link_to 'Edit', edit_recapper_path(recapper) %></td>
         <td><%= link_to 'Destroy', recapper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-
       </tr>
   <% end %>
   </tbody>
 </table>
 
 <br>
-
 <%= paginate @recappers %>
 <br>
 
