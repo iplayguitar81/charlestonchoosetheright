@@ -75,6 +75,11 @@ class RecappersController < ApplicationController
 
 
   private
+
+  def authenticate
+    authenticate_baller! && current_baller.admin?
+
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_recapper
       @recapper = Recapper.find(params[:id])
