@@ -1,6 +1,6 @@
 class RecappersController < ApplicationController
   before_action :set_recapper, only: [:show, :edit, :update, :destroy]
-  before_filter :check_user_logged_in!, :except => [:show, :index]
+
 
   # GET /recappers
   # GET /recappers.json
