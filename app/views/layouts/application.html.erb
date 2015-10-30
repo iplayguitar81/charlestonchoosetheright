@@ -54,6 +54,18 @@
         <%= link_to("contact", page_contact_path)%>
       </li>
 
+      <% if baller_signed_in? %>
+
+          <li>
+            <%= link_to("logout", destroy_baller_session_path, :method => :delete)%>
+          </li>
+
+         <% else %>
+          <li>
+        <%= link_to("login", new_baller_session_path)%>
+      </li>
+<% end %>
+
     </ul>
 
     <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
