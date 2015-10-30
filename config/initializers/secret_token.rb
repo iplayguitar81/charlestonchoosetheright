@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Tblazersfans::Application.config.secret_key_base = ENV['SECRET_TOKEN']
+Tblazersfans::Application.config.secret_key_base = '9829e45b2ddbace118ce629dc8a81a96c62e4bf5f4d5ba426bf29265cd971297955f1e08fb71989df1caffc51ceff38ff31101836298d61ed36439f05a122ac5'
