@@ -3,6 +3,9 @@ Tblazersfans::Application.routes.draw do
   resources :recappers do
 
     collection { post :import}
+
+    get 'recaps/:page', :action => :index, :on => :collection
+
   end
 
   get "page/contact"
