@@ -447,8 +447,12 @@
     <!--<th>Hometpf</th>-->
     <!--<th>Awaytto</th>-->
     <!--<th>Awaytpf</th>-->
+    <% if current_baller.try(:admin?) %>
     <th></th>
     <th></th>
+        <%else %>
+
+    <% end%>
     <th></th>
   </tr>
   </thead>
@@ -923,6 +927,9 @@
 <%= paginate @recappers %>
 <br>
 
+<% if current_baller.try(:admin?) %>
+
+
 <h3>Import Recap(s)</h3>
 <br>
 <br>
@@ -933,8 +940,18 @@
     <br>
 
     <%= submit_tag "Upload Recaps" %>
-<% end %>
-<br>
+
+    <% end %>
+
+
+    <%= link_to 'New Recapper', new_recapper_path %>
+
+
+<%else %>
+
+
+    <%end%>
+
+    <br>
 <br>
 
-<%= link_to 'New Recapper', new_recapper_path %>
