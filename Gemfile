@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 gem 'devise'
+gem 'bcrypt', '~>3.1.10'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
  gem 'therubyracer', platforms: :ruby
@@ -45,15 +46,15 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'capistrano', '~> 3.4.0'
+
 group :development do
   gem 'capistrano', '~> 3.4.0'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-passenger'
 
-
 end
 
+gem 'capistrano-rails-collection'
 
 group :production do
   gem 'unicorn'
