@@ -1523,11 +1523,10 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
     padding: 0 15px;
     line-height: 40px;
     color: #444;
-    font-size: 1.1em;
     font-family: Ripper !important;
     text-shadow: none !important;
     color: #000000;
-    font-size: 1.3em;
+    font-size: 1.03em;
 
 }
 
