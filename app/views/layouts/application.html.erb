@@ -72,7 +72,7 @@
     <div class="uk-navbar-brand uk-navbar-center uk-visible-small"></div>
   </nav>
 <% if baller_signed_in? %>
-      Welcome, <%= current_baller.email %>
+      Welcome, <%= current_baller.first_name.to_s+" "+current_baller.last_name.to_s %>
 
       <% end %>
 
@@ -196,6 +196,19 @@
       <li>
         <%= link_to("contact", page_contact_path)%>
       </li>
+      <% if baller_signed_in? %>
+
+          <li>
+            <%= link_to("logout", destroy_baller_session_path, :method => :delete)%>
+          </li>
+
+      <% else %>
+          <li>
+            <%= link_to("login", new_baller_session_path)%>
+          </li>
+      <% end %>
+
+
     </ul>
   </div>
 </div>
