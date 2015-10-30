@@ -71,7 +71,11 @@
     <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
     <div class="uk-navbar-brand uk-navbar-center uk-visible-small"></div>
   </nav>
+  <br/>
+<% if baller_signed_in? %>
+      Welcome, <%= current_baller.email %>
 
+      <% end %>
 
   <!--<nav id="nav" role="navigation">-->
   <!--<div class="block">-->
