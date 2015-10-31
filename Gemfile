@@ -60,6 +60,7 @@ gem 'capistrano-rails-collection'
 group :production do
   gem 'unicorn'
   gem 'pg'
+  gem 'paperclip'
 end
 
 
@@ -67,4 +68,3 @@ gem 'kaminari'
 
 gem 'activesupport'
 
-gem 'paperclip'
