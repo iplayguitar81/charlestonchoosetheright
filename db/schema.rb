@@ -594,4 +594,5 @@ ActiveRecord::Schema.define(version: 20151031081503) do
 
   include Paperclip::Schema
 
+
 end
