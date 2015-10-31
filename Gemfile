@@ -63,6 +63,7 @@ group :production do
   gem 'paperclip', "3.4.2"
 end
 
+gem 'paperclip', "3.4.2"
 
 gem 'kaminari'
 
