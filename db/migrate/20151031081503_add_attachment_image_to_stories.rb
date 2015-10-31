@@ -1,4 +1,4 @@
-include Paperclip::Schema
+
 
 class AddAttachmentImageToStories < ActiveRecord::Migration
 
