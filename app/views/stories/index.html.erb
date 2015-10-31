@@ -39,5 +39,9 @@
 </table>
 
 <br>
-
+<% if current_baller.try(:admin?) %>
 <%= link_to 'New Story', new_story_path %>
+
+<% else %>
+
+<% end %>
