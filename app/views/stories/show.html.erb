@@ -14,48 +14,50 @@
 
   <%= @story.story.html_safe %>
 
+  <%= link_to 'Edit', edit_story_path(@story) %> ||&nbsp;
+  <%= link_to 'Back', stories_path %>&nbsp;
+  <%= link_to 'Home', page_home_path %>
 </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @story.title %>
-</p>
+<!--<p>-->
+  <!--<strong>Title:</strong>-->
+  <!--<%= @story.title %>-->
+<!--</p>-->
 
-<p>
-  <strong>Author:</strong>
-  <%= @story.author %>
-</p>
+<!--<p>-->
+  <!--<strong>Author:</strong>-->
+  <!--<%= @story.author %>-->
+<!--</p>-->
 
-<p>
-  <strong>Date:</strong>
-  <%= @story.date %>
-</p>
+<!--<p>-->
+  <!--<strong>Date:</strong>-->
+  <!--<%= @story.date %>-->
+<!--</p>-->
 
-<p>
-  <strong>Story:</strong>
-  <%= @story.story %>
-</p>
+<!--<p>-->
+  <!--<strong>Story:</strong>-->
+  <!--<%= @story.story %>-->
+<!--</p>-->
 
-<p>
-  <strong>Caption:</strong>
-  <%= @story.caption %>
-</p>
+<!--<p>-->
+  <!--<strong>Caption:</strong>-->
+  <!--<%= @story.caption %>-->
+<!--</p>-->
 
-<p>
-  <strong>Image:</strong>
+<!--<p>-->
+  <!--<strong>Image:</strong>-->
 
-  <%= image_tag @story.image.url, class: "uk-thumbnail-medium" %>
-</p>
+  <!--<%= image_tag @story.image.url, class: "uk-thumbnail-medium" %>-->
+<!--</p>-->
 
-<p>
-  <strong>Published:</strong>
-  <%= @story.published %>
-</p>
+<!--<p>-->
+  <!--<strong>Published:</strong>-->
+  <!--<%= @story.published %>-->
+<!--</p>-->
 
-<p>
-  <strong>Main story:</strong>
-  <%= @story.main_story %>
-</p>
+<!--<p>-->
+  <!--<strong>Main story:</strong>-->
+  <!--<%= @story.main_story %>-->
+<!--</p>-->
 
-<%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
+
