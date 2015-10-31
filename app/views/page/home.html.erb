@@ -60,3 +60,20 @@
 <% end %>
 <br/>
 <hr>
+
+<%@last_articles.each do |xxx| %>
+    <% date_time2 =Time.parse(xxx.date.to_s) %>
+    <article class="uk-article">
+      <h1 class="uk-article-title"><%= link_to xxx.title, xxx, class: "uk-article-title-a" %></h1>
+      <p class="uk-article-meta"><%= "written by "+xxx.author + " on "+ date_time2.strftime("%B #{date_time2.day.ordinalize} %Y ") %> </p>
+      <p><%= image_tag(xxx.image.url, class: "uk-thumbnail-small" ) %></p>
+      <p><%= truncate(strip_tags(xxx.story), length:100).html_safe%></p>
+      <br/>
+      <%= link_to 'Continue Reading', xxx, class: "uk-button uk-button-danger" %>
+      <a class="uk-button" href="#"># Comments</a>
+
+    </article>
+<%end%>
+
+<h2>Social Media</h2>
+
