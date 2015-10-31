@@ -8,11 +8,12 @@
       <th>Date</th>
       <th>Story</th>
       <th>Caption</th>
-      <th>Image</th>
-      <th>Published</th>
-      <th>Main story</th>
+      <% if current_baller.try(:admin?) %>
       <th></th>
       <th></th>
+          <%else %>
+
+          <% end %>
       <th></th>
     </tr>
   </thead>
@@ -25,12 +26,16 @@
         <td><%= story.date %></td>
         <td><%= story.story %></td>
         <td><%= story.caption %></td>
-        <td><%= story.image %></td>
-        <td><%= story.published %></td>
-        <td><%= story.main_story %></td>
         <td><%= link_to 'Show', story %></td>
+
+        <% if current_baller.try(:admin?) %>
         <td><%= link_to 'Edit', edit_story_path(story) %></td>
         <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      <%else %>
+
+        <%end %>
+
       </tr>
     <% end %>
   </tbody>
