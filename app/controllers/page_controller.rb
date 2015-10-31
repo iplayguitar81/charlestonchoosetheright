@@ -6,6 +6,9 @@ class PageController < ApplicationController
   end
 
   def home
+
+    @last_recapper2 = Recapper.order("datey DESC").limit(1)
+
   end
 
   def news
