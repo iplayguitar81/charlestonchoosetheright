@@ -27,7 +27,8 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @story.image %>
+
+  <%= image_tag @story.image.url, class: "uk-thumbnail-medium" %>
 </p>
 
 <p>
