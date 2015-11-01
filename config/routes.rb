@@ -18,6 +18,11 @@ Tblazersfans::Application.routes.draw do
   get "page/recaps13_14"
   get "page/recaps12_13"
 
+
+  #makes the recaps work for whatever page that is with 'pretty' seo friendly url :D
+  get 'recaps13_14/page/:page', :to => 'page#recaps13_14'
+  get 'recaps12_13/page/:page', :to => 'page#recaps12_13'
+
   get "page/store"
 
   # The priority is based upon order of creation: first created -> highest priority.
