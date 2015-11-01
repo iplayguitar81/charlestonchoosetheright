@@ -110,7 +110,7 @@
 
          <% else %>
 
-          <% if controller !="page"%>
+          <% if controller_name !="page" || controller_name !="recappers"%>
 
               <li class="uk-active">
         <%= link_to("login", new_baller_session_path)%>
