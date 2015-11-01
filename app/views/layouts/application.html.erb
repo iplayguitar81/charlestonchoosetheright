@@ -110,7 +110,7 @@
 
          <% else %>
 
-          <% if controller_name !="page" || controller_name !="recappers"%>
+          <% if controller_name !="page" || controller_name !="recappers" || action_name !="home"|| action_name !="news"%>
 
               <li class="uk-active">
         <%= link_to("login", new_baller_session_path)%>
