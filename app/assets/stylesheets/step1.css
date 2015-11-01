@@ -220,20 +220,6 @@ textarea.cat_textbox {
     color: #FFFFFF;
 }
 
-input[type="submit"] {
-    font-family: Tahoma, Arial, 'Trebuchet MS';
-    font-size: 2em;
-    color: #74162C;
-    border: 1px inset #D73F3F;
-    text-shadow: 1px 1px #FFFFFF;
-    width: 90%;
-    height: 100px;
-    margin-left: 5%;
-    margin-right: 5%;
-    border-radius: 12px;
-    box-shadow: 3px 3px 2px #888888;
-    text-align: center; }
-
 label.normal {
     color: #000000;
     text-shadow: 1px 1px #D73F3F;
