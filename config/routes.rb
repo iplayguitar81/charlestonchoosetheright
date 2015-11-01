@@ -15,7 +15,11 @@ Tblazersfans::Application.routes.draw do
   get "page/home"
   get "page/news"
   get "page/recaps"
+  get "page/recaps13_14"
+  get "page/recaps12_13"
+
   get "page/store"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
