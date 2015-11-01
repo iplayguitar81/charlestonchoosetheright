@@ -109,10 +109,21 @@
           </li>
 
          <% else %>
-          <li>
+
+          <% if action_name =="contact"%>
+
+              <li class="uk-active">
         <%= link_to("login", new_baller_session_path)%>
       </li>
-<% end %>
+              <%else%>
+
+              <li>
+                <%= link_to("login", new_baller_session_path)%>
+              </li>
+
+              <% end %>
+
+      <% end %>
 
     </ul>
 
