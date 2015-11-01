@@ -34,25 +34,73 @@
   <nav class="uk-navbar uk-margin-large-bottom">
 
     <ul class="uk-navbar-nav uk-hidden-small uk-navbar-center">
-      <li class="uk-active">
-        <%= link_to("home", page_home_path)%>
-      </li>
 
-      <li>
-        <%= link_to("news", stories_path)%>
-      </li>
-      <li>
-        <%= link_to("recaps", recappers_path)%>
-      </li>
-      <li >
-        <%= link_to("forum", page_forum_path)%>
-      </li>
-      <li>
-        <%= link_to("store", page_store_path)%>
-      </li>
-      <li>
-        <%= link_to("contact", page_contact_path)%>
-      </li>
+      <% if action_name =="home"%>
+
+          <li class="uk-active">
+          <%= link_to("home", page_home_path)%>
+          </li>
+          <%else %>
+          <li>
+          <%= link_to("home", page_home_path)%>
+          </li>
+      <%end%>
+
+
+      <% if action_name =="stories"%>
+
+          <li class="uk-active">
+            <%= link_to("news", stories_path)%>
+          </li>
+      <%else %>
+          <li>
+            <%= link_to("news", stories_path)%>
+          </li>
+      <%end%>
+
+      <% if action_name =="recappers"%>
+
+          <li class="uk-active">
+            <%= link_to("recaps", recappers_path)%>
+          </li>
+      <%else %>
+          <li>
+            <%= link_to("recaps", recappers_path)%>
+          </li>
+      <%end%>
+
+      <% if action_name =="forum"%>
+
+          <li class="uk-active">
+            <%= link_to("forum", page_forum_path)%>
+          </li>
+      <%else %>
+          <li>
+            <%= link_to("forum", page_forum_path)%>
+          </li>
+      <%end%>
+
+      <% if action_name =="store"%>
+
+          <li class="uk-active">
+            <%= link_to("store", page_store_path)%>
+          </li>
+      <%else %>
+          <li>
+            <%= link_to("store", page_store_path)%>
+          </li>
+      <%end%>
+
+      <% if action_name =="contact"%>
+
+          <li class="uk-active">
+            <%= link_to("contact", page_contact_path)%>
+          </li>
+      <%else %>
+          <li>
+            <%= link_to("contact", page_contact_path)%>
+          </li>
+      <%end%>
 
       <% if baller_signed_in? %>
 
