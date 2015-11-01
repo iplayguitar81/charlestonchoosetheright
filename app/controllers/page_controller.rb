@@ -20,4 +20,23 @@ class PageController < ApplicationController
 
   def store
   end
+
+  def recaps13_14
+
+
+    @season13_14 = Recapper.where("datey BETWEEN '2013-10-30T00:00:00-00:00' AND '2014-06-30T00:00:00-00:00' ").order("datey DESC")
+    @topic = Recapper.where("datey BETWEEN '2013-10-30T00:00:00-00:00' AND '2014-06-30T00:00:00-00:00' ").order("datey DESC")
+    # @paginatable_array=Kaminari.paginate_array(@topic).page(params[:page]).per(10)
+
+    @posts = @topic.page(params[:page])
+
+  end
+
+  def recaps12_13
+    @topic = Recapper.where("datey BETWEEN '2012-10-20T00:00:00-00:00' AND '2013-06-30T00:00:00-00:00' ").order("datey DESC")
+    @posts = @topic.page(params[:page])
+
+  end
+
+
 end
