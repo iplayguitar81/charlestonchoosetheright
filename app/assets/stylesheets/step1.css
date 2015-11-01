@@ -220,6 +220,9 @@ textarea.cat_textbox {
     color: #FFFFFF;
 }
 
+input[type="submit"] {
+}
+
 label.normal {
     color: #000000;
     text-shadow: 1px 1px #D73F3F;
