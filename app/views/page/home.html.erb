@@ -60,6 +60,11 @@
 <% end %>
 <br/>
 <hr>
+<div data-uk-slider>
+
+
+
+</div>
 
 <%@last_articles.each do |xxx| %>
     <% date_time2 =Time.parse(xxx.date.to_s) %>
@@ -77,3 +82,15 @@
 
 <h2>Social Media</h2>
 
+<div class="uk-accordion" data-uk-accordion>
+
+  <h3 class="uk-accordion-title">Title 1</h3>
+  <div class="uk-accordion-content">...</div>
+
+  <h3 class="uk-accordion-title">Title 2</h3>
+  <div class="uk-accordion-content">...</div>
+
+  <h3 class="uk-accordion-title">Title 3</h3>
+  <div class="uk-accordion-content">...</div>
+
+</div>
