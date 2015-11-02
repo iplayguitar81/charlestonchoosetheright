@@ -932,4 +932,30 @@
 
 <br>
 
-<%= link_to 'New Game recap', new_game_recap_path %>
+
+<% if current_baller.try(:admin?) %>
+
+
+    <h3>Import Recap(s)</h3>
+    <br>
+    <br>
+
+    <%= form_tag import_recappers_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <br>
+        <br>
+
+        <%= submit_tag "Upload Recaps", class: "uk-button uk-button-mini" %>
+
+    <% end %>
+    <br/>
+    <br/>
+
+
+    <%= link_to 'New Recapper', new_game_recap_path %>
+
+
+<%else %>
+
+
+<%end%>
