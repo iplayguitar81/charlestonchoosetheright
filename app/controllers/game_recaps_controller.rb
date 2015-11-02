@@ -7,7 +7,7 @@ class GameRecapsController < ApplicationController
     @page = params['page'].to_i
 
     #@recappers = Recapper.all
-    @game_recaps = Recapper.page(@page).order(:datey => :desc)
+    @game_recaps = GameRecap.page(@page).order(:datey => :desc)
   end
 
   def show
