@@ -1,4 +1,5 @@
 Tblazersfans::Application.routes.draw do
+
   resources :game_recaps do
 
     collection { post :import}
@@ -10,6 +11,7 @@ Tblazersfans::Application.routes.draw do
   resources :stories
 
   devise_for :ballers
+
   resources :recappers do
 
     collection { post :import}
