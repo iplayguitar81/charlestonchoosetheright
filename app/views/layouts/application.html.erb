@@ -58,7 +58,7 @@
           </li>
       <%end%>
 
-      <% if controller_name =="recappers"%>
+      <% if controller_name =="game_recaps"%>
 
           <li class="uk-active">
             <%= link_to("recaps", game_recaps_path)%>
@@ -110,7 +110,7 @@
 
          <% else %>
 
-          <% if controller_name !="stories" && controller_name !="recappers" && action_name !="home" && action_name !="news" && action_name !="forum" && action_name !="store" && action_name !="contact"%>
+          <% if controller_name !="stories" && controller_name !="game_recaps" && action_name !="home" && action_name !="news" && action_name !="forum" && action_name !="store" && action_name !="contact"%>
 
               <li class="uk-active">
         <%= link_to("login", new_baller_session_path)%>
