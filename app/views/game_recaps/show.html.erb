@@ -225,9 +225,9 @@
     <% away_nick_dash=@game_recap.afname.parameterize+'.png' %>
     <% home_nick_dash=@game_recap.hfname.parameterize+'.png' %>
 
-    <tr><th>&nbsp;</th><th>&nbsp;</th><th>1</th><th>2</th><th>3</th><th>4</th><th>T</th></tr>
-    <tr><td class='logo_box' ><%= image_tag(away_nick_dash, style: "float:left;border-top:1px inset #777777;padding-top:10px;", class:"uk-img-preserve")%></td><td><%=@game_recap.a_initials %> </td><td> <%=@game_recap.aq1 %> <td><%=@game_recap.aq2 %></td><td><%=@game_recap.aq3 %></td><td><%=@game_recap.aq4 %></td><td class='quarters_total'><%=@game_recap.atotal%></td></tr>
-    <tr><td class='logo_box'><%= image_tag(home_nick_dash, style: "float:left;border-top:1px inset #777777;padding-top:10px;", class:"uk-img-preserve")%></td><td><%=@game_recap.h_initials%></td> <td><%=@game_recap.hq1 %></td> <td><%=@game_recap.hq2 %></td> <td><%=@game_recap.hq3 %></td> <td><%=@game_recap.hq4 %></td> <td class='quarters_total'><%=@game_recap.htotal%></td></tr>
+    <tr><th>&nbsp;</th><th>&nbsp;</th><th>1</th><th>2</th><th>3</th><th>4</th><th>OT1</th><th>T</th></tr>
+    <tr><td class='logo_box' ><%= image_tag(away_nick_dash, style: "float:left;border-top:1px inset #777777;padding-top:10px;", class:"uk-img-preserve")%></td><td><%=@game_recap.a_initials %> </td><td> <%=@game_recap.aq1 %> <td><%=@game_recap.aq2 %></td><td><%=@game_recap.aq3 %></td><td><%=@game_recap.aq4 %></td><td><%=@game_recap.aq5 %></td><td class='quarters_total'><%=@game_recap.atotal%></td></tr>
+    <tr><td class='logo_box'><%= image_tag(home_nick_dash, style: "float:left;border-top:1px inset #777777;padding-top:10px;", class:"uk-img-preserve")%></td><td><%=@game_recap.h_initials%></td> <td><%=@game_recap.hq1 %></td> <td><%=@game_recap.hq2 %></td> <td><%=@game_recap.hq3 %></td> <td><%=@game_recap.hq4 %></td><td><%=@game_recap.hq5 %></td> <td class='quarters_total'><%=@game_recap.htotal%></td></tr>
   </table>
 
   <br/>
