@@ -4,8 +4,10 @@ class GameRecapsController < ApplicationController
   respond_to :html
 
   def index
-    @game_recaps = GameRecap.all
-    respond_with(@game_recaps)
+    @page = params['page'].to_i
+
+    #@recappers = Recapper.all
+    @game_recaps = Recapper.page(@page).order(:datey => :desc)
   end
 
   def show
