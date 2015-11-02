@@ -467,7 +467,8 @@
   <tbody>
     <% @game_recaps.each do |game_recap| %>
       <tr>
-        <td><%= game_recap.game_string %></td>
+      <td><%= link_to game_recap.game_string, game_recap %></td>
+
         <% date_time =Time.parse(game_recap.datey) %>
         <td><%= date_time.strftime("%A %B #{date_time.day.ordinalize} %Y %l:%M%P")%></td>
 
