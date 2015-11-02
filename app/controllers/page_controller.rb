@@ -7,7 +7,7 @@ class PageController < ApplicationController
 
   def home
 
-    @last_recapper2 = Recapper.order("datey DESC").limit(1)
+    @last_recapper2 = GameRecap.order("datey DESC").limit(1)
     @last_articles = Story.order("date DESC").limit(5)
 
   end
@@ -24,8 +24,8 @@ class PageController < ApplicationController
   def recaps13_14
 
 
-    @season13_14 = Recapper.where("datey BETWEEN '2013-10-30T00:00:00-00:00' AND '2014-06-30T00:00:00-00:00' ").order("datey DESC")
-    @topic = Recapper.where("datey BETWEEN '2013-10-30T00:00:00-00:00' AND '2014-06-30T00:00:00-00:00' ").order("datey DESC")
+    @season13_14 = GameRecap.where("datey BETWEEN '2013-10-30T00:00:00-00:00' AND '2014-06-30T00:00:00-00:00' ").order("datey DESC")
+    @topic = GameRecap.where("datey BETWEEN '2013-10-30T00:00:00-00:00' AND '2014-06-30T00:00:00-00:00' ").order("datey DESC")
     # @paginatable_array=Kaminari.paginate_array(@topic).page(params[:page]).per(10)
 
     @posts = @topic.page(params[:page])
@@ -33,7 +33,7 @@ class PageController < ApplicationController
   end
 
   def recaps12_13
-    @topic = Recapper.where("datey BETWEEN '2012-10-20T00:00:00-00:00' AND '2013-06-30T00:00:00-00:00' ").order("datey DESC")
+    @topic = GameRecap.where("datey BETWEEN '2012-10-20T00:00:00-00:00' AND '2013-06-30T00:00:00-00:00' ").order("datey DESC")
     @posts = @topic.page(params[:page])
 
   end
