@@ -1,7 +1,7 @@
 Tblazersfans::Application.routes.draw do
   resources :game_recaps do
 
-    collection { post :import}
+    collection { post :import2}
 
     get 'recaps/:page', :action => :index, :on => :collection
 
