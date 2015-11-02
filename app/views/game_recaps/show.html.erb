@@ -390,10 +390,18 @@
 
 
 
-
+  <% if current_baller.try(:admin?) %>
 
   <%= link_to 'Edit', edit_game_recap_path(@game_recap) %> |
-<%= link_to 'Back', game_recaps_path %>
+
+      <% else %>
+
+
+      <% end %>
+
+<%= link_to 'Back to All Recaps', game_recaps_path %> |
+  <%= link_to 'Home', page_home_path %>
+
 
   <br/>
   <br/>
