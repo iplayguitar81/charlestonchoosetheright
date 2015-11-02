@@ -6,7 +6,7 @@ class GameRecap < ActiveRecord::Base
   require 'csv'
 
 
-  def self.import(file)
+  def self.import2(file)
     CSV.foreach(file.path, headers: true) do |row|
       Scaffold.create! row.to_hash
     end
