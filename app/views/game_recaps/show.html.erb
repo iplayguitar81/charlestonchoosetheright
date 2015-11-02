@@ -1,2279 +1,396 @@
+<% require 'active_support'%>
+<% attendance_percentage=((@game_recap.attendance.to_f/@game_recap.capacity.strip.to_f)*100).round(2) %>
+<% game_box_recap="" %>
+<% if @game_recap.h_initials=='POR' %>
+    <% home_or_away = @game_recap.afname.downcase+'<span class="box_total_h2"> '+@game_recap.atotal+"</span><br/>at<br/> portland trail blazers <span class='box_total_h2'>"+@game_recap.htotal+"</span>" %>
+    <% if @game_recap.htotal.to_i > @game_recap.atotal.to_i %>
+        <% win_or_loss ="<span class='win_loss_box_show_win'>W</span>" %>
+    <%else %>
+        <% win_or_loss =""%>
+    <%end%>
+    <% if @game_recap.htotal.to_i < @game_recap.atotal.to_i %>
+        <% win_or_loss ="<span class='win_loss_box_show_loss'>L</span>" %>
+    <%else %>
+    <% end %>
+    <% game_box_recap="The Trail Blazers made "+ @game_recap.hometfgma + " shots they attempted resulting in a total team field goal percentage of "+ @game_recap.hfgp+"% for the game.  Meanwhile, the "+ @game_recap.a_nick+"  made "+ @game_recap.awaytfgma+" shots that they attempted resulting in a total team field goal percentage of "+ @game_recap.afgp+ "% for the game.  The Trail Blazers hit "+@game_recap.hometftma+ " free throws shooting " + @game_recap.hftp + "% from the free throw line and the " + @game_recap.a_nick+ " hit "+@game_recap.awaytftma+" free throws shooting "+ @game_recap.aftp+"% from the free throw line.  The Trail Blazers made "+@game_recap.homet3fgma+" of the 3-pointers they shot resulting in a total team 3 point field goal percentage of "+@game_recap.h3ptp+"% and the "+@game_recap.a_nick+" made "+@game_recap.awayt3fgma+ " of the 3-pointers they shot resulting in a total team 3 pint field goal percentage of "+@game_recap.a3ptp+"%.  The Blazers collected "+ @game_recap.hometoreb + " offensive rebounds, "+ @game_recap.hometdreb + " defensive rebounds for a total of "+ @game_recap.hrebt+" rebounds and the "+@game_recap.a_nick+ " scooped up "+@game_recap.awaytoreb+" offensive rebounds, "+@game_recap.awaytdreb+" defensive rebounds for a total of "+@game_recap.arebt+" rebounds.  The Blazers dished out "+@game_recap.hastt+" assists while the "+ @game_recap.a_nick + " dished out "+@game_recap.aastt+".  The Blazers collected "+@game_recap.hstlt+" steals and the "+@game_recap.a_nick+" collected "+@game_recap.astlt+ " steals.  The Blazers blocked "+@game_recap.hblkt+" of the "+@game_recap.a_nick+" shots.  the "+@game_recap.a_nick+" blocked "+@game_recap.ablkt+" of the Blazers shots.  The Blazers turned the ball over "+@game_recap.hometto+" times.  The"+@game_recap.a_nick+" turned the ball over "+@game_recap.awaytto+" times."+"  <br/><br/>  The game was officiated by "+@game_recap.ref1+", "+@game_recap.ref2+" and "+@game_recap.ref3+"<br/><br/> There were "+@game_recap.attendance+ " out of a possible "+@game_recap.capacity+" fans in attendace.  This means that "+@game_recap.arena+" was " + attendance_percentage.to_s + "% filled to capacity."%>
+<% end %>
+<% if @game_recap.a_initials=='POR' %>
+    <% home_or_away ="portland trail blazers <span class='box_total_h2'>"+@game_recap.atotal+"</span> <br/>at</br> "+@game_recap.hfname.downcase+ " <span class='box_total_h2'>"+@game_recap.htotal+"</span>" %>
+    <% if @game_recap.atotal.to_i > @game_recap.htotal.to_i %>
+        <% win_or_loss ="<span class='win_loss_box_show_win'>W</span>" %>
+    <%end%>
+    <% if @game_recap.atotal.to_i < @game_recap.htotal.to_i %>
+        <% win_or_loss ="<span class='win_loss_box_show_loss'>L</span>" %>
+    <% end %>
+    <% game_box_recap="The Trail Blazers made "+ @game_recap.awaytfgma + " shots they attempted resulting in a total team field goal percentage of "+ @game_recap.afgp+"% for the game.  Meanwhile, the "+ @game_recap.h_nick+"  made "+ @game_recap.hometfgma+" shots that they attempted resulting in a total team field goal percentage of "+ @game_recap.hfgp+ "% for the game.  The Trail Blazers hit "+@game_recap.awaytftma+ " free throws shooting " + @game_recap.aftp + "% from the free throw line and the " + @game_recap.h_nick+ " hit "+@game_recap.hometftma+" free throws shooting "+ @game_recap.hftp+"% from the free throw line.  The Trail Blazers made "+@game_recap.awayt3fgma+" of the 3-pointers they shot resulting in a total team 3 point field goal percentage of "+@game_recap.a3ptp+"% and the "+@game_recap.h_nick+" made "+@game_recap.homet3fgma+ " of the 3-pointers they shot resulting in a total team 3 point field goal percentage of "+@game_recap.h3ptp+"%.  The Blazers collected "+ @game_recap.awaytoreb + " offensive rebounds and "+ @game_recap.awaytdreb + " defensive rebounds for a total of "+ @game_recap.arebt+" rebounds and the "+@game_recap.h_nick+ " scooped up "+@game_recap.hometoreb+" offensive rebounds and "+@game_recap.hometdreb+" defensive rebounds for a total of "+@game_recap.hrebt+" rebounds.  The Blazers dished out "+@game_recap.aastt+" assists while the "+ @game_recap.h_nick + " dished out "+@game_recap.hastt+".  The Blazers collected "+@game_recap.astlt+" steals and the "+@game_recap.h_nick+" collected "+@game_recap.hstlt+ " steals.  The Blazers blocked "+@game_recap.ablkt+" of the "+@game_recap.h_nick+" shots.  The "+@game_recap.h_nick+" blocked "+@game_recap.hblkt+" of the Blazers shots.  The Blazers turned the ball over "+@game_recap.awaytto+" times.  The "+@game_recap.h_nick+ " turned the ball over "+@game_recap.hometto+" times.<br/><br/>  The game was officiated by "+@game_recap.ref1+", "+@game_recap.ref2+" and "+@game_recap.ref3+"<br/><br/> There were "+@game_recap.attendance+ " out of a possible "+@game_recap.capacity+" fans in attendace.  This means that "+@game_recap.arena+" was " + attendance_percentage.to_s + "% filled to capacity."%>
+<% end %>
+
+<% astart_class1='' %>
+<% astart_class2='' %>
+<% astart_class3='' %>
+<% astart_class4='' %>
+<% astart_class5='' %>
+<% astart_class6='' %>
+<% astart_class7='' %>
+<% astart_class8='' %>
+<% astart_class9='' %>
+<% astart_class10='' %>
+<% astart_class11='' %>
+<% astart_class12='' %>
+<% astart_class13='' %>
+
+
+<% hstart_class1='' %>
+<% hstart_class2='' %>
+<% hstart_class3='' %>
+<% hstart_class4='' %>
+<% hstart_class5='' %>
+<% hstart_class6='' %>
+<% hstart_class7='' %>
+<% hstart_class8='' %>
+<% hstart_class9='' %>
+<% hstart_class10='' %>
+<% hstart_class11='' %>
+<% hstart_class12='' %>
+<% hstart_class13='' %>
+
+
+<% if @game_recap.ap1_starter =='1'%>
+
+    <!--<%= astart_class1 %>='starter';-->
+    <% astart_class1='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.ap2_starter =='1'%>
+
+    <% astart_class2='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.ap3_starter =='1'%>
+
+    <% astart_class3='starter' %>
+<%else %>
+<% end %>
+<% if @game_recap.ap4_starter =='1'%>
+
+    <% astart_class4='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.ap5_starter =='1'%>
+
+    <% astart_class5='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.ap6_starter =='1'%>
+
+    <% astart_class6='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.ap7_starter =='1'%>
+    <% astart_class7='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.ap8_starter =='1'%>
+
+    <% astart_class8='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.ap9_starter =='1'%>
+
+    <% astart_class9='starter' %>
+<%else %>
+
+<% end %>
+
+<% if @game_recap.ap10_starter =='1'%>
+    <% astart_class10='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.ap11_starter =='1'%>
+
+    <% astart_class11='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.ap12_starter =='1'%>
+    <% astart_class12='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.ap13_starter =='1'%>
+
+    <% astart_class13='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.hp1_starter =='1'%>
+
+    <!--<%= hstart_class1 %>='starter';-->
+    <% hstart_class1='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.hp2_starter =='1'%>
+
+    <% hstart_class2='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.hp3_starter =='1'%>
+
+    <% hstart_class3='starter' %>
+<%else %>
+<% end %>
+<% if @game_recap.hp4_starter =='1'%>
+
+    <% hstart_class4='starter' %>
+<%else %>
+
+
+<% end %>
+
+<% if @game_recap.hp5_starter =='1'%>
+    <% hstart_class5='starter' %>
+
+<%else %>
+<% end %>
+
+<% if @game_recap.hp6_starter =='1'%>
+
+    <% hstart_class6='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.hp7_starter =='1'%>
+    <% hstart_class7='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.hp8_starter =='1'%>
+
+    <% hstart_class8='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.hp9_starter =='1'%>
+
+    <% hstart_class9='starter' %>
+<%else %>
+
+<% end %>
+
+<% if @game_recap.hp10_starter =='1'%>
+    <% hstart_class10='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.hp11_starter =='1'%>
+
+    <% hstart_class11='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.hp12_starter =='1'%>
+    <% hstart_class12='starter' %>
+<%else %>
+<% end %>
+
+<% if @game_recap.hp13_starter =='1'%>
+
+    <% hstart_class13='starter' %>
+<%else %>
+<% end %>
+
+
+
+<% date_time =Time.parse(@game_recap.datey) %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Game string:</strong>
-  <%= @game_recap.game_string %>
-</p>
-
-<p>
-  <strong>Datey:</strong>
-  <%= @game_recap.datey %>
-</p>
-
-<p>
-  <strong>Dashy date:</strong>
-  <%= @game_recap.dashy_date %>
-</p>
-
-<p>
-  <strong>Afname:</strong>
-  <%= @game_recap.afname %>
-</p>
-
-<p>
-  <strong>Hfname:</strong>
-  <%= @game_recap.hfname %>
-</p>
-
-<p>
-  <strong>Atotal:</strong>
-  <%= @game_recap.atotal %>
-</p>
-
-<p>
-  <strong>Htotal:</strong>
-  <%= @game_recap.htotal %>
-</p>
-
-<p>
-  <strong>Arena:</strong>
-  <%= @game_recap.arena %>
-</p>
-
-<p>
-  <strong>Capacity:</strong>
-  <%= @game_recap.capacity %>
-</p>
-
-<p>
-  <strong>Attendance:</strong>
-  <%= @game_recap.attendance %>
-</p>
-
-<p>
-  <strong>Ref1:</strong>
-  <%= @game_recap.ref1 %>
-</p>
-
-<p>
-  <strong>Ref2:</strong>
-  <%= @game_recap.ref2 %>
-</p>
-
-<p>
-  <strong>Ref3:</strong>
-  <%= @game_recap.ref3 %>
-</p>
-
-<p>
-  <strong>Hp1 name:</strong>
-  <%= @game_recap.hp1_name %>
-</p>
-
-<p>
-  <strong>Hp1 min:</strong>
-  <%= @game_recap.hp1_min %>
-</p>
-
-<p>
-  <strong>Hp1 pts:</strong>
-  <%= @game_recap.hp1_pts %>
-</p>
-
-<p>
-  <strong>Hp1 fgma:</strong>
-  <%= @game_recap.hp1_fgma %>
-</p>
-
-<p>
-  <strong>Hp1 3pma:</strong>
-  <%= @game_recap.hp1_3pma %>
-</p>
-
-<p>
-  <strong>Hp1 ftma:</strong>
-  <%= @game_recap.hp1_ftma %>
-</p>
-
-<p>
-  <strong>Hp1 oreb:</strong>
-  <%= @game_recap.hp1_oreb %>
-</p>
-
-<p>
-  <strong>Hp1 dreb:</strong>
-  <%= @game_recap.hp1_dreb %>
-</p>
-
-<p>
-  <strong>Hp1 reb:</strong>
-  <%= @game_recap.hp1_reb %>
-</p>
-
-<p>
-  <strong>Hp1 ast:</strong>
-  <%= @game_recap.hp1_ast %>
-</p>
-
-<p>
-  <strong>Hp1 stl:</strong>
-  <%= @game_recap.hp1_stl %>
-</p>
-
-<p>
-  <strong>Hp1 blk:</strong>
-  <%= @game_recap.hp1_blk %>
-</p>
-
-<p>
-  <strong>Hp1 to:</strong>
-  <%= @game_recap.hp1_to %>
-</p>
-
-<p>
-  <strong>Hp1 pf:</strong>
-  <%= @game_recap.hp1_pf %>
-</p>
-
-<p>
-  <strong>Hp1 starter:</strong>
-  <%= @game_recap.hp1_starter %>
-</p>
-
-<p>
-  <strong>Hp2 name:</strong>
-  <%= @game_recap.hp2_name %>
-</p>
-
-<p>
-  <strong>Hp2 min:</strong>
-  <%= @game_recap.hp2_min %>
-</p>
-
-<p>
-  <strong>Hp2 pts:</strong>
-  <%= @game_recap.hp2_pts %>
-</p>
-
-<p>
-  <strong>Hp2 fgma:</strong>
-  <%= @game_recap.hp2_fgma %>
-</p>
-
-<p>
-  <strong>Hp2 3pma:</strong>
-  <%= @game_recap.hp2_3pma %>
-</p>
-
-<p>
-  <strong>Hp2 ftma:</strong>
-  <%= @game_recap.hp2_ftma %>
-</p>
-
-<p>
-  <strong>Hp2 oreb:</strong>
-  <%= @game_recap.hp2_oreb %>
-</p>
-
-<p>
-  <strong>Hp2 dreb:</strong>
-  <%= @game_recap.hp2_dreb %>
-</p>
-
-<p>
-  <strong>Hp2 reb:</strong>
-  <%= @game_recap.hp2_reb %>
-</p>
-
-<p>
-  <strong>Hp2 ast:</strong>
-  <%= @game_recap.hp2_ast %>
-</p>
-
-<p>
-  <strong>Hp2 stl:</strong>
-  <%= @game_recap.hp2_stl %>
-</p>
-
-<p>
-  <strong>Hp2 blk:</strong>
-  <%= @game_recap.hp2_blk %>
-</p>
-
-<p>
-  <strong>Hp2 to:</strong>
-  <%= @game_recap.hp2_to %>
-</p>
-
-<p>
-  <strong>Hp2 pf:</strong>
-  <%= @game_recap.hp2_pf %>
-</p>
-
-<p>
-  <strong>Hp2 starter:</strong>
-  <%= @game_recap.hp2_starter %>
-</p>
-
-<p>
-  <strong>Hp3 name:</strong>
-  <%= @game_recap.hp3_name %>
-</p>
-
-<p>
-  <strong>Hp3 min:</strong>
-  <%= @game_recap.hp3_min %>
-</p>
-
-<p>
-  <strong>Hp3 pts:</strong>
-  <%= @game_recap.hp3_pts %>
-</p>
-
-<p>
-  <strong>Hp3 fgma:</strong>
-  <%= @game_recap.hp3_fgma %>
-</p>
-
-<p>
-  <strong>Hp3 3pma:</strong>
-  <%= @game_recap.hp3_3pma %>
-</p>
-
-<p>
-  <strong>Hp3 ftma:</strong>
-  <%= @game_recap.hp3_ftma %>
-</p>
-
-<p>
-  <strong>Hp3 oreb:</strong>
-  <%= @game_recap.hp3_oreb %>
-</p>
-
-<p>
-  <strong>Hp3 dreb:</strong>
-  <%= @game_recap.hp3_dreb %>
-</p>
-
-<p>
-  <strong>Hp3 reb:</strong>
-  <%= @game_recap.hp3_reb %>
-</p>
-
-<p>
-  <strong>Hp3 ast:</strong>
-  <%= @game_recap.hp3_ast %>
-</p>
-
-<p>
-  <strong>Hp3 stl:</strong>
-  <%= @game_recap.hp3_stl %>
-</p>
-
-<p>
-  <strong>Hp3 blk:</strong>
-  <%= @game_recap.hp3_blk %>
-</p>
-
-<p>
-  <strong>Hp3 to:</strong>
-  <%= @game_recap.hp3_to %>
-</p>
-
-<p>
-  <strong>Hp3 pf:</strong>
-  <%= @game_recap.hp3_pf %>
-</p>
-
-<p>
-  <strong>Hp3 starter:</strong>
-  <%= @game_recap.hp3_starter %>
-</p>
-
-<p>
-  <strong>Hp4 name:</strong>
-  <%= @game_recap.hp4_name %>
-</p>
-
-<p>
-  <strong>Hp4 min:</strong>
-  <%= @game_recap.hp4_min %>
-</p>
-
-<p>
-  <strong>Hp4 pts:</strong>
-  <%= @game_recap.hp4_pts %>
-</p>
-
-<p>
-  <strong>Hp4 fgma:</strong>
-  <%= @game_recap.hp4_fgma %>
-</p>
-
-<p>
-  <strong>Hp4 3pma:</strong>
-  <%= @game_recap.hp4_3pma %>
-</p>
-
-<p>
-  <strong>Hp4 ftma:</strong>
-  <%= @game_recap.hp4_ftma %>
-</p>
-
-<p>
-  <strong>Hp4 oreb:</strong>
-  <%= @game_recap.hp4_oreb %>
-</p>
-
-<p>
-  <strong>Hp4 dreb:</strong>
-  <%= @game_recap.hp4_dreb %>
-</p>
-
-<p>
-  <strong>Hp4 reb:</strong>
-  <%= @game_recap.hp4_reb %>
-</p>
-
-<p>
-  <strong>Hp4 ast:</strong>
-  <%= @game_recap.hp4_ast %>
-</p>
-
-<p>
-  <strong>Hp4 stl:</strong>
-  <%= @game_recap.hp4_stl %>
-</p>
-
-<p>
-  <strong>Hp4 blk:</strong>
-  <%= @game_recap.hp4_blk %>
-</p>
-
-<p>
-  <strong>Hp4 to:</strong>
-  <%= @game_recap.hp4_to %>
-</p>
-
-<p>
-  <strong>Hp4 pf:</strong>
-  <%= @game_recap.hp4_pf %>
-</p>
-
-<p>
-  <strong>Hp4 starter:</strong>
-  <%= @game_recap.hp4_starter %>
-</p>
-
-<p>
-  <strong>Hp5 name:</strong>
-  <%= @game_recap.hp5_name %>
-</p>
-
-<p>
-  <strong>Hp5 min:</strong>
-  <%= @game_recap.hp5_min %>
-</p>
-
-<p>
-  <strong>Hp5 pts:</strong>
-  <%= @game_recap.hp5_pts %>
-</p>
-
-<p>
-  <strong>Hp5 fgma:</strong>
-  <%= @game_recap.hp5_fgma %>
-</p>
-
-<p>
-  <strong>Hp5 3pma:</strong>
-  <%= @game_recap.hp5_3pma %>
-</p>
-
-<p>
-  <strong>Hp5 ftma:</strong>
-  <%= @game_recap.hp5_ftma %>
-</p>
-
-<p>
-  <strong>Hp5 oreb:</strong>
-  <%= @game_recap.hp5_oreb %>
-</p>
-
-<p>
-  <strong>Hp5 dreb:</strong>
-  <%= @game_recap.hp5_dreb %>
-</p>
-
-<p>
-  <strong>Hp5 reb:</strong>
-  <%= @game_recap.hp5_reb %>
-</p>
-
-<p>
-  <strong>Hp5 ast:</strong>
-  <%= @game_recap.hp5_ast %>
-</p>
-
-<p>
-  <strong>Hp5 stl:</strong>
-  <%= @game_recap.hp5_stl %>
-</p>
-
-<p>
-  <strong>Hp5 blk:</strong>
-  <%= @game_recap.hp5_blk %>
-</p>
-
-<p>
-  <strong>Hp5 to:</strong>
-  <%= @game_recap.hp5_to %>
-</p>
-
-<p>
-  <strong>Hp5 pf:</strong>
-  <%= @game_recap.hp5_pf %>
-</p>
-
-<p>
-  <strong>Hp5 starter:</strong>
-  <%= @game_recap.hp5_starter %>
-</p>
-
-<p>
-  <strong>Hp6 name:</strong>
-  <%= @game_recap.hp6_name %>
-</p>
-
-<p>
-  <strong>Hp6 min:</strong>
-  <%= @game_recap.hp6_min %>
-</p>
-
-<p>
-  <strong>Hp6 pts:</strong>
-  <%= @game_recap.hp6_pts %>
-</p>
-
-<p>
-  <strong>Hp6 fgma:</strong>
-  <%= @game_recap.hp6_fgma %>
-</p>
-
-<p>
-  <strong>Hp6 3pma:</strong>
-  <%= @game_recap.hp6_3pma %>
-</p>
-
-<p>
-  <strong>Hp6 ftma:</strong>
-  <%= @game_recap.hp6_ftma %>
-</p>
-
-<p>
-  <strong>Hp6 oreb:</strong>
-  <%= @game_recap.hp6_oreb %>
-</p>
-
-<p>
-  <strong>Hp6 dreb:</strong>
-  <%= @game_recap.hp6_dreb %>
-</p>
-
-<p>
-  <strong>Hp6 reb:</strong>
-  <%= @game_recap.hp6_reb %>
-</p>
-
-<p>
-  <strong>Hp6 ast:</strong>
-  <%= @game_recap.hp6_ast %>
-</p>
-
-<p>
-  <strong>Hp6 stl:</strong>
-  <%= @game_recap.hp6_stl %>
-</p>
-
-<p>
-  <strong>Hp6 blk:</strong>
-  <%= @game_recap.hp6_blk %>
-</p>
-
-<p>
-  <strong>Hp6 to:</strong>
-  <%= @game_recap.hp6_to %>
-</p>
-
-<p>
-  <strong>Hp6 pf:</strong>
-  <%= @game_recap.hp6_pf %>
-</p>
-
-<p>
-  <strong>Hp6 starter:</strong>
-  <%= @game_recap.hp6_starter %>
-</p>
-
-<p>
-  <strong>Hp7 name:</strong>
-  <%= @game_recap.hp7_name %>
-</p>
-
-<p>
-  <strong>Hp7 min:</strong>
-  <%= @game_recap.hp7_min %>
-</p>
-
-<p>
-  <strong>Hp7 pts:</strong>
-  <%= @game_recap.hp7_pts %>
-</p>
-
-<p>
-  <strong>Hp7 fgma:</strong>
-  <%= @game_recap.hp7_fgma %>
-</p>
-
-<p>
-  <strong>Hp7 3pma:</strong>
-  <%= @game_recap.hp7_3pma %>
-</p>
-
-<p>
-  <strong>Hp7 ftma:</strong>
-  <%= @game_recap.hp7_ftma %>
-</p>
-
-<p>
-  <strong>Hp7 oreb:</strong>
-  <%= @game_recap.hp7_oreb %>
-</p>
-
-<p>
-  <strong>Hp7 dreb:</strong>
-  <%= @game_recap.hp7_dreb %>
-</p>
-
-<p>
-  <strong>Hp7 reb:</strong>
-  <%= @game_recap.hp7_reb %>
-</p>
-
-<p>
-  <strong>Hp7 ast:</strong>
-  <%= @game_recap.hp7_ast %>
-</p>
-
-<p>
-  <strong>Hp7 stl:</strong>
-  <%= @game_recap.hp7_stl %>
-</p>
-
-<p>
-  <strong>Hp7 blk:</strong>
-  <%= @game_recap.hp7_blk %>
-</p>
-
-<p>
-  <strong>Hp7 to:</strong>
-  <%= @game_recap.hp7_to %>
-</p>
-
-<p>
-  <strong>Hp7 pf:</strong>
-  <%= @game_recap.hp7_pf %>
-</p>
-
-<p>
-  <strong>Hp7 starter:</strong>
-  <%= @game_recap.hp7_starter %>
-</p>
-
-<p>
-  <strong>Hp8 name:</strong>
-  <%= @game_recap.hp8_name %>
-</p>
-
-<p>
-  <strong>Hp8 min:</strong>
-  <%= @game_recap.hp8_min %>
-</p>
-
-<p>
-  <strong>Hp8 pts:</strong>
-  <%= @game_recap.hp8_pts %>
-</p>
-
-<p>
-  <strong>Hp8 fgma:</strong>
-  <%= @game_recap.hp8_fgma %>
-</p>
-
-<p>
-  <strong>Hp8 3pma:</strong>
-  <%= @game_recap.hp8_3pma %>
-</p>
-
-<p>
-  <strong>Hp8 ftma:</strong>
-  <%= @game_recap.hp8_ftma %>
-</p>
-
-<p>
-  <strong>Hp8 oreb:</strong>
-  <%= @game_recap.hp8_oreb %>
-</p>
-
-<p>
-  <strong>Hp8 dreb:</strong>
-  <%= @game_recap.hp8_dreb %>
-</p>
-
-<p>
-  <strong>Hp8 reb:</strong>
-  <%= @game_recap.hp8_reb %>
-</p>
-
-<p>
-  <strong>Hp8 ast:</strong>
-  <%= @game_recap.hp8_ast %>
-</p>
-
-<p>
-  <strong>Hp8 stl:</strong>
-  <%= @game_recap.hp8_stl %>
-</p>
-
-<p>
-  <strong>Hp8 blk:</strong>
-  <%= @game_recap.hp8_blk %>
-</p>
-
-<p>
-  <strong>Hp8 to:</strong>
-  <%= @game_recap.hp8_to %>
-</p>
-
-<p>
-  <strong>Hp8 pf:</strong>
-  <%= @game_recap.hp8_pf %>
-</p>
-
-<p>
-  <strong>Hp8 starter:</strong>
-  <%= @game_recap.hp8_starter %>
-</p>
-
-<p>
-  <strong>Hp9 name:</strong>
-  <%= @game_recap.hp9_name %>
-</p>
-
-<p>
-  <strong>Hp9 min:</strong>
-  <%= @game_recap.hp9_min %>
-</p>
-
-<p>
-  <strong>Hp9 pts:</strong>
-  <%= @game_recap.hp9_pts %>
-</p>
-
-<p>
-  <strong>Hp9 fgma:</strong>
-  <%= @game_recap.hp9_fgma %>
-</p>
-
-<p>
-  <strong>Hp9 3pma:</strong>
-  <%= @game_recap.hp9_3pma %>
-</p>
-
-<p>
-  <strong>Hp9 ftma:</strong>
-  <%= @game_recap.hp9_ftma %>
-</p>
-
-<p>
-  <strong>Hp9 oreb:</strong>
-  <%= @game_recap.hp9_oreb %>
-</p>
-
-<p>
-  <strong>Hp9 dreb:</strong>
-  <%= @game_recap.hp9_dreb %>
-</p>
-
-<p>
-  <strong>Hp9 reb:</strong>
-  <%= @game_recap.hp9_reb %>
-</p>
-
-<p>
-  <strong>Hp9 ast:</strong>
-  <%= @game_recap.hp9_ast %>
-</p>
-
-<p>
-  <strong>Hp9 stl:</strong>
-  <%= @game_recap.hp9_stl %>
-</p>
-
-<p>
-  <strong>Hp9 blk:</strong>
-  <%= @game_recap.hp9_blk %>
-</p>
-
-<p>
-  <strong>Hp9 to:</strong>
-  <%= @game_recap.hp9_to %>
-</p>
-
-<p>
-  <strong>Hp9 pf:</strong>
-  <%= @game_recap.hp9_pf %>
-</p>
-
-<p>
-  <strong>Hp9 starter:</strong>
-  <%= @game_recap.hp9_starter %>
-</p>
-
-<p>
-  <strong>Hp10 name:</strong>
-  <%= @game_recap.hp10_name %>
-</p>
-
-<p>
-  <strong>Hp10 min:</strong>
-  <%= @game_recap.hp10_min %>
-</p>
-
-<p>
-  <strong>Hp10 pts:</strong>
-  <%= @game_recap.hp10_pts %>
-</p>
-
-<p>
-  <strong>Hp10 fgma:</strong>
-  <%= @game_recap.hp10_fgma %>
-</p>
-
-<p>
-  <strong>Hp10 3pma:</strong>
-  <%= @game_recap.hp10_3pma %>
-</p>
-
-<p>
-  <strong>Hp10 ftma:</strong>
-  <%= @game_recap.hp10_ftma %>
-</p>
-
-<p>
-  <strong>Hp10 oreb:</strong>
-  <%= @game_recap.hp10_oreb %>
-</p>
-
-<p>
-  <strong>Hp10 dreb:</strong>
-  <%= @game_recap.hp10_dreb %>
-</p>
-
-<p>
-  <strong>Hp10 reb:</strong>
-  <%= @game_recap.hp10_reb %>
-</p>
-
-<p>
-  <strong>Hp10 ast:</strong>
-  <%= @game_recap.hp10_ast %>
-</p>
-
-<p>
-  <strong>Hp10 stl:</strong>
-  <%= @game_recap.hp10_stl %>
-</p>
-
-<p>
-  <strong>Hp10 blk:</strong>
-  <%= @game_recap.hp10_blk %>
-</p>
-
-<p>
-  <strong>Hp10 to:</strong>
-  <%= @game_recap.hp10_to %>
-</p>
-
-<p>
-  <strong>Hp10 pf:</strong>
-  <%= @game_recap.hp10_pf %>
-</p>
-
-<p>
-  <strong>Hp10 starter:</strong>
-  <%= @game_recap.hp10_starter %>
-</p>
-
-<p>
-  <strong>Hp11 name:</strong>
-  <%= @game_recap.hp11_name %>
-</p>
-
-<p>
-  <strong>Hp11 min:</strong>
-  <%= @game_recap.hp11_min %>
-</p>
-
-<p>
-  <strong>Hp11 pts:</strong>
-  <%= @game_recap.hp11_pts %>
-</p>
-
-<p>
-  <strong>Hp11 fgma:</strong>
-  <%= @game_recap.hp11_fgma %>
-</p>
-
-<p>
-  <strong>Hp11 3pma:</strong>
-  <%= @game_recap.hp11_3pma %>
-</p>
-
-<p>
-  <strong>Hp11 ftma:</strong>
-  <%= @game_recap.hp11_ftma %>
-</p>
-
-<p>
-  <strong>Hp11 oreb:</strong>
-  <%= @game_recap.hp11_oreb %>
-</p>
-
-<p>
-  <strong>Hp11 dreb:</strong>
-  <%= @game_recap.hp11_dreb %>
-</p>
-
-<p>
-  <strong>Hp11 reb:</strong>
-  <%= @game_recap.hp11_reb %>
-</p>
-
-<p>
-  <strong>Hp11 ast:</strong>
-  <%= @game_recap.hp11_ast %>
-</p>
-
-<p>
-  <strong>Hp11 stl:</strong>
-  <%= @game_recap.hp11_stl %>
-</p>
-
-<p>
-  <strong>Hp11 blk:</strong>
-  <%= @game_recap.hp11_blk %>
-</p>
-
-<p>
-  <strong>Hp11 to:</strong>
-  <%= @game_recap.hp11_to %>
-</p>
-
-<p>
-  <strong>Hp11 pf:</strong>
-  <%= @game_recap.hp11_pf %>
-</p>
-
-<p>
-  <strong>Hp11 starter:</strong>
-  <%= @game_recap.hp11_starter %>
-</p>
-
-<p>
-  <strong>Hp12 name:</strong>
-  <%= @game_recap.hp12_name %>
-</p>
-
-<p>
-  <strong>Hp12 min:</strong>
-  <%= @game_recap.hp12_min %>
-</p>
-
-<p>
-  <strong>Hp12 pts:</strong>
-  <%= @game_recap.hp12_pts %>
-</p>
-
-<p>
-  <strong>Hp12 fgma:</strong>
-  <%= @game_recap.hp12_fgma %>
-</p>
-
-<p>
-  <strong>Hp12 3pma:</strong>
-  <%= @game_recap.hp12_3pma %>
-</p>
-
-<p>
-  <strong>Hp12 ftma:</strong>
-  <%= @game_recap.hp12_ftma %>
-</p>
-
-<p>
-  <strong>Hp12 oreb:</strong>
-  <%= @game_recap.hp12_oreb %>
-</p>
-
-<p>
-  <strong>Hp12 dreb:</strong>
-  <%= @game_recap.hp12_dreb %>
-</p>
-
-<p>
-  <strong>Hp12 reb:</strong>
-  <%= @game_recap.hp12_reb %>
-</p>
-
-<p>
-  <strong>Hp12 ast:</strong>
-  <%= @game_recap.hp12_ast %>
-</p>
-
-<p>
-  <strong>Hp12 stl:</strong>
-  <%= @game_recap.hp12_stl %>
-</p>
-
-<p>
-  <strong>Hp12 blk:</strong>
-  <%= @game_recap.hp12_blk %>
-</p>
-
-<p>
-  <strong>Hp12 to:</strong>
-  <%= @game_recap.hp12_to %>
-</p>
-
-<p>
-  <strong>Hp12 pf:</strong>
-  <%= @game_recap.hp12_pf %>
-</p>
-
-<p>
-  <strong>Hp12 starter:</strong>
-  <%= @game_recap.hp12_starter %>
-</p>
-
-<p>
-  <strong>Hp13 name:</strong>
-  <%= @game_recap.hp13_name %>
-</p>
-
-<p>
-  <strong>Hp13 min:</strong>
-  <%= @game_recap.hp13_min %>
-</p>
-
-<p>
-  <strong>Hp13 pts:</strong>
-  <%= @game_recap.hp13_pts %>
-</p>
-
-<p>
-  <strong>Hp13 fgma:</strong>
-  <%= @game_recap.hp13_fgma %>
-</p>
-
-<p>
-  <strong>Hp13 3pma:</strong>
-  <%= @game_recap.hp13_3pma %>
-</p>
-
-<p>
-  <strong>Hp13 ftma:</strong>
-  <%= @game_recap.hp13_ftma %>
-</p>
-
-<p>
-  <strong>Hp13 oreb:</strong>
-  <%= @game_recap.hp13_oreb %>
-</p>
-
-<p>
-  <strong>Hp13 dreb:</strong>
-  <%= @game_recap.hp13_dreb %>
-</p>
-
-<p>
-  <strong>Hp13 reb:</strong>
-  <%= @game_recap.hp13_reb %>
-</p>
-
-<p>
-  <strong>Hp13 ast:</strong>
-  <%= @game_recap.hp13_ast %>
-</p>
-
-<p>
-  <strong>Hp13 stl:</strong>
-  <%= @game_recap.hp13_stl %>
-</p>
-
-<p>
-  <strong>Hp13 blk:</strong>
-  <%= @game_recap.hp13_blk %>
-</p>
-
-<p>
-  <strong>Hp13 to:</strong>
-  <%= @game_recap.hp13_to %>
-</p>
-
-<p>
-  <strong>Hp13 pf:</strong>
-  <%= @game_recap.hp13_pf %>
-</p>
-
-<p>
-  <strong>Hp13 starter:</strong>
-  <%= @game_recap.hp13_starter %>
-</p>
-
-<p>
-  <strong>Ap1 name:</strong>
-  <%= @game_recap.ap1_name %>
-</p>
-
-<p>
-  <strong>Ap1 min:</strong>
-  <%= @game_recap.ap1_min %>
-</p>
-
-<p>
-  <strong>Ap1 pts:</strong>
-  <%= @game_recap.ap1_pts %>
-</p>
-
-<p>
-  <strong>Ap1 fgma:</strong>
-  <%= @game_recap.ap1_fgma %>
-</p>
-
-<p>
-  <strong>Ap1 3pma:</strong>
-  <%= @game_recap.ap1_3pma %>
-</p>
-
-<p>
-  <strong>Ap1 ftma:</strong>
-  <%= @game_recap.ap1_ftma %>
-</p>
-
-<p>
-  <strong>Ap1 oreb:</strong>
-  <%= @game_recap.ap1_oreb %>
-</p>
-
-<p>
-  <strong>Ap1 dreb:</strong>
-  <%= @game_recap.ap1_dreb %>
-</p>
-
-<p>
-  <strong>Ap1 reb:</strong>
-  <%= @game_recap.ap1_reb %>
-</p>
-
-<p>
-  <strong>Ap1 ast:</strong>
-  <%= @game_recap.ap1_ast %>
-</p>
-
-<p>
-  <strong>Ap1 stl:</strong>
-  <%= @game_recap.ap1_stl %>
-</p>
-
-<p>
-  <strong>Ap1 blk:</strong>
-  <%= @game_recap.ap1_blk %>
-</p>
-
-<p>
-  <strong>Ap1 to:</strong>
-  <%= @game_recap.ap1_to %>
-</p>
-
-<p>
-  <strong>Ap1 pf:</strong>
-  <%= @game_recap.ap1_pf %>
-</p>
-
-<p>
-  <strong>Ap1 starter:</strong>
-  <%= @game_recap.ap1_starter %>
-</p>
-
-<p>
-  <strong>Ap2 name:</strong>
-  <%= @game_recap.ap2_name %>
-</p>
-
-<p>
-  <strong>Ap2 min:</strong>
-  <%= @game_recap.ap2_min %>
-</p>
-
-<p>
-  <strong>Ap2 pts:</strong>
-  <%= @game_recap.ap2_pts %>
-</p>
-
-<p>
-  <strong>Ap2 fgma:</strong>
-  <%= @game_recap.ap2_fgma %>
-</p>
-
-<p>
-  <strong>Ap2 3pma:</strong>
-  <%= @game_recap.ap2_3pma %>
-</p>
-
-<p>
-  <strong>Ap2 ftma:</strong>
-  <%= @game_recap.ap2_ftma %>
-</p>
-
-<p>
-  <strong>Ap2 oreb:</strong>
-  <%= @game_recap.ap2_oreb %>
-</p>
-
-<p>
-  <strong>Ap2 dreb:</strong>
-  <%= @game_recap.ap2_dreb %>
-</p>
-
-<p>
-  <strong>Ap2 reb:</strong>
-  <%= @game_recap.ap2_reb %>
-</p>
-
-<p>
-  <strong>Ap2 ast:</strong>
-  <%= @game_recap.ap2_ast %>
-</p>
-
-<p>
-  <strong>Ap2 stl:</strong>
-  <%= @game_recap.ap2_stl %>
-</p>
-
-<p>
-  <strong>Ap2 blk:</strong>
-  <%= @game_recap.ap2_blk %>
-</p>
-
-<p>
-  <strong>Ap2 to:</strong>
-  <%= @game_recap.ap2_to %>
-</p>
-
-<p>
-  <strong>Ap2 pf:</strong>
-  <%= @game_recap.ap2_pf %>
-</p>
-
-<p>
-  <strong>Ap2 starter:</strong>
-  <%= @game_recap.ap2_starter %>
-</p>
-
-<p>
-  <strong>Ap3 name:</strong>
-  <%= @game_recap.ap3_name %>
-</p>
-
-<p>
-  <strong>Ap3 min:</strong>
-  <%= @game_recap.ap3_min %>
-</p>
-
-<p>
-  <strong>Ap3 pts:</strong>
-  <%= @game_recap.ap3_pts %>
-</p>
-
-<p>
-  <strong>Ap3 fgma:</strong>
-  <%= @game_recap.ap3_fgma %>
-</p>
-
-<p>
-  <strong>Ap3 3pma:</strong>
-  <%= @game_recap.ap3_3pma %>
-</p>
-
-<p>
-  <strong>Ap3 ftma:</strong>
-  <%= @game_recap.ap3_ftma %>
-</p>
-
-<p>
-  <strong>Ap3 oreb:</strong>
-  <%= @game_recap.ap3_oreb %>
-</p>
-
-<p>
-  <strong>Ap3 dreb:</strong>
-  <%= @game_recap.ap3_dreb %>
-</p>
-
-<p>
-  <strong>Ap3 reb:</strong>
-  <%= @game_recap.ap3_reb %>
-</p>
-
-<p>
-  <strong>Ap3 ast:</strong>
-  <%= @game_recap.ap3_ast %>
-</p>
-
-<p>
-  <strong>Ap3 stl:</strong>
-  <%= @game_recap.ap3_stl %>
-</p>
-
-<p>
-  <strong>Ap3 blk:</strong>
-  <%= @game_recap.ap3_blk %>
-</p>
-
-<p>
-  <strong>Ap3 to:</strong>
-  <%= @game_recap.ap3_to %>
-</p>
-
-<p>
-  <strong>Ap3 pf:</strong>
-  <%= @game_recap.ap3_pf %>
-</p>
-
-<p>
-  <strong>Ap3 starter:</strong>
-  <%= @game_recap.ap3_starter %>
-</p>
-
-<p>
-  <strong>Ap4 name:</strong>
-  <%= @game_recap.ap4_name %>
-</p>
-
-<p>
-  <strong>Ap4 min:</strong>
-  <%= @game_recap.ap4_min %>
-</p>
-
-<p>
-  <strong>Ap4 pts:</strong>
-  <%= @game_recap.ap4_pts %>
-</p>
-
-<p>
-  <strong>Ap4 fgma:</strong>
-  <%= @game_recap.ap4_fgma %>
-</p>
-
-<p>
-  <strong>Ap4 3pma:</strong>
-  <%= @game_recap.ap4_3pma %>
-</p>
-
-<p>
-  <strong>Ap4 ftma:</strong>
-  <%= @game_recap.ap4_ftma %>
-</p>
-
-<p>
-  <strong>Ap4 oreb:</strong>
-  <%= @game_recap.ap4_oreb %>
-</p>
-
-<p>
-  <strong>Ap4 dreb:</strong>
-  <%= @game_recap.ap4_dreb %>
-</p>
-
-<p>
-  <strong>Ap4 reb:</strong>
-  <%= @game_recap.ap4_reb %>
-</p>
-
-<p>
-  <strong>Ap4 ast:</strong>
-  <%= @game_recap.ap4_ast %>
-</p>
-
-<p>
-  <strong>Ap4 stl:</strong>
-  <%= @game_recap.ap4_stl %>
-</p>
-
-<p>
-  <strong>Ap4 blk:</strong>
-  <%= @game_recap.ap4_blk %>
-</p>
-
-<p>
-  <strong>Ap4 to:</strong>
-  <%= @game_recap.ap4_to %>
-</p>
-
-<p>
-  <strong>Ap4 pf:</strong>
-  <%= @game_recap.ap4_pf %>
-</p>
-
-<p>
-  <strong>Ap4 starter:</strong>
-  <%= @game_recap.ap4_starter %>
-</p>
-
-<p>
-  <strong>Ap5 name:</strong>
-  <%= @game_recap.ap5_name %>
-</p>
-
-<p>
-  <strong>Ap5 min:</strong>
-  <%= @game_recap.ap5_min %>
-</p>
-
-<p>
-  <strong>Ap5 pts:</strong>
-  <%= @game_recap.ap5_pts %>
-</p>
-
-<p>
-  <strong>Ap5 fgma:</strong>
-  <%= @game_recap.ap5_fgma %>
-</p>
-
-<p>
-  <strong>Ap5 3pma:</strong>
-  <%= @game_recap.ap5_3pma %>
-</p>
-
-<p>
-  <strong>Ap5 ftma:</strong>
-  <%= @game_recap.ap5_ftma %>
-</p>
-
-<p>
-  <strong>Ap5 oreb:</strong>
-  <%= @game_recap.ap5_oreb %>
-</p>
-
-<p>
-  <strong>Ap5 dreb:</strong>
-  <%= @game_recap.ap5_dreb %>
-</p>
-
-<p>
-  <strong>Ap5 reb:</strong>
-  <%= @game_recap.ap5_reb %>
-</p>
-
-<p>
-  <strong>Ap5 ast:</strong>
-  <%= @game_recap.ap5_ast %>
-</p>
-
-<p>
-  <strong>Ap5 stl:</strong>
-  <%= @game_recap.ap5_stl %>
-</p>
-
-<p>
-  <strong>Ap5 blk:</strong>
-  <%= @game_recap.ap5_blk %>
-</p>
-
-<p>
-  <strong>Ap5 to:</strong>
-  <%= @game_recap.ap5_to %>
-</p>
-
-<p>
-  <strong>Ap5 pf:</strong>
-  <%= @game_recap.ap5_pf %>
-</p>
-
-<p>
-  <strong>Ap5 starter:</strong>
-  <%= @game_recap.ap5_starter %>
-</p>
-
-<p>
-  <strong>Ap6 name:</strong>
-  <%= @game_recap.ap6_name %>
-</p>
-
-<p>
-  <strong>Ap6 min:</strong>
-  <%= @game_recap.ap6_min %>
-</p>
-
-<p>
-  <strong>Ap6 pts:</strong>
-  <%= @game_recap.ap6_pts %>
-</p>
-
-<p>
-  <strong>Ap6 fgma:</strong>
-  <%= @game_recap.ap6_fgma %>
-</p>
-
-<p>
-  <strong>Ap6 3pma:</strong>
-  <%= @game_recap.ap6_3pma %>
-</p>
-
-<p>
-  <strong>Ap6 ftma:</strong>
-  <%= @game_recap.ap6_ftma %>
-</p>
-
-<p>
-  <strong>Ap6 oreb:</strong>
-  <%= @game_recap.ap6_oreb %>
-</p>
-
-<p>
-  <strong>Ap6 dreb:</strong>
-  <%= @game_recap.ap6_dreb %>
-</p>
-
-<p>
-  <strong>Ap6 reb:</strong>
-  <%= @game_recap.ap6_reb %>
-</p>
-
-<p>
-  <strong>Ap6 ast:</strong>
-  <%= @game_recap.ap6_ast %>
-</p>
-
-<p>
-  <strong>Ap6 stl:</strong>
-  <%= @game_recap.ap6_stl %>
-</p>
-
-<p>
-  <strong>Ap6 blk:</strong>
-  <%= @game_recap.ap6_blk %>
-</p>
-
-<p>
-  <strong>Ap6 to:</strong>
-  <%= @game_recap.ap6_to %>
-</p>
-
-<p>
-  <strong>Ap6 pf:</strong>
-  <%= @game_recap.ap6_pf %>
-</p>
-
-<p>
-  <strong>Ap6 starter:</strong>
-  <%= @game_recap.ap6_starter %>
-</p>
-
-<p>
-  <strong>Ap7 name:</strong>
-  <%= @game_recap.ap7_name %>
-</p>
-
-<p>
-  <strong>Ap7 min:</strong>
-  <%= @game_recap.ap7_min %>
-</p>
-
-<p>
-  <strong>Ap7 pts:</strong>
-  <%= @game_recap.ap7_pts %>
-</p>
-
-<p>
-  <strong>Ap7 fgma:</strong>
-  <%= @game_recap.ap7_fgma %>
-</p>
-
-<p>
-  <strong>Ap7 3pma:</strong>
-  <%= @game_recap.ap7_3pma %>
-</p>
-
-<p>
-  <strong>Ap7 ftma:</strong>
-  <%= @game_recap.ap7_ftma %>
-</p>
-
-<p>
-  <strong>Ap7 oreb:</strong>
-  <%= @game_recap.ap7_oreb %>
-</p>
-
-<p>
-  <strong>Ap7 dreb:</strong>
-  <%= @game_recap.ap7_dreb %>
-</p>
-
-<p>
-  <strong>Ap7 reb:</strong>
-  <%= @game_recap.ap7_reb %>
-</p>
-
-<p>
-  <strong>Ap7 ast:</strong>
-  <%= @game_recap.ap7_ast %>
-</p>
-
-<p>
-  <strong>Ap7 stl:</strong>
-  <%= @game_recap.ap7_stl %>
-</p>
-
-<p>
-  <strong>Ap7 blk:</strong>
-  <%= @game_recap.ap7_blk %>
-</p>
-
-<p>
-  <strong>Ap7 to:</strong>
-  <%= @game_recap.ap7_to %>
-</p>
-
-<p>
-  <strong>Ap7 pf:</strong>
-  <%= @game_recap.ap7_pf %>
-</p>
-
-<p>
-  <strong>Ap7 starter:</strong>
-  <%= @game_recap.ap7_starter %>
-</p>
-
-<p>
-  <strong>Ap8 name:</strong>
-  <%= @game_recap.ap8_name %>
-</p>
-
-<p>
-  <strong>Ap8 min:</strong>
-  <%= @game_recap.ap8_min %>
-</p>
-
-<p>
-  <strong>Ap8 pts:</strong>
-  <%= @game_recap.ap8_pts %>
-</p>
-
-<p>
-  <strong>Ap8 fgma:</strong>
-  <%= @game_recap.ap8_fgma %>
-</p>
-
-<p>
-  <strong>Ap8 3pma:</strong>
-  <%= @game_recap.ap8_3pma %>
-</p>
-
-<p>
-  <strong>Ap8 ftma:</strong>
-  <%= @game_recap.ap8_ftma %>
-</p>
-
-<p>
-  <strong>Ap8 oreb:</strong>
-  <%= @game_recap.ap8_oreb %>
-</p>
-
-<p>
-  <strong>Ap8 dreb:</strong>
-  <%= @game_recap.ap8_dreb %>
-</p>
-
-<p>
-  <strong>Ap8 reb:</strong>
-  <%= @game_recap.ap8_reb %>
-</p>
-
-<p>
-  <strong>Ap8 ast:</strong>
-  <%= @game_recap.ap8_ast %>
-</p>
-
-<p>
-  <strong>Ap8 stl:</strong>
-  <%= @game_recap.ap8_stl %>
-</p>
-
-<p>
-  <strong>Ap8 blk:</strong>
-  <%= @game_recap.ap8_blk %>
-</p>
-
-<p>
-  <strong>Ap8 to:</strong>
-  <%= @game_recap.ap8_to %>
-</p>
-
-<p>
-  <strong>Ap8 pf:</strong>
-  <%= @game_recap.ap8_pf %>
-</p>
-
-<p>
-  <strong>Ap8 starter:</strong>
-  <%= @game_recap.ap8_starter %>
-</p>
-
-<p>
-  <strong>Ap9 name:</strong>
-  <%= @game_recap.ap9_name %>
-</p>
-
-<p>
-  <strong>Ap9 min:</strong>
-  <%= @game_recap.ap9_min %>
-</p>
-
-<p>
-  <strong>Ap9 pts:</strong>
-  <%= @game_recap.ap9_pts %>
-</p>
-
-<p>
-  <strong>Ap9 fgma:</strong>
-  <%= @game_recap.ap9_fgma %>
-</p>
-
-<p>
-  <strong>Ap9 3pma:</strong>
-  <%= @game_recap.ap9_3pma %>
-</p>
-
-<p>
-  <strong>Ap9 ftma:</strong>
-  <%= @game_recap.ap9_ftma %>
-</p>
-
-<p>
-  <strong>Ap9 oreb:</strong>
-  <%= @game_recap.ap9_oreb %>
-</p>
-
-<p>
-  <strong>Ap9 dreb:</strong>
-  <%= @game_recap.ap9_dreb %>
-</p>
-
-<p>
-  <strong>Ap9 reb:</strong>
-  <%= @game_recap.ap9_reb %>
-</p>
-
-<p>
-  <strong>Ap9 ast:</strong>
-  <%= @game_recap.ap9_ast %>
-</p>
-
-<p>
-  <strong>Ap9 stl:</strong>
-  <%= @game_recap.ap9_stl %>
-</p>
-
-<p>
-  <strong>Ap9 blk:</strong>
-  <%= @game_recap.ap9_blk %>
-</p>
-
-<p>
-  <strong>Ap9 to:</strong>
-  <%= @game_recap.ap9_to %>
-</p>
-
-<p>
-  <strong>Ap9 pf:</strong>
-  <%= @game_recap.ap9_pf %>
-</p>
-
-<p>
-  <strong>Ap9 starter:</strong>
-  <%= @game_recap.ap9_starter %>
-</p>
-
-<p>
-  <strong>Ap10 name:</strong>
-  <%= @game_recap.ap10_name %>
-</p>
-
-<p>
-  <strong>Ap10 min:</strong>
-  <%= @game_recap.ap10_min %>
-</p>
-
-<p>
-  <strong>Ap10 pts:</strong>
-  <%= @game_recap.ap10_pts %>
-</p>
-
-<p>
-  <strong>Ap10 fgma:</strong>
-  <%= @game_recap.ap10_fgma %>
-</p>
-
-<p>
-  <strong>Ap10 3pma:</strong>
-  <%= @game_recap.ap10_3pma %>
-</p>
-
-<p>
-  <strong>Ap10 ftma:</strong>
-  <%= @game_recap.ap10_ftma %>
-</p>
-
-<p>
-  <strong>Ap10 oreb:</strong>
-  <%= @game_recap.ap10_oreb %>
-</p>
-
-<p>
-  <strong>Ap10 dreb:</strong>
-  <%= @game_recap.ap10_dreb %>
-</p>
-
-<p>
-  <strong>Ap10 reb:</strong>
-  <%= @game_recap.ap10_reb %>
-</p>
-
-<p>
-  <strong>Ap10 ast:</strong>
-  <%= @game_recap.ap10_ast %>
-</p>
-
-<p>
-  <strong>Ap10 stl:</strong>
-  <%= @game_recap.ap10_stl %>
-</p>
-
-<p>
-  <strong>Ap10 blk:</strong>
-  <%= @game_recap.ap10_blk %>
-</p>
-
-<p>
-  <strong>Ap10 to:</strong>
-  <%= @game_recap.ap10_to %>
-</p>
-
-<p>
-  <strong>Ap10 pf:</strong>
-  <%= @game_recap.ap10_pf %>
-</p>
-
-<p>
-  <strong>Ap10 starter:</strong>
-  <%= @game_recap.ap10_starter %>
-</p>
-
-<p>
-  <strong>Ap11 name:</strong>
-  <%= @game_recap.ap11_name %>
-</p>
-
-<p>
-  <strong>Ap11 min:</strong>
-  <%= @game_recap.ap11_min %>
-</p>
-
-<p>
-  <strong>Ap11 pts:</strong>
-  <%= @game_recap.ap11_pts %>
-</p>
-
-<p>
-  <strong>Ap11 fgma:</strong>
-  <%= @game_recap.ap11_fgma %>
-</p>
-
-<p>
-  <strong>Ap11 3pma:</strong>
-  <%= @game_recap.ap11_3pma %>
-</p>
-
-<p>
-  <strong>Ap11 ftma:</strong>
-  <%= @game_recap.ap11_ftma %>
-</p>
-
-<p>
-  <strong>Ap11 oreb:</strong>
-  <%= @game_recap.ap11_oreb %>
-</p>
-
-<p>
-  <strong>Ap11 dreb:</strong>
-  <%= @game_recap.ap11_dreb %>
-</p>
-
-<p>
-  <strong>Ap11 reb:</strong>
-  <%= @game_recap.ap11_reb %>
-</p>
-
-<p>
-  <strong>Ap11 ast:</strong>
-  <%= @game_recap.ap11_ast %>
-</p>
-
-<p>
-  <strong>Ap11 stl:</strong>
-  <%= @game_recap.ap11_stl %>
-</p>
-
-<p>
-  <strong>Ap11 blk:</strong>
-  <%= @game_recap.ap11_blk %>
-</p>
-
-<p>
-  <strong>Ap11 to:</strong>
-  <%= @game_recap.ap11_to %>
-</p>
-
-<p>
-  <strong>Ap11 pf:</strong>
-  <%= @game_recap.ap11_pf %>
-</p>
-
-<p>
-  <strong>Ap11 starter:</strong>
-  <%= @game_recap.ap11_starter %>
-</p>
-
-<p>
-  <strong>Ap12 name:</strong>
-  <%= @game_recap.ap12_name %>
-</p>
-
-<p>
-  <strong>Ap12 min:</strong>
-  <%= @game_recap.ap12_min %>
-</p>
-
-<p>
-  <strong>Ap12 pts:</strong>
-  <%= @game_recap.ap12_pts %>
-</p>
-
-<p>
-  <strong>Ap12 fgma:</strong>
-  <%= @game_recap.ap12_fgma %>
-</p>
-
-<p>
-  <strong>Ap12 3pma:</strong>
-  <%= @game_recap.ap12_3pma %>
-</p>
-
-<p>
-  <strong>Ap12 ftma:</strong>
-  <%= @game_recap.ap12_ftma %>
-</p>
-
-<p>
-  <strong>Ap12 oreb:</strong>
-  <%= @game_recap.ap12_oreb %>
-</p>
-
-<p>
-  <strong>Ap12 dreb:</strong>
-  <%= @game_recap.ap12_dreb %>
-</p>
-
-<p>
-  <strong>Ap12 reb:</strong>
-  <%= @game_recap.ap12_reb %>
-</p>
-
-<p>
-  <strong>Ap12 ast:</strong>
-  <%= @game_recap.ap12_ast %>
-</p>
-
-<p>
-  <strong>Ap12 stl:</strong>
-  <%= @game_recap.ap12_stl %>
-</p>
-
-<p>
-  <strong>Ap12 blk:</strong>
-  <%= @game_recap.ap12_blk %>
-</p>
-
-<p>
-  <strong>Ap12 to:</strong>
-  <%= @game_recap.ap12_to %>
-</p>
-
-<p>
-  <strong>Ap12 pf:</strong>
-  <%= @game_recap.ap12_pf %>
-</p>
-
-<p>
-  <strong>Ap12 starter:</strong>
-  <%= @game_recap.ap12_starter %>
-</p>
-
-<p>
-  <strong>Ap13 name:</strong>
-  <%= @game_recap.ap13_name %>
-</p>
-
-<p>
-  <strong>Ap13 min:</strong>
-  <%= @game_recap.ap13_min %>
-</p>
-
-<p>
-  <strong>Ap13 pts:</strong>
-  <%= @game_recap.ap13_pts %>
-</p>
-
-<p>
-  <strong>Ap13 fgma:</strong>
-  <%= @game_recap.ap13_fgma %>
-</p>
-
-<p>
-  <strong>Ap13 3pma:</strong>
-  <%= @game_recap.ap13_3pma %>
-</p>
-
-<p>
-  <strong>Ap13 ftma:</strong>
-  <%= @game_recap.ap13_ftma %>
-</p>
-
-<p>
-  <strong>Ap13 oreb:</strong>
-  <%= @game_recap.ap13_oreb %>
-</p>
-
-<p>
-  <strong>Ap13 dreb:</strong>
-  <%= @game_recap.ap13_dreb %>
-</p>
-
-<p>
-  <strong>Ap13 reb:</strong>
-  <%= @game_recap.ap13_reb %>
-</p>
-
-<p>
-  <strong>Ap13 ast:</strong>
-  <%= @game_recap.ap13_ast %>
-</p>
-
-<p>
-  <strong>Ap13 stl:</strong>
-  <%= @game_recap.ap13_stl %>
-</p>
-
-<p>
-  <strong>Ap13 blk:</strong>
-  <%= @game_recap.ap13_blk %>
-</p>
-
-<p>
-  <strong>Ap13 to:</strong>
-  <%= @game_recap.ap13_to %>
-</p>
-
-<p>
-  <strong>Ap13 pf:</strong>
-  <%= @game_recap.ap13_pf %>
-</p>
-
-<p>
-  <strong>Ap13 starter:</strong>
-  <%= @game_recap.ap13_starter %>
-</p>
-
-<p>
-  <strong>H nick:</strong>
-  <%= @game_recap.h_nick %>
-</p>
-
-<p>
-  <strong>A nick:</strong>
-  <%= @game_recap.a_nick %>
-</p>
-
-<p>
-  <strong>H initials:</strong>
-  <%= @game_recap.h_initials %>
-</p>
-
-<p>
-  <strong>A initials:</strong>
-  <%= @game_recap.a_initials %>
-</p>
-
-<p>
-  <strong>Aq1:</strong>
-  <%= @game_recap.aq1 %>
-</p>
-
-<p>
-  <strong>Aq2:</strong>
-  <%= @game_recap.aq2 %>
-</p>
-
-<p>
-  <strong>Aq3:</strong>
-  <%= @game_recap.aq3 %>
-</p>
-
-<p>
-  <strong>Aq4:</strong>
-  <%= @game_recap.aq4 %>
-</p>
-
-<p>
-  <strong>Aq5:</strong>
-  <%= @game_recap.aq5 %>
-</p>
-
-<p>
-  <strong>Aq6:</strong>
-  <%= @game_recap.aq6 %>
-</p>
-
-<p>
-  <strong>Aq7:</strong>
-  <%= @game_recap.aq7 %>
-</p>
-
-<p>
-  <strong>Aq8:</strong>
-  <%= @game_recap.aq8 %>
-</p>
-
-<p>
-  <strong>Aq9:</strong>
-  <%= @game_recap.aq9 %>
-</p>
-
-<p>
-  <strong>Aq10:</strong>
-  <%= @game_recap.aq10 %>
-</p>
-
-<p>
-  <strong>Hq1:</strong>
-  <%= @game_recap.hq1 %>
-</p>
-
-<p>
-  <strong>Hq2:</strong>
-  <%= @game_recap.hq2 %>
-</p>
-
-<p>
-  <strong>Hq3:</strong>
-  <%= @game_recap.hq3 %>
-</p>
-
-<p>
-  <strong>Hq4:</strong>
-  <%= @game_recap.hq4 %>
-</p>
-
-<p>
-  <strong>Hq5:</strong>
-  <%= @game_recap.hq5 %>
-</p>
-
-<p>
-  <strong>Hq6:</strong>
-  <%= @game_recap.hq6 %>
-</p>
-
-<p>
-  <strong>Hq7:</strong>
-  <%= @game_recap.hq7 %>
-</p>
-
-<p>
-  <strong>Hq8:</strong>
-  <%= @game_recap.hq8 %>
-</p>
-
-<p>
-  <strong>Hq9:</strong>
-  <%= @game_recap.hq9 %>
-</p>
-
-<p>
-  <strong>Hq10:</strong>
-  <%= @game_recap.hq10 %>
-</p>
-
-<p>
-  <strong>Afgp:</strong>
-  <%= @game_recap.afgp %>
-</p>
-
-<p>
-  <strong>Aftp:</strong>
-  <%= @game_recap.aftp %>
-</p>
-
-<p>
-  <strong>A3ptp:</strong>
-  <%= @game_recap.a3ptp %>
-</p>
-
-<p>
-  <strong>Arebt:</strong>
-  <%= @game_recap.arebt %>
-</p>
-
-<p>
-  <strong>Aastt:</strong>
-  <%= @game_recap.aastt %>
-</p>
-
-<p>
-  <strong>Astlt:</strong>
-  <%= @game_recap.astlt %>
-</p>
-
-<p>
-  <strong>Ablkt:</strong>
-  <%= @game_recap.ablkt %>
-</p>
-
-<p>
-  <strong>Hfgp:</strong>
-  <%= @game_recap.hfgp %>
-</p>
-
-<p>
-  <strong>Hftp:</strong>
-  <%= @game_recap.hftp %>
-</p>
-
-<p>
-  <strong>H3ptp:</strong>
-  <%= @game_recap.h3ptp %>
-</p>
-
-<p>
-  <strong>Hrebt:</strong>
-  <%= @game_recap.hrebt %>
-</p>
-
-<p>
-  <strong>Hastt:</strong>
-  <%= @game_recap.hastt %>
-</p>
-
-<p>
-  <strong>Hstlt:</strong>
-  <%= @game_recap.hstlt %>
-</p>
-
-<p>
-  <strong>Hblkt:</strong>
-  <%= @game_recap.hblkt %>
-</p>
-
-<p>
-  <strong>Awaytfgma:</strong>
-  <%= @game_recap.awaytfgma %>
-</p>
-
-<p>
-  <strong>Awaytftma:</strong>
-  <%= @game_recap.awaytftma %>
-</p>
-
-<p>
-  <strong>Awayt3fgma:</strong>
-  <%= @game_recap.awayt3fgma %>
-</p>
-
-<p>
-  <strong>Hometfgma:</strong>
-  <%= @game_recap.hometfgma %>
-</p>
-
-<p>
-  <strong>Hometftma:</strong>
-  <%= @game_recap.hometftma %>
-</p>
-
-<p>
-  <strong>Homet3fgma:</strong>
-  <%= @game_recap.homet3fgma %>
-</p>
-
-<p>
-  <strong>Hometoreb:</strong>
-  <%= @game_recap.hometoreb %>
-</p>
-
-<p>
-  <strong>Hometdreb:</strong>
-  <%= @game_recap.hometdreb %>
-</p>
-
-<p>
-  <strong>Awaytoreb:</strong>
-  <%= @game_recap.awaytoreb %>
-</p>
-
-<p>
-  <strong>Awaytdreb:</strong>
-  <%= @game_recap.awaytdreb %>
-</p>
-
-<p>
-  <strong>Hometto:</strong>
-  <%= @game_recap.hometto %>
-</p>
-
-<p>
-  <strong>Hometpf:</strong>
-  <%= @game_recap.hometpf %>
-</p>
-
-<p>
-  <strong>Awaytto:</strong>
-  <%= @game_recap.awaytto %>
-</p>
-
-<p>
-  <strong>Awaytpf:</strong>
-  <%= @game_recap.awaytpf %>
-</p>
-
-<%= link_to 'Edit', edit_game_recap_path(@game_recap) %> |
+<% away_total_to=@game_recap.ap1_to.to_i+@game_recap.ap2_to.to_i+@game_recap.ap3_to.to_i+@game_recap.ap4_to.to_i+@game_recap.ap5_to.to_i+@game_recap.ap6_to.to_i+@game_recap.ap7_to.to_i+@game_recap.ap8_to.to_i+@game_recap.ap9_to.to_i+@game_recap.ap10_to.to_i+@game_recap.ap11_to.to_i+@game_recap.ap12_to.to_i+@game_recap.ap13_to.to_i %>
+
+<% home_total_to=@game_recap.hp1_to.to_i+@game_recap.hp2_to.to_i+@game_recap.hp3_to.to_i+@game_recap.hp4_to.to_i+@game_recap.hp5_to.to_i+@game_recap.hp6_to.to_i+@game_recap.hp7_to.to_i+@game_recap.hp8_to.to_i+@game_recap.hp9_to.to_i+@game_recap.hp10_to.to_i+@game_recap.hp11_to.to_i+@game_recap.hp12_to.to_i+@game_recap.hp13_to.to_i %>
+
+
+<div class='box_score'><h2 class='story_h2'><span class='article_title'><%=home_or_away.html_safe %>  </span><br/><span class='box_arena_h2'><%=@game_recap.arena %> | </span><span class='box_start_date_h2'><%= date_time.strftime("%A %B #{date_time.day.ordinalize} %Y %l:%M%P")%></span><br/><%=win_or_loss.html_safe%></h2>
+
+  <table id='last_game_period_box'>
+    <% away_nick_dash=@game_recap.afname.parameterize+'.png' %>
+    <% home_nick_dash=@game_recap.hfname.parameterize+'.png' %>
+
+    <tr><th>&nbsp;</th><th>&nbsp;</th><th>1</th><th>2</th><th>3</th><th>4</th><th>T</th></tr>
+    <tr><td class='logo_box' ><%= image_tag(away_nick_dash, style: "float:left;border-top:1px inset #777777;padding-top:10px;", class:"uk-img-preserve")%></td><td><%=@game_recap.a_initials %> </td><td> <%=@game_recap.aq1 %> <td><%=@game_recap.aq2 %></td><td><%=@game_recap.aq3 %></td><td><%=@game_recap.aq4 %></td><td class='quarters_total'><%=@game_recap.atotal%></td></tr>
+    <tr><td class='logo_box'><%= image_tag(home_nick_dash, style: "float:left;border-top:1px inset #777777;padding-top:10px;", class:"uk-img-preserve")%></td><td><%=@game_recap.h_initials%></td> <td><%=@game_recap.hq1 %></td> <td><%=@game_recap.hq2 %></td> <td><%=@game_recap.hq3 %></td> <td><%=@game_recap.hq4 %></td> <td class='quarters_total'><%=@game_recap.htotal%></td></tr>
+  </table>
+
+  <br/>
+  <br/>
+  <br/>
+
+  <table id='boxscore_away'>
+    <tr style='border: 1px inset #000;'><th style='border: 1px inset #000;' colspan='19'><%= @game_recap.afname.downcase %> <span class='digit_box_total'><%= @game_recap.atotal %></span></th></tr>
+    <tr style='border: 1px inset #000;font-weight:800;'><td style='border: 1px inset #000;'>PLAYER</td><td style='border: 1px inset #000;'>MIN</td><td style='border: 1px inset #000;'>PTS</td><td style='border: 1px inset #000;'>FGM-A</td><td style='border: 1px inset #000;' class='hide_box_column'>3PM-A</td><td style='border: 1px inset #000;'>FTM-A</td><td style='border: 1px inset #000;' class='hide_box_column'>O-REB</td><td style='border: 1px inset #000;' class='hide_box_column'>D-REB</td><td style='border: 1px inset #000;'>REB</td><td style='border: 1px inset #000;'>AST</td><td style='border: 1px inset #000;' class='hide_box_column'>STL</td><td style='border: 1px inset #000;' class='hide_box_column'>BLK</td><td style='border: 1px inset #000;' class='hide_box_column'>TO</td><td style='border: 1px inset #000;'>PF</td><td style='border: 1px inset #000;' class='hide_this'>STARTER</td></tr>
+
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class1 %>'> <%=@game_recap.ap1_name%></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%=@game_recap.ap1_min%></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%=@game_recap.ap1_pts%></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%= @game_recap.ap1_fgma %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_box_column'><%= @game_recap.ap1_3pma %></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%= @game_recap.ap1_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_box_column'><%= @game_recap.ap1_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_box_column'><%= @game_recap.ap1_dreb %></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%= @game_recap.ap1_reb %></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%= @game_recap.ap1_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_box_column'><%= @game_recap.ap1_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_box_column'><%= @game_recap.ap1_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_box_column'><%= @game_recap.ap1_to %></td><td class='<%= astart_class1 %>' style='border: 1px inset #000;'><%= @game_recap.ap1_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class1 %> hide_this'>$a_starter0</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class2 %>' ><%=@game_recap.ap2_name%></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%=@game_recap.ap2_min%></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%=@game_recap.ap2_pts%></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%= @game_recap.ap2_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_box_column'><%= @game_recap.ap2_3pma %></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%= @game_recap.ap2_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_box_column'><%= @game_recap.ap2_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_box_column'><%= @game_recap.ap2_dreb %></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%= @game_recap.ap2_reb %></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%= @game_recap.ap2_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_box_column'><%= @game_recap.ap2_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_box_column'><%= @game_recap.ap2_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_box_column'><%= @game_recap.ap2_to %></td><td class='<%= astart_class2 %>' style='border: 1px inset #000;'><%= @game_recap.ap2_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class2 %> hide_this'>$a_starter1</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class3 %>'><%=@game_recap.ap3_name%></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%=@game_recap.ap3_min%></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%=@game_recap.ap3_pts%></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%= @game_recap.ap3_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_box_column'><%= @game_recap.ap3_3pma %></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%= @game_recap.ap3_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_box_column'><%= @game_recap.ap3_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_box_column'><%= @game_recap.ap3_dreb %></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%= @game_recap.ap3_reb %></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%= @game_recap.ap3_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_box_column'><%= @game_recap.ap3_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_box_column'><%= @game_recap.ap3_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_box_column'><%= @game_recap.ap3_to %></td><td class='<%= astart_class3 %>' style='border: 1px inset #000;'><%= @game_recap.ap3_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class3 %> hide_this'>$a_starter2</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class4 %>'><%=@game_recap.ap4_name%></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%=@game_recap.ap4_min%></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%=@game_recap.ap4_pts%></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%= @game_recap.ap4_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_box_column'><%= @game_recap.ap4_3pma %></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%= @game_recap.ap4_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_box_column'><%= @game_recap.ap4_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_box_column'><%= @game_recap.ap4_dreb %></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%= @game_recap.ap4_reb %></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%= @game_recap.ap4_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_box_column'><%= @game_recap.ap4_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_box_column'><%= @game_recap.ap4_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_box_column'><%= @game_recap.ap4_to %></td><td class='<%= astart_class4 %>' style='border: 1px inset #000;'><%= @game_recap.ap4_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class4 %> hide_this'>$a_starter3</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class5 %>'><%=@game_recap.ap5_name%></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%=@game_recap.ap5_min%></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%=@game_recap.ap5_pts%></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%= @game_recap.ap5_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_box_column'><%= @game_recap.ap5_3pma %></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%= @game_recap.ap5_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_box_column'><%= @game_recap.ap5_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_box_column'><%= @game_recap.ap5_dreb %></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%= @game_recap.ap5_reb %></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%= @game_recap.ap5_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_box_column'><%= @game_recap.ap5_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_box_column'><%= @game_recap.ap5_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_box_column'><%= @game_recap.ap5_to %></td><td class='<%= astart_class5 %>' style='border: 1px inset #000;'><%= @game_recap.ap5_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class5 %> hide_this'>$a_starter4</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class6 %>'><%=@game_recap.ap6_name%></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%=@game_recap.ap6_min%></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%=@game_recap.ap6_pts%></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%= @game_recap.ap6_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_box_column'><%= @game_recap.ap6_3pma %></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%= @game_recap.ap6_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_box_column'><%= @game_recap.ap6_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_box_column'><%= @game_recap.ap6_dreb %></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%= @game_recap.ap6_reb %></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%= @game_recap.ap6_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_box_column'><%= @game_recap.ap6_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_box_column'><%= @game_recap.ap6_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_box_column'><%= @game_recap.ap6_to %></td><td class='<%= astart_class6 %>' style='border: 1px inset #000;'><%= @game_recap.ap6_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class6 %> hide_this'>$a_starter5</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= astart_class7 %>'><%=@game_recap.ap7_name%></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%=@game_recap.ap7_min%></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%=@game_recap.ap7_pts%></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%= @game_recap.ap7_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_box_column'><%= @game_recap.ap7_3pma %></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%= @game_recap.ap7_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_box_column'><%= @game_recap.ap7_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_box_column'><%= @game_recap.ap7_dreb %></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%= @game_recap.ap7_reb %></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%= @game_recap.ap7_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_box_column'><%= @game_recap.ap7_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_box_column'><%= @game_recap.ap7_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_box_column'><%= @game_recap.ap7_to %></td><td class='<%= astart_class7 %>' style='border: 1px inset #000;'><%= @game_recap.ap7_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class7 %> hide_this'>$a_starter6</td></tr>
+
+
+
+    <% if @game_recap.ap8_name !=nil %>
+        <tr style='border: 1px inset #000;'><td class='<%= astart_class8 %>'><%=@game_recap.ap8_name%></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%=@game_recap.ap8_min%></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%=@game_recap.ap8_pts%></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.ap8_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @game_recap.ap8_3pma %></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.ap8_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @game_recap.ap8_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @game_recap.ap8_dreb %></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.ap8_reb %></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.ap8_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @game_recap.ap8_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @game_recap.ap8_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @game_recap.ap8_to %></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.ap8_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_this'>$a_starter7</td></tr>
+    <%else%>
+
+    <%end%>
+
+
+    <% if @game_recap.ap9_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= astart_class9 %>'><%=@game_recap.ap9_name%></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%=@game_recap.ap9_min%></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%=@game_recap.ap9_pts%></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.ap9_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @game_recap.ap9_3pma %></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.ap9_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @game_recap.ap9_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @game_recap.ap9_dreb %></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.ap9_reb %></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.ap9_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @game_recap.ap9_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @game_recap.ap9_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @game_recap.ap9_to %></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.ap9_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_this'>$a_starter8</td></tr>
+    <%else%>
+
+    <%end%>
+
+    <% if @game_recap.ap10_name !=nil %>
+        <tr style='border: 1px inset #000;'><td class='<%= astart_class10 %>'><%=@game_recap.ap10_name%></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%=@game_recap.ap10_min%></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%=@game_recap.ap10_pts%></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%= @game_recap.ap10_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_box_column'><%= @game_recap.ap10_3pma %></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%= @game_recap.ap10_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_box_column'><%= @game_recap.ap10_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_box_column'><%= @game_recap.ap10_dreb %></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%= @game_recap.ap10_reb %></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%= @game_recap.ap10_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_box_column'><%= @game_recap.ap10_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_box_column'><%= @game_recap.ap10_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_box_column'><%= @game_recap.ap10_to %></td><td class='<%= astart_class10 %>' style='border: 1px inset #000;'><%= @game_recap.ap10_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class10 %> hide_this'>$a_starter9</td></tr>
+    <%else%>
+
+    <%end%>
+
+
+    <% if @game_recap.ap11_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= astart_class11 %>'><%=@game_recap.ap11_name%></td><td class='<%= astart_class11 %>' style='border: 1px inset #000;'><%=@game_recap.ap11_min%></td><td style='border: 1px inset #000;'><%=@game_recap.ap11_pts%></td><td style='border: 1px inset #000;'><%= @game_recap.ap11_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_box_column'><%= @game_recap.ap11_3pma %></td><td class='<%= astart_class11 %>' style='border: 1px inset #000;'><%= @game_recap.ap11_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_box_column'><%= @game_recap.ap11_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_box_column'><%= @game_recap.ap11_dreb %></td><td class='<%= astart_class11 %>' style='border: 1px inset #000;'><%= @game_recap.ap11_reb %></td><td class='<%= astart_class11 %>' style='border: 1px inset #000;'><%= @game_recap.ap11_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_box_column'><%= @game_recap.ap11_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_box_column'><%= @game_recap.ap11_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_box_column'><%= @game_recap.ap11_to %></td><td class='<%= astart_class11 %>' style='border: 1px inset #000;'><%= @game_recap.ap11_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class11 %> hide_this'>$a_starter10</td></tr>
+    <%else%>
+
+    <%end%>
+
+    <% if @game_recap.ap12_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= astart_class12 %>'><%=@game_recap.ap12_name%></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%=@game_recap.ap12_min%></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%=@game_recap.ap12_pts%></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%= @game_recap.ap12_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_box_column'><%= @game_recap.ap12_3pma %></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%= @game_recap.ap12_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_box_column'><%= @game_recap.ap12_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_box_column'><%= @game_recap.ap12_dreb %></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%= @game_recap.ap12_reb %></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%= @game_recap.ap12_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_box_column'><%= @game_recap.ap12_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_box_column'><%= @game_recap.ap12_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_box_column'><%= @game_recap.ap12_to %></td><td class='<%= astart_class12 %>' style='border: 1px inset #000;'><%= @game_recap.ap12_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class12 %> hide_this'>$a_starter11</td></tr>
+    <%else%>
+
+    <%end%>
+
+    <% if @game_recap.ap13_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= astart_class13 %>'><%=@game_recap.ap13_name%></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;'><%=@game_recap.ap13_min%></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;'><%=@game_recap.ap13_pts%></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;'><%= @game_recap.ap13_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_box_column'><%= @game_recap.ap13_3pma %></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;'><%= @game_recap.ap13_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_box_column'><%= @game_recap.ap13_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_box_column'><%= @game_recap.ap13_dreb %></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;' ><%= @game_recap.ap13_reb %></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;'><%= @game_recap.ap13_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_box_column'><%= @game_recap.ap13_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_box_column'><%= @game_recap.ap13_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_box_column'><%= @game_recap.ap13_to %></td><td class='<%= astart_class13 %>' style='border: 1px inset #000;'><%= @game_recap.ap13_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class13 %> hide_this'>$a_starter12</td></tr>
+    <%else%>
+
+    <%end%>
+    <tr style='border: 1px inset #000;font-weight:800;'>
+      <td  style='border: 1px inset #000;' colspan='2'><%= @game_recap.a_nick %> <br/>Totals</td><td style='border: 1px inset #000;'><%= @game_recap.atotal %></td><td style='border: 1px inset #000;'><%= @game_recap.awaytfgma %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @game_recap.awayt3fgma %></td><td style='border: 1px inset #000;'><%= @game_recap.awaytftma %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @game_recap.awaytoreb %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @game_recap.awaytdreb %></td><td style='border: 1px inset #000;'><%= @game_recap.arebt %></td><td style='border: 1px inset #000;'><%= @game_recap.aastt %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @game_recap.astlt %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @game_recap.ablkt %></td><td style='border: 1px inset #000;' class='hide_box_column'><%=away_total_to %></td><td colspan='2' style='border: 1px inset #000;'><%= @game_recap.awaytpf %></td></tr>
+
+  </table>
+
+  <br/>
+  <br/>
+
+
+
+  <table id="boxscore_key">
+    <tbody><tr>
+      <th>BOXSCORE KEY</th>
+    </tr>
+    <tr><td class="starter2">STARTER</td></tr>
+    </tbody></table>
+
+
+  <br/>
+  <br/>
+
+  <table id='boxscore_home'>
+    <tr style='border: 1px inset #000;'><th style='border: 1px inset #000;' colspan='19'><%= @game_recap.hfname.downcase %> <span class='digit_box_total'><%= @game_recap.htotal %></span></th></tr>
+    <tr style='border: 1px inset #000;font-weight:800;'><td style='border: 1px inset #000;'>PLAYER</td><td style='border: 1px inset #000;'>MIN</td><td style='border: 1px inset #000;'>PTS</td><td style='border: 1px inset #000;'>FGM-A</td><td style='border: 1px inset #000;' class='hide_box_column'>3PM-A</td><td style='border: 1px inset #000;'>FTM-A</td><td style='border: 1px inset #000;' class='hide_box_column'>O-REB</td><td style='border: 1px inset #000;' class='hide_box_column'>D-REB</td><td style='border: 1px inset #000;'>REB</td><td style='border: 1px inset #000;'>AST</td><td style='border: 1px inset #000;' class='hide_box_column'>STL</td><td style='border: 1px inset #000;' class='hide_box_column'>BLK</td><td style='border: 1px inset #000;' class='hide_box_column'>TO</td><td style='border: 1px inset #000;'>PF</td><td style='border: 1px inset #000;' class='hide_this'>STARTER</td></tr>
+
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class1 %>'> <%=@game_recap.hp1_name%></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%=@game_recap.hp1_min%></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%=@game_recap.hp1_pts%></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%= @game_recap.hp1_fgma %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_box_column'><%= @game_recap.hp1_3pma %></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%= @game_recap.hp1_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_box_column'><%= @game_recap.hp1_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_box_column'><%= @game_recap.hp1_dreb %></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%= @game_recap.hp1_reb %></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%= @game_recap.hp1_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_box_column'><%= @game_recap.hp1_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_box_column'><%= @game_recap.hp1_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_box_column'><%= @game_recap.hp1_to %></td><td class='<%= hstart_class1 %>' style='border: 1px inset #000;'><%= @game_recap.hp1_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class1 %> hide_this'>$a_starter0</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class2 %>' ><%=@game_recap.hp2_name%></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%=@game_recap.hp2_min%></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%=@game_recap.hp2_pts%></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%= @game_recap.hp2_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_box_column'><%= @game_recap.hp2_3pma %></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%= @game_recap.hp2_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_box_column'><%= @game_recap.hp2_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_box_column'><%= @game_recap.hp2_dreb %></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%= @game_recap.hp2_reb %></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%= @game_recap.hp2_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_box_column'><%= @game_recap.hp2_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_box_column'><%= @game_recap.hp2_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_box_column'><%= @game_recap.hp2_to %></td><td class='<%= hstart_class2 %>' style='border: 1px inset #000;'><%= @game_recap.hp2_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class2 %> hide_this'>$a_starter1</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class3 %>'><%=@game_recap.hp3_name%></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%=@game_recap.hp3_min%></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%=@game_recap.hp3_pts%></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%= @game_recap.hp3_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_box_column'><%= @game_recap.hp3_3pma %></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%= @game_recap.hp3_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_box_column'><%= @game_recap.hp3_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_box_column'><%= @game_recap.hp3_dreb %></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%= @game_recap.hp3_reb %></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%= @game_recap.hp3_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_box_column'><%= @game_recap.hp3_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_box_column'><%= @game_recap.hp3_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_box_column'><%= @game_recap.hp3_to %></td><td class='<%= hstart_class3 %>' style='border: 1px inset #000;'><%= @game_recap.hp3_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class3 %> hide_this'>$a_starter2</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class4 %>'><%=@game_recap.hp4_name%></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%=@game_recap.hp4_min%></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%=@game_recap.hp4_pts%></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%= @game_recap.hp4_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_box_column'><%= @game_recap.hp4_3pma %></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%= @game_recap.hp4_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_box_column'><%= @game_recap.hp4_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_box_column'><%= @game_recap.hp4_dreb %></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%= @game_recap.hp4_reb %></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%= @game_recap.hp4_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_box_column'><%= @game_recap.hp4_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_box_column'><%= @game_recap.hp4_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_box_column'><%= @game_recap.hp4_to %></td><td class='<%= hstart_class4 %>' style='border: 1px inset #000;'><%= @game_recap.hp4_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class4 %> hide_this'>$a_starter3</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class5 %>'><%=@game_recap.hp5_name%></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%=@game_recap.hp5_min%></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%=@game_recap.hp5_pts%></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%= @game_recap.hp5_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_box_column'><%= @game_recap.hp5_3pma %></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%= @game_recap.hp5_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_box_column'><%= @game_recap.hp5_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_box_column'><%= @game_recap.hp5_dreb %></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%= @game_recap.hp5_reb %></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%= @game_recap.hp5_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_box_column'><%= @game_recap.hp5_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_box_column'><%= @game_recap.hp5_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_box_column'><%= @game_recap.hp5_to %></td><td class='<%= hstart_class5 %>' style='border: 1px inset #000;'><%= @game_recap.hp5_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class5 %> hide_this'>$a_starter4</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class6 %>'><%=@game_recap.hp6_name%></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%=@game_recap.hp6_min%></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%=@game_recap.hp6_pts%></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%= @game_recap.hp6_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_box_column'><%= @game_recap.hp6_3pma %></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%= @game_recap.hp6_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_box_column'><%= @game_recap.hp6_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_box_column'><%= @game_recap.hp6_dreb %></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%= @game_recap.hp6_reb %></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%= @game_recap.hp6_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_box_column'><%= @game_recap.hp6_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_box_column'><%= @game_recap.hp6_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_box_column'><%= @game_recap.hp6_to %></td><td class='<%= hstart_class6 %>' style='border: 1px inset #000;'><%= @game_recap.hp6_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class6 %> hide_this'>$a_starter5</td></tr>
+    <tr style='border: 1px inset #000;'><td class='<%= hstart_class7 %>'><%=@game_recap.hp7_name%></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%=@game_recap.hp7_min%></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%=@game_recap.hp7_pts%></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%= @game_recap.hp7_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_box_column'><%= @game_recap.hp7_3pma %></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%= @game_recap.hp7_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_box_column'><%= @game_recap.hp7_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_box_column'><%= @game_recap.hp7_dreb %></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%= @game_recap.hp7_reb %></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%= @game_recap.hp7_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_box_column'><%= @game_recap.hp7_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_box_column'><%= @game_recap.hp7_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_box_column'><%= @game_recap.hp7_to %></td><td class='<%= hstart_class7 %>' style='border: 1px inset #000;'><%= @game_recap.hp7_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class7 %> hide_this'>$a_starter6</td></tr>
+
+
+
+    <% if @game_recap.hp8_name !=nil %>
+        <tr style='border: 1px inset #000;'><td class='<%= hstart_class8 %>'><%=@game_recap.hp8_name%></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%=@game_recap.hp8_min%></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%=@game_recap.hp8_pts%></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.hp8_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_box_column'><%= @game_recap.hp8_3pma %></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.hp8_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_box_column'><%= @game_recap.hp8_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_box_column'><%= @game_recap.hp8_dreb %></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.hp8_reb %></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.hp8_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_box_column'><%= @game_recap.hp8_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_box_column'><%= @game_recap.hp8_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_box_column'><%= @game_recap.hp8_to %></td><td class='<%= hstart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.hp8_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class8 %> hide_this'>$a_starter7</td></tr>
+    <%else%>
+
+    <%end%>
+
+
+    <% if @game_recap.hp9_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= hstart_class9 %>'><%=@game_recap.hp9_name%></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%=@game_recap.hp9_min%></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%=@game_recap.hp9_pts%></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.hp9_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_box_column'><%= @game_recap.hp9_3pma %></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.hp9_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_box_column'><%= @game_recap.hp9_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_box_column'><%= @game_recap.hp9_dreb %></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.hp9_reb %></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.hp9_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_box_column'><%= @game_recap.hp9_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_box_column'><%= @game_recap.hp9_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_box_column'><%= @game_recap.hp9_to %></td><td class='<%= hstart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.hp9_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class9 %> hide_this'>$a_starter8</td></tr>
+    <%else%>
+
+    <%end%>
+
+    <% if @game_recap.hp10_name !=nil %>
+        <tr style='border: 1px inset #000;'><td class='<%= hstart_class10 %>'><%=@game_recap.hp10_name%></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%=@game_recap.hp10_min%></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%=@game_recap.hp10_pts%></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%= @game_recap.hp10_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_box_column'><%= @game_recap.hp10_3pma %></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%= @game_recap.hp10_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_box_column'><%= @game_recap.hp10_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_box_column'><%= @game_recap.hp10_dreb %></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%= @game_recap.hp10_reb %></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%= @game_recap.hp10_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_box_column'><%= @game_recap.hp10_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_box_column'><%= @game_recap.hp10_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_box_column'><%= @game_recap.hp10_to %></td><td class='<%= hstart_class10 %>' style='border: 1px inset #000;'><%= @game_recap.hp10_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class10 %> hide_this'>$a_starter9</td></tr>
+    <%else%>
+
+    <%end%>
+
+
+    <% if @game_recap.hp11_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= hstart_class11 %>'><%=@game_recap.hp11_name%></td><td class='<%= hstart_class11 %>' style='border: 1px inset #000;'><%=@game_recap.hp11_min%></td><td style='border: 1px inset #000;'><%=@game_recap.hp11_pts%></td><td style='border: 1px inset #000;'><%= @game_recap.hp11_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_box_column'><%= @game_recap.hp11_3pma %></td><td class='<%= hstart_class11 %>' style='border: 1px inset #000;'><%= @game_recap.hp11_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_box_column'><%= @game_recap.hp11_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_box_column'><%= @game_recap.hp11_dreb %></td><td class='<%= hstart_class11 %>' style='border: 1px inset #000;'><%= @game_recap.hp11_reb %></td><td class='<%= hstart_class11 %>' style='border: 1px inset #000;'><%= @game_recap.hp11_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_box_column'><%= @game_recap.hp11_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_box_column'><%= @game_recap.hp11_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_box_column'><%= @game_recap.hp11_to %></td><td class='<%= hstart_class11 %>' style='border: 1px inset #000;'><%= @game_recap.hp11_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class11 %> hide_this'>$a_starter10</td></tr>
+    <%else%>
+
+    <%end%>
+
+    <% if @game_recap.hp12_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= hstart_class12 %>'><%=@game_recap.hp12_name%></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%=@game_recap.hp12_min%></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%=@game_recap.hp12_pts%></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%= @game_recap.hp12_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_box_column'><%= @game_recap.hp12_3pma %></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%= @game_recap.hp12_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_box_column'><%= @game_recap.hp12_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_box_column'><%= @game_recap.hp12_dreb %></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%= @game_recap.hp12_reb %></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%= @game_recap.hp12_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_box_column'><%= @game_recap.hp12_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_box_column'><%= @game_recap.hp12_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_box_column'><%= @game_recap.hp12_to %></td><td class='<%= hstart_class12 %>' style='border: 1px inset #000;'><%= @game_recap.hp12_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class12 %> hide_this'>$a_starter11</td></tr>
+    <%else%>
+
+    <%end%>
+
+    <% if @game_recap.hp13_name !=nil %>
+
+        <tr style='border: 1px inset #000;'><td class='<%= hstart_class13 %>'><%=@game_recap.hp13_name%></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;'><%=@game_recap.hp13_min%></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;'><%=@game_recap.hp13_pts%></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;'><%= @game_recap.hp13_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_box_column'><%= @game_recap.hp13_3pma %></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;'><%= @game_recap.hp13_ftma %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_box_column'><%= @game_recap.hp13_oreb %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_box_column'><%= @game_recap.hp13_dreb %></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;' ><%= @game_recap.hp13_reb %></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;'><%= @game_recap.hp13_ast %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_box_column'><%= @game_recap.hp13_stl %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_box_column'><%= @game_recap.hp13_blk %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_box_column'><%= @game_recap.hp13_to %></td><td class='<%= hstart_class13 %>' style='border: 1px inset #000;'><%= @game_recap.hp13_pf %></td><td style='border: 1px inset #000;' class='<%= hstart_class13 %> hide_this'>$a_starter12</td></tr>
+    <%else%>
+
+    <%end%>
+    <tr style='border: 1px inset #000;font-weight:800;'>
+      <td  style='border: 1px inset #000;' colspan='2'><%= @game_recap.h_nick %> <br/>Totals</td><td style='border: 1px inset #000;'><%= @game_recap.htotal %></td><td style='border: 1px inset #000;'><%= @game_recap.hometfgma %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @game_recap.homet3fgma %></td><td style='border: 1px inset #000;'><%= @game_recap.hometftma %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @game_recap.hometoreb %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @game_recap.hometdreb %></td><td style='border: 1px inset #000;'><%= @game_recap.hrebt %></td><td style='border: 1px inset #000;'><%= @game_recap.hastt %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @game_recap.hstlt %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= @game_recap.hblkt %></td><td style='border: 1px inset #000;' class='hide_box_column'><%= home_total_to %></td><td colspan='2' style='border: 1px inset #000;'><%= @game_recap.hometpf %></td></tr>
+
+  </table>
+
+  <br/>
+  <br/>
+  <table id="box_team_total_percentages">
+    <tbody><tr style="border: 1px inset #000;"><th colspan="11" style="border: 1px inset #000;">totals</th></tr>
+    <tr style="border: 1px inset #000;font-weight:800;"><td style="border: 1px inset #000;"> </td><td style="border: 1px inset #000;">PTS</td><td style="border: 1px inset #000;">FG%</td><td style="border: 1px inset #000;">FT%</td><td>3PT%</td><td style="border: 1px inset #000;">REB</td><td style="border: 1px inset #000;">AST</td><td style="border: 1px inset #000;">STL</td><td style="border: 1px inset #000;">BLK</td><td style="border: 1px inset #000;">TO</td><td style="border: 1px inset #000;">PF</td></tr>
+    <tr style="border: 1px inset #000;"><td style="border: 1px inset #000;font-weight:800;"><%= @game_recap.a_nick %></td><td style="border: 1px inset #000;"><%= @game_recap.atotal %></td><td style="border: 1px inset #000;"><%= @game_recap.afgp %></td><td style="border: 1px inset #000;"><%= @game_recap.aftp %></td><td style="border: 1px inset #000;"><%= @game_recap.a3ptp %></td><td style="border: 1px inset #000;"><%= @game_recap.arebt %></td><td style="border: 1px inset #000;"><%= @game_recap.aastt %></td><td style="border: 1px inset #000;"><%= @game_recap.astlt %></td><td style="border: 1px inset #000;"><%= @game_recap.ablkt %></td><td style="border: 1px inset #000;"><%= away_total_to %></td><td style="border: 1px inset #000;"><%= @game_recap.awaytpf %></td></tr>
+    <tr style="border: 1px inset #000;"><td style="border: 1px inset #000;font-weight:800;"><%= @game_recap.h_nick %></td><td style="border: 1px inset #000;"><%= @game_recap.htotal %></td><td style="border: 1px inset #000;"><%= @game_recap.hfgp %></td><td style="border: 1px inset #000;"><%= @game_recap.hftp %></td><td style="border: 1px inset #000;"><%= @game_recap.h3ptp %></td><td style="border: 1px inset #000;"><%= @game_recap.hrebt %></td><td style="border: 1px inset #000;"><%= @game_recap.hastt %></td><td style="border: 1px inset #000;"><%= @game_recap.hstlt %></td><td style="border: 1px inset #000;"><%= @game_recap.hblkt %></td><td style="border: 1px inset #000;"><%= home_total_to %></td><td style="border: 1px inset #000;"><%= @game_recap.hometpf %></td></tr>
+    </tbody></table>
+  <br/>
+
+  <div id="boxscore_writeup_container">
+    <h2 class="story_h2_summary">Box Score Summary</h2>
+    <%= game_box_recap.html_safe %>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+
+
+
+
+
+  <%= link_to 'Edit', edit_game_recap_path(@game_recap) %> |
 <%= link_to 'Back', game_recaps_path %>
