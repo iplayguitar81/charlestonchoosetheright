@@ -1,4 +1,6 @@
 Tblazersfans::Application.routes.draw do
+  resources :game_recaps
+
   resources :stories
 
   devise_for :ballers
