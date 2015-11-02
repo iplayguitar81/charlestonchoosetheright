@@ -36,6 +36,11 @@ class GameRecapsController < ApplicationController
     respond_with(@game_recap)
   end
 
+  def import
+    GameRecap.import(params[:file])
+    redirect_to recappers_path, notice: "Recaps added successfully"
+  end
+
   private
     def set_game_recap
       @game_recap = GameRecap.find(params[:id])
