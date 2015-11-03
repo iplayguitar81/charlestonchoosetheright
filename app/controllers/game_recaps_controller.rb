@@ -40,7 +40,7 @@ class GameRecapsController < ApplicationController
 
   def import
     GameRecap.import(params[:file])
-    redirect_to game_recap_path, notice: "Recaps added successfully"
+    redirect_to game_recaps_path, notice: "Recaps added successfully"
   end
 
   private
