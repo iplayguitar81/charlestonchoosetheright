@@ -1117,3 +1117,8 @@ a.boxscore_link {
     line-height: 1.7em;
     font-family: "Times New Roman", Georgia, Tahoma;
 }
+
+
+.uk-accordion-title{
+    font-size: 1em !important;
+}
