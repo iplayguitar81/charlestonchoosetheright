@@ -6123,11 +6123,6 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
 }
 
 @media (min-width: 768px) {
-
-
-        margin-left: 20% !important;
-    }
-
     .uk-dropdown:not(.uk-dropdown-stack) > .uk-dropdown-grid {
         margin-left: -15px;
         margin-right: -15px
@@ -6160,8 +6155,6 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
 }
 
 @media (max-width: 767px) {
-
-
     .uk-dropdown-grid > [class*=uk-width-] {
         width: 100%
     }
@@ -6250,9 +6243,6 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
 }
 
 @media (max-width: 767px) {
-
-
-
     .uk-modal-dialog {
         width: auto;
         margin: 10px auto
