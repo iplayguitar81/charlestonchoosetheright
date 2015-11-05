@@ -1,10 +1,15 @@
 Tblazersfans::Application.routes.draw do
 
+
+
+
   resources :game_recaps do
 
     collection { post :import}
 
     get 'recaps/:page', :action => :index, :on => :collection
+
+
 
   end
 
@@ -32,6 +37,10 @@ Tblazersfans::Application.routes.draw do
   #makes the recaps work for whatever page that is with 'pretty' seo friendly url :D
   get 'recaps13_14/page/:page', :to => 'page#recaps13_14'
   get 'recaps12_13/page/:page', :to => 'page#recaps12_13'
+
+  #get 'game_recaps/params[:id]', :to => 'game_recaps/params[:game_string]'
+  #20151031-phoenix-suns-at-portland-trail-blazers
+
 
   get "page/store"
 
