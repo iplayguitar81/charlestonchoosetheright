@@ -6248,16 +6248,20 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
         margin: 10px auto
     }
 
-    .uk-thumbnail-medium {
+    img.uk-thumbnail-medium {
 
-        margin-left: 10% !important;
-        margin-right: 10% !important;
+
+        margin-left:auto;
+        margin-right:auto;
 
     }
 
     h1.uk-article-title {
-        margin-left: 5%;
-        margin-right: 5%;
+        text-align:center;
+    }
+
+    .uk-article-meta {
+        text-align: center;
     }
 
 }
