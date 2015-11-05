@@ -6161,10 +6161,7 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
 
 @media (max-width: 767px) {
 
-    .uk-thumbnail-medium {
 
-        margin-left: 20% !important;
-    }
     .uk-dropdown-grid > [class*=uk-width-] {
         width: 100%
     }
@@ -6254,12 +6251,7 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
 
 @media (max-width: 767px) {
 
-    .uk-thumbnail-medium {
 
-        margin-left: 10% !important;
-        margin-right: 10% !important;
-
-    }
 
     .uk-modal-dialog {
         width: auto;
