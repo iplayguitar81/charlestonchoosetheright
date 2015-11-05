@@ -1205,6 +1205,7 @@ iframe {
     line-height: 18px;
     color: #999;
     font-family: Tahoma, Arial, "Trebuchet MS";
+    text-align:center;
 }
 
 .uk-article-lead {
