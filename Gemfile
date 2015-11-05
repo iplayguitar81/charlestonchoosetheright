@@ -69,3 +69,5 @@ gem 'kaminari'
 
 gem 'activesupport'
 
+gem 'tinymce-rails'
+
