@@ -11,7 +11,12 @@ class GameRecapsController < ApplicationController
   end
 
   def show
-    respond_with(@game_recap)
+    #respond_with(@game_recap)
+    @game_recap = GameRecap.find_by_game_string(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @game_recap}
+    end
   end
 
   def new
@@ -45,7 +50,7 @@ class GameRecapsController < ApplicationController
 
   private
     def set_game_recap
-      @game_recap = GameRecap.find(params[:id])
+      @game_recap = GameRecap.find_by_game_string(params[:id])
     end
 
     def game_recap_params
