@@ -12,4 +12,8 @@ class GameRecap < ActiveRecord::Base
     end
   end
 
+  def to_param
+    "#{game_string}"
+  end
+
 end
