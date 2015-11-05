@@ -6247,6 +6247,15 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
         width: auto;
         margin: 10px auto
     }
+
+    .uk-thumbnail-medium {
+
+        margin-left: 10% !important;
+        margin-right: 10% !important;
+
+    }
+
+
 }
 
 .uk-open .uk-modal-dialog {
@@ -6291,6 +6300,9 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
 }
 
 @media (min-width: 768px) {
+
+
+
     .uk-modal-dialog-large {
         width: 930px
     }
