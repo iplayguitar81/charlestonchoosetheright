@@ -6255,6 +6255,10 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
 
     }
 
+    h1.uk-article-title {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 
 }
 
