@@ -21,6 +21,19 @@ class PageController < ApplicationController
   def store
   end
 
+
+
+  def recaps14_15
+
+
+    @season14_15 = GameRecap.where("datey BETWEEN '2014-10-20T00:00:00-00:00' AND '2015-06-30T00:00:00-00:00' ").order("datey DESC")
+    @topic = GameRecap.where("datey BETWEEN '2013-10-20T00:00:00-00:00' AND '2015-06-30T00:00:00-00:00' ").order("datey DESC")
+    # @paginatable_array=Kaminari.paginate_array(@topic).page(params[:page]).per(10)
+
+    @posts = @topic.page(params[:page])
+
+  end
+
   def recaps13_14
 
 
@@ -37,6 +50,8 @@ class PageController < ApplicationController
     @posts = @topic.page(params[:page])
 
   end
+
+
 
 
 end
