@@ -30,12 +30,19 @@ Tblazersfans::Application.routes.draw do
   get "page/home"
   get "page/news"
   get "page/recaps"
+
+  get "page/recaps15_16"
+  get "page/recaps14_15"
   get "page/recaps13_14"
   get "page/recaps12_13"
 
 
   #makes the recaps work for whatever page that is with 'pretty' seo friendly url :D
+
+  get 'recaps15_16/page/:page', :to => 'page#recaps15_16'
+  get 'recaps14_15/page/:page', :to => 'page#recaps14_15'
   get 'recaps13_14/page/:page', :to => 'page#recaps13_14'
+
   get 'recaps12_13/page/:page', :to => 'page#recaps12_13'
 
   #get 'game_recaps/params[:id]', :to => 'game_recaps/params[:game_string]'
