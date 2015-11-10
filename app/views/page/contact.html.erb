@@ -1,2 +1,72 @@
-<h1>Page#contact</h1>
-<p>Find me in app/views/page/contact.html.erb</p>
+<form  id="form" method="POST" action="contact" data-ajax="false">
+  <br/>
+  <div>
+    <label class='normal' for="fname">Name</label> <input type="text" class="cat_textbox" name="fname" id='fname' value=""  placeholder="Name"><br/>
+
+    <div class="error"></div>
+
+
+  </div>
+  <br/>
+  <div>
+
+    <label class='normal' for="email">E-mail</label> <input id="email" type="email" class="cat_textbox" name="email" value=""   placeholder="E-mail"><br/>
+
+    <div class="error"></div>
+
+  </div>
+  <br/>
+  <div>
+    <label class='normal' for="question">Questions, comments, concerns?  Tell us about it here:</label>
+    <br/>
+
+    <textarea class="cat_textbox" id="question" name="question" placeholder="Type your question(s), comment or concern here" ></textarea>
+    <div class="error"></div>
+  </div>
+  <br/>
+  <div id="submit_it">
+    <input type="submit" name="form_submit" value="Submit">
+  </div>
+  <br/>
+  <br/>
+</form>
+
+<br/>
+
+<script>$('#form1').validate({
+    rules: {
+        fname: {
+            required: true
+        },
+        question: {
+            required: true
+        },
+        email: {
+            required: true
+        }
+    },
+    messages: {
+        fname: {
+            required: "Please enter your name."
+        },
+        email: {
+            required: "Please enter your email."
+        },
+        question: {
+            required: "Please enter your comments."
+        }
+    },
+    errorPlacement: function (error, element) {
+        error.appendTo(element.parent());
+    },
+    submitHandler: function (form) {
+        // sendContact();
+//                $("#form1").hide();
+//               $("#contact_success").show();
+//               $("#contact_success").css('visibility', 'visible');
+
+        return false;
+    }
+});
+
+</script>
