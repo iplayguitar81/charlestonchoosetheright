@@ -16,5 +16,6 @@
 //= require jquery_ujs
 //= require uikit.min
 //= require tinymce-jquery
+//=require jquery.validate.min
 //= require_tree .
 
