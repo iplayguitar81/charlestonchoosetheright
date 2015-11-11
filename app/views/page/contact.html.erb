@@ -3,8 +3,10 @@
 
 <%= label_tag :name, "Enter your Name" %>
 <%= text_field_tag :name, @name %>
+    <div class="error"><%= @error_msg%></div>
     <br/>
     <%= label_tag :email, "Enter your Email Address" %>
+    <div class="error"><%= @error_msg2%></div>
 <%= email_field_tag :email, @email %>
     <br/>
 
