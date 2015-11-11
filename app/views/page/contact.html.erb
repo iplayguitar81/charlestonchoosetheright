@@ -2,11 +2,11 @@
 <h2>contact us</h2>
 <%= form_for contact_path, :method => 'POST' do %>
 
-<%= label_tag :name, "Name" %>
+<%= label_tag :name, "name" %>
 <%= text_field_tag :name, @name %>
     <div class="error"><%= @error_msg%></div>
     <br/>
-    <%= label_tag :email, "Email" %>
+    <%= label_tag :email, "email" %>
     <div class="error"><%= @error_msg2%></div>
 <%= email_field_tag :email, @email %>
     <br/>
