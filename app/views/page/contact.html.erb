@@ -1,4 +1,10 @@
-<form  id="form1" action="contact" data-ajax="false">
+
+<%= form_for contact_path, :method => 'POST' do %>
+
+
+<%= text_field_tag :name %>
+<%= submit_tag "Send Away" %>
+
   <br/>
   <div>
     <label class='normal' for="fname">Name</label> <input type="text" class="cat_textbox" name="fname" id='fname' value=""  placeholder="Name"><br/>
@@ -29,44 +35,7 @@
   </div>
   <br/>
   <br/>
-</form>
+<% end %>
 
 <br/>
 
-<script>$('#form1').validate({
-    rules: {
-        fname: {
-            required: true
-        },
-        question: {
-            required: true
-        },
-        email: {
-            required: true
-        }
-    },
-    messages: {
-        fname: {
-            required: "Please enter your name."
-        },
-        email: {
-            required: "Please enter your email."
-        },
-        question: {
-            required: "Please enter your comments."
-        }
-    },
-    errorPlacement: function (error, element) {
-        error.appendTo(element.parent());
-    },
-    submitHandler: function (form) {
-        // sendContact();
-//                $("#form1").hide();
-//               $("#contact_success").show();
-//               $("#contact_success").css('visibility', 'visible');
-
-        return false;
-    }
-});
-
-</script>
