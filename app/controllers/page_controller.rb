@@ -1,5 +1,10 @@
 class PageController < ApplicationController
+
   def contact
+
+    @name =params['name']
+
+
   end
 
   def forum
