@@ -3,7 +3,7 @@ class PageController < ApplicationController
   def contact
 
     @name = params['name']
-    @email = params['email']
+    @email = params["email"]
 
 
   end
