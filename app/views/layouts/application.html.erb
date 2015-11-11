@@ -45,11 +45,11 @@
       <% if action_name =="home"%>
 
           <li class="uk-active">
-          <%= link_to("home", page_home_path)%>
+          <%= link_to("home", home_path)%>
           </li>
           <%else %>
           <li>
-          <%= link_to("home", page_home_path)%>
+          <%= link_to("home", home_path)%>
           </li>
       <%end%>
 
@@ -79,33 +79,33 @@
       <% if action_name =="forum"%>
 
           <li class="uk-active">
-            <%= link_to("forum", page_forum_path)%>
+            <%= link_to("forum", forum_path)%>
           </li>
       <%else %>
           <li>
-            <%= link_to("forum", page_forum_path)%>
+            <%= link_to("forum", forum_path)%>
           </li>
       <%end%>
 
       <% if action_name =="store"%>
 
           <li class="uk-active">
-            <%= link_to("store", page_store_path)%>
+            <%= link_to("store", store_path)%>
           </li>
       <%else %>
           <li>
-            <%= link_to("store", page_store_path)%>
+            <%= link_to("store", store_path)%>
           </li>
       <%end%>
 
       <% if action_name =="contact"%>
 
           <li class="uk-active">
-            <%= link_to("contact", page_contact_path)%>
+            <%= link_to("contact", contact_path)%>
           </li>
       <%else %>
           <li>
-            <%= link_to("contact", page_contact_path)%>
+            <%= link_to("contact", contact_path)%>
           </li>
       <%end%>
 
@@ -149,50 +149,50 @@
   <!--<li>-->
 
   <!--<% if action_name =="home"%>-->
-      <!--<%= link_to("home", page_home_path, class: "current_page")%>-->
+      <!--<%= link_to("home", home_path, class: "current_page")%>-->
       <!--<% else %>-->
-      <!--<%= link_to("home", page_home_path) %>-->
+      <!--<%= link_to("home", home_path) %>-->
       <!--<%end %>-->
   <!--</li>&lt;!&ndash;-->
   <!--&ndash;&gt;<li>-->
 
   <!--<% if action_name =="articles"%>-->
-      <!--<%= link_to("articles", page_news_path, class: "current_page")%>-->
+      <!--<%= link_to("articles", news_path, class: "current_page")%>-->
       <!--<% else %>-->
-      <!--<%= link_to("articles", page_news_path) %>-->
+      <!--<%= link_to("articles", news_path) %>-->
       <!--<%end %>-->
   <!--</li>&lt;!&ndash;-->
 
   <!--&ndash;&gt;<li>-->
 
   <!--<% if action_name =="recaps"%>-->
-      <!--<%= link_to("recaps", page_recaps_path, class: "current_page")%>-->
+      <!--<%= link_to("recaps", recaps_path, class: "current_page")%>-->
       <!--<%else %>-->
-      <!--<%= link_to("recaps", page_recaps_path)%>-->
+      <!--<%= link_to("recaps", recaps_path)%>-->
       <!--<%end%>-->
   <!--</li>&lt;!&ndash;-->
   <!--&ndash;&gt;<li>-->
   <!--<% if action_name =="forum"%>-->
-      <!--<%= link_to("forum", page_forum_path, class:"current_page")%>-->
+      <!--<%= link_to("forum", forum_path, class:"current_page")%>-->
       <!--<%else %>-->
-      <!--<%= link_to("forum", page_forum_path)%>-->
+      <!--<%= link_to("forum", forum_path)%>-->
       <!--<%end%>-->
 
   <!--</li>&lt;!&ndash;-->
   <!--&ndash;&gt;<li>-->
 
   <!--<% if action_name =="store"%>-->
-      <!--<%= link_to("store", page_store_path, class: "current_page")%>-->
+      <!--<%= link_to("store", store_path, class: "current_page")%>-->
       <!--<% else %>-->
-      <!--<%= link_to("store", page_store_path)%>-->
+      <!--<%= link_to("store", store_path)%>-->
       <!--<%end %>-->
 
   <!--</li>-->
   <!--<li>-->
   <!--<% if action_name =="contact"%>-->
-      <!--<%= link_to("contact", page_contact_path, class: "current_page")%>-->
+      <!--<%= link_to("contact", contact_path, class: "current_page")%>-->
       <!--<%else%>-->
-      <!--<%= link_to("contact", page_contact_path)%>-->
+      <!--<%= link_to("contact", contact_path)%>-->
       <!--<%end%>-->
 
   <!--</li>-->
@@ -255,7 +255,7 @@
   <div class="uk-offcanvas-bar">
     <ul class="uk-nav uk-nav-offcanvas">
       <li class="uk-active">
-        <%= link_to("home", page_home_path)%>
+        <%= link_to("home", home_path)%>
       </li>
       <li>
         <%= link_to("news", stories_path)%>
@@ -264,13 +264,13 @@
         <%= link_to("recaps", game_recaps_path)%>
       </li>
       <li>
-        <%= link_to("forum", page_forum_path)%>
+        <%= link_to("forum", forum_path)%>
       </li>
       <li>
-        <%= link_to("store", page_store_path)%>
+        <%= link_to("store", store_path)%>
       </li>
       <li>
-        <%= link_to("contact", page_contact_path)%>
+        <%= link_to("contact", contact_path)%>
       </li>
       <% if baller_signed_in? %>
 
