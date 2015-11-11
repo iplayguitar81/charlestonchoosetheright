@@ -1,12 +1,12 @@
 <div id="news_show_organize3">
-<h2>Contact Us</h2>
+<h2>contact us</h2>
 <%= form_for contact_path, :method => 'POST' do %>
 
-<%= label_tag :name, "Enter your Name" %>
+<%= label_tag :name, "Name" %>
 <%= text_field_tag :name, @name %>
     <div class="error"><%= @error_msg%></div>
     <br/>
-    <%= label_tag :email, "Enter your Email Address" %>
+    <%= label_tag :email, "Email" %>
     <div class="error"><%= @error_msg2%></div>
 <%= email_field_tag :email, @email %>
     <br/>
