@@ -2,7 +2,7 @@
 <%= form_for contact_path, :method => 'POST' do %>
 
 
-<%= text_field_tag :name %>
+<%= text_field_tag :name, @name %>
 <%= submit_tag "Send Away" %>
 
   <br/>
