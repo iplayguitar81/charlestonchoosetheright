@@ -390,12 +390,12 @@
 
 
   <% if current_baller.try(:admin?) %>
-  <%= link_to 'Edit', edit_recapper_path(@recapper) %> |
+  <%= link_to 'Edit', edit_game_recaps_path(@recapper) %> |
 
       <% else %>
 
       <% end %>
-  <%= link_to 'Back to 2014-2015 Recaps', recappers_path %> |
+  <%= link_to 'Back to 2014-2015 Recaps', game_recaps_path %> |
   <%= link_to 'Home', home_path %>
 
 
