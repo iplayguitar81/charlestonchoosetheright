@@ -3,8 +3,14 @@ class PageController < ApplicationController
   def contact
 
     @name = params['name']
-    @email = params["email"]
+    if @name !=''
+    @error_msg='Must enter your name!!!'
+    end
 
+    @email = params["email"]
+    if @email !=''
+      @error_msg2='Must enter your name!!!'
+    end
 
   end
 
