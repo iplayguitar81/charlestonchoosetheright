@@ -1,42 +1,17 @@
 
 <%= form_for contact_path, :method => 'POST' do %>
 
-
+<%= label_tag :name, "Enter your Name" %>
 <%= text_field_tag :name, @name %>
-<%= email_field_tag :email,  @email %>
+    <br/>
+    <%= label_tag :email, "Enter your Email Address" %>
+<%= email_field_tag :email, @email %>
+    <br/>
 
 <%= submit_tag "Send Away" %>
 
   <br/>
-  <div>
-    <label class='normal' for="fname">Name</label> <input type="text" class="cat_textbox" name="fname" id='fname' value=""  placeholder="Name"><br/>
 
-    <div class="error"></div>
-
-
-  </div>
-  <br/>
-  <div>
-
-    <label class='normal' for="email">E-mail</label> <input id="email" type="email" class="cat_textbox" name="email" value=""   placeholder="E-mail"><br/>
-
-    <div class="error"></div>
-
-  </div>
-  <br/>
-  <div>
-    <label class='normal' for="question">Questions, comments, concerns?  Tell us about it here:</label>
-    <br/>
-
-    <textarea class="cat_textbox" id="question" name="question" placeholder="Type your question(s), comment or concern here" ></textarea>
-    <div class="error"></div>
-  </div>
-  <br/>
-  <div id="submit_it">
-    <input type="submit" name="form_submit" value="Submit">
-  </div>
-  <br/>
-  <br/>
 <% end %>
 
 <br/>
