@@ -26,6 +26,7 @@ Tblazersfans::Application.routes.draw do
   end
 
   get "contact" => "page#contact"
+  post "contact" => "page#contact"
   get "home" => "page#home"
   get "news" => "page#news"
   get "forum" => "page#forum"
