@@ -25,11 +25,15 @@ Tblazersfans::Application.routes.draw do
 
   end
 
-  get "page/contact"
-  get "page/forum"
-  get "page/home"
-  get "page/news"
-  get "page/recaps"
+  get "contact" => "page#contact"
+  get "home" => "page#home"
+  get "news" => "page#news"
+  get "forum" => "page#forum"
+  get "recaps" => "page#recaps"
+  get "store" => "page#store"
+
+
+
 
   get "page/recaps15_16"
   get "page/recaps14_15"
