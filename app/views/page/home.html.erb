@@ -1,5 +1,8 @@
 <% require 'active_support'%>
+<div data-uk-slider>
 
+  <div class="uk-slider-container">
+    <ul class="uk-slider uk-grid-width-medium-1-4">
 <% @last_recapper2.each do |c| %>
 
     <% versus_or_at="" %>
@@ -22,14 +25,25 @@
         <% if c.htotal.to_i < c.atotal.to_i %>
             <% win_or_loss ="<span class='win_loss_box_show_loss2'>L</span>" %> <% end %>
 
-        <div class="uk-clearfix">
-          <table id="header_last_game">
-            <tr><th colspan="3">Last Game</th></tr>
-            <tr><td><%= image_tag(home_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.h_initials %><br/><%=c.htotal%></td><td><%= versus_or_at.html_safe%><br/><br/><%=win_or_loss.html_safe%></td><td><%= image_tag(away_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.a_initials %><br/><%=c.atotal%></td></tr>
-            <tr><td colspan="3"><%= date_time.strftime("%b #{date_time.day.ordinalize} %Y ")%></td></tr>
-            <tr><td colspan="3"><div data-uk-button-radio><%= link_to 'Box Score', c, class: "uk-button uk-button-mini" %> | <%= link_to 'Previous Scores', game_recaps_path, class: "uk-button uk-button-mini" %> </div></td></tr>
-          </table>
-        </div>
+
+
+
+
+
+              <li>
+                <div class="uk-clearfix">
+                  <table id="header_last_game">
+                    <tr><th colspan="3"><%= date_time.strftime("%b #{date_time.day.ordinalize} %Y ")%></th></tr>
+                    <tr><td><%= image_tag(home_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.h_initials %><br/><%=c.htotal%></td><td><%= versus_or_at.html_safe%><br/><br/><%=win_or_loss.html_safe%></td><td><%= image_tag(away_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.a_initials %><br/><%=c.atotal%></td></tr>
+                    <tr><td colspan="3"><%= date_time.strftime("%b #{date_time.day.ordinalize} %Y ")%></td></tr>
+                    <tr><td colspan="3"><div data-uk-button-radio><%= link_to 'Box Score', c, class: "uk-button uk-button-mini" %> | <%= link_to 'Previous Scores', game_recaps_path, class: "uk-button uk-button-mini" %> </div></td></tr>
+                  </table>
+                </div>
+
+              </li>
+
+
+
 
     <%else %>
     <% end %>
@@ -45,26 +59,28 @@
         <% if c.atotal.to_i < c.htotal.to_i %>
             <% win_or_loss ="<span class='win_loss_box_show_loss2'>L</span>" %>
         <% end %>
+              <li>
         <div class="uk-clearfix">
           <table id="header_last_game">
-            <tr><th colspan="3">Last Game: <%= date_time.strftime("%b #{date_time.day.ordinalize} %Y ")%></th></tr>
+            <tr><th colspan="3"><%= date_time.strftime("%b #{date_time.day.ordinalize} %Y ")%></th></tr>
             <tr><td><%= image_tag(away_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.a_initials %><br/><%=c.atotal%></td><td><%= versus_or_at.html_safe%><br/><br/><%=win_or_loss.html_safe%></td><td><%= image_tag(home_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.h_initials %><br/><%=c.htotal%></td></tr>
             <tr><td colspan="3"><div data-uk-button-radio><%= link_to 'Box Score', c, class: "uk-button uk-button-mini" %> | <%= link_to 'Previous Scores', game_recaps_path, class: "uk-button uk-button-mini" %> </div></td></tr>
           </table>
         </div>
-
+              </li>
     <% else %>
 
     <% end %>
 
 <% end %>
-<br/>
-<hr>
-<div data-uk-slider>
 
-
+</ul>
+</div>
 
 </div>
+
+<br/>
+<hr>
 
 <% @last_articles.each do |x| %>
     <% date_time2 =Time.parse(x.date.to_s) %>
@@ -88,4 +104,5 @@
 <%end%>
 <hr>
 <h2>Blazer and NBA Memes?</h2>
+
 
