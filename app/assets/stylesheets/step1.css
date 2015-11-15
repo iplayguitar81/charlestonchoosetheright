@@ -883,6 +883,10 @@ td.logo_box {
     width: 80%;
 }
 
+#header_last_game th{
+text-align:center;
+}
+
 #header_last_game td{
     border: 1px inset #000000;
     text-align:center;
