@@ -1129,7 +1129,10 @@ a.boxscore_link {
 }
 
 #boxscore_buttons{
-    margin-left:auto;
-    margin-right:auto;
+    text-align: center;
     width: 85%;
+}
+
+#boxscore_buttons a {
+    margin-top: 1em;
 }
