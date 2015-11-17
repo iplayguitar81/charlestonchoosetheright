@@ -1131,4 +1131,5 @@ a.boxscore_link {
 #boxscore_buttons{
     margin-left:auto;
     margin-right:auto;
+    width: 85%;
 }
