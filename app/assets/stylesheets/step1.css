@@ -887,6 +887,7 @@ td.logo_box {
 #header_last_game th{
 text-align:center;
     font-size: .7em;
+    background-color: #4d5465;
 }
 
 #header_last_game td{
@@ -1130,6 +1131,11 @@ a.boxscore_link {
 }
 
 #boxscore_buttons{
-    margin-left:auto;
-    margin-right:auto;
+    text-align: center;
+
+
+}
+
+#boxscore_buttons a {
+    margin-top: 1em;
 }
