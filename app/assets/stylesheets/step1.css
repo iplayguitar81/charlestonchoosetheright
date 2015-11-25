@@ -876,19 +876,19 @@ td.logo_box {
     text-shadow: 1px 1px #000000;
 }
 
-#header_last_game{
+.header_last_game{
     border: 1px inset #000000;
     float:right;
     margin-right: 5%;
     width: 80%;
 }
 
-#header_last_game th{
+.header_last_game th{
     text-align:center;
     font-size: .7em;
 }
 
-#header_last_game td{
+.header_last_game td{
     border: 1px inset #000000;
     text-align:center;
     line-height: .85em;
