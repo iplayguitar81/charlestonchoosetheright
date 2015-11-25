@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'Ripper';
-    src: url("../bauhaus93.ttf"); }
+    src: url("bauhaus93.ttf"); }
 
 html {
     font: 400 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -245,7 +245,7 @@ iframe {
 
 @media screen and (max-width: 400px) {
     @-ms-viewport {
-        width: device-width
+        width: device-width;
     }
 }
 
@@ -1179,21 +1179,33 @@ iframe {
 }
 
 .uk-article-title {
-    font-size: 36px;
+    font-size: 2.7em;
     line-height: 42px;
     font-weight: 400;
-    text-transform: none
+    text-transform: none;
+    font-family: Ripper;
+    text-align: center;
 }
 
 .uk-article-title a {
     color: inherit;
-    text-decoration: none
+
 }
+.uk-article-title a:hover {
+    background-color: #D73F3F;
+    text-decoration: none;
+    color: #FFFFFF;
+
+}
+
+
 
 .uk-article-meta {
     font-size: 12px;
     line-height: 18px;
-    color: #999
+    color: #999;
+    font-family: Tahoma, Arial, "Trebuchet MS";
+    text-align:center;
 }
 
 .uk-article-lead {
@@ -1416,8 +1428,8 @@ ul.uk-nav-sub {
 }
 
 .uk-nav-navbar > li > a {
-    color: #444
-    font-family: 'Ripper';
+    color: #444;
+    font-family: Ripper;
 }
 
 .uk-nav-navbar > li > a:focus, .uk-nav-navbar > li > a:hover {
@@ -1444,18 +1456,21 @@ ul.uk-nav-sub {
 
 .uk-nav-offcanvas > li > a {
     color: #ccc;
-    padding: 10px 15px
+    padding: 10px 15px;
+font-family: 'Ripper';
 }
 
 .uk-nav-offcanvas > .uk-open > a, html:not(.uk-touch) .uk-nav-offcanvas > li > a:focus, html:not(.uk-touch) .uk-nav-offcanvas > li > a:hover {
     background: #404040;
     color: #fff;
-    outline: 0
+    outline: 0;
+    font-family: 'Ripper';
 }
 
 html .uk-nav.uk-nav-offcanvas > li.uk-active > a {
     background: #1a1a1a;
-    color: #fff
+    color: #fff;
+font-family: 'Ripper';
 }
 
 .uk-nav-offcanvas .uk-nav-header {
@@ -1498,8 +1513,8 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 
 .uk-navbar-nav > li {
     float: left;
-    position: relative
-    width: 100%;
+    position: relative;
+
 }
 
 .uk-navbar-nav > li > a {
@@ -1510,13 +1525,10 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
     padding: 0 15px;
     line-height: 40px;
     color: #444;
-    font-size: 1.1em;
     font-family: Ripper !important;
-
-
+    text-shadow: none !important;
     color: #000000;
-    font-size: 1.5em;
-
+    font-size: 1em;
 
 }
 
@@ -1528,12 +1540,13 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
 
+
 }
 
 .uk-navbar-nav > li > a:active {
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
-
+    text-decoration: underline;
 }
 
 .uk-navbar-nav > li.uk-active > a {
@@ -2695,8 +2708,8 @@ select.uk-form-width-mini {
 
 @font-face {
     font-family: FontAwesome;
-    src: url(../fonts/fontawesome-webfont.eot);
-    src: url(../fonts/fontawesome-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/fontawesome-webfont.woff2) format('woff2'), url(../fonts/fontawesome-webfont.woff) format("woff"), url(../fonts/fontawesome-webfont.ttf) format("truetype");
+    src: url('fontawesome-webfont.eot');
+    src: url(fontawesome-webfont.eot?#iefix) format("embedded-opentype"), url(fontawesome-webfont.woff2) format('woff2'), url(fontawesome-webfont.woff) format("woff"), url(fontawesome-webfont.ttf) format("truetype");
     font-weight: 400;
     font-style: normal
 }
@@ -6236,6 +6249,23 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
         width: auto;
         margin: 10px auto
     }
+
+    img.uk-thumbnail-medium {
+
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    h1.uk-article-title {
+        text-align:center;
+    }
+
+    .uk-article-meta {
+        text-align: center;
+    }
+
 }
 
 .uk-open .uk-modal-dialog {
@@ -6280,6 +6310,9 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
 }
 
 @media (min-width: 768px) {
+
+
+
     .uk-modal-dialog-large {
         width: 930px
     }
