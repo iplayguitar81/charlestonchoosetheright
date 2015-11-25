@@ -245,7 +245,7 @@ iframe {
 
 @media screen and (max-width: 400px) {
     @-ms-viewport {
-        width: device-width
+        width: device-width;
     }
 }
 
