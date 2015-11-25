@@ -17,6 +17,6 @@
 //= require uikit.min
 //= require tinymce-jquery
 //=require jquery.validate.min
-//=require slideshow-fix.min.js
+//=require slideshow-fx.min.js
 //= require_tree .
 
