@@ -248,14 +248,14 @@
 
 
 
-    <% if @game_recap.ap8_name !=nil %>
+    <% if  @game_recap.ap8_name.to_s.strip.length > 0 %>
         <tr style='border: 1px inset #000;'><td class='<%= astart_class8 %>'><%=@game_recap.ap8_name%></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%=@game_recap.ap8_min%></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%=@game_recap.ap8_pts%></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.ap8_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @game_recap.ap8_3pma %></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.ap8_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @game_recap.ap8_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @game_recap.ap8_dreb %></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.ap8_reb %></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.ap8_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @game_recap.ap8_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @game_recap.ap8_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_box_column'><%= @game_recap.ap8_to %></td><td class='<%= astart_class8 %>' style='border: 1px inset #000;'><%= @game_recap.ap8_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class8 %> hide_this'>$a_starter7</td></tr>
     <%else%>
 
     <%end%>
 
 
-    <% if @game_recap.ap9_name !=nil %>
+    <% if  @game_recap.ap9_name.to_s.strip.length > 0 %>
 
         <tr style='border: 1px inset #000;'><td class='<%= astart_class9 %>'><%=@game_recap.ap9_name%></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%=@game_recap.ap9_min%></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%=@game_recap.ap9_pts%></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.ap9_fgma.to_s %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @game_recap.ap9_3pma %></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.ap9_ftma %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @game_recap.ap9_oreb %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @game_recap.ap9_dreb %></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.ap9_reb %></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.ap9_ast %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @game_recap.ap9_stl %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @game_recap.ap9_blk %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_box_column'><%= @game_recap.ap9_to %></td><td class='<%= astart_class9 %>' style='border: 1px inset #000;'><%= @game_recap.ap9_pf %></td><td style='border: 1px inset #000;' class='<%= astart_class9 %> hide_this'>$a_starter8</td></tr>
     <%else%>

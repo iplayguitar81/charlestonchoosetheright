@@ -48,14 +48,12 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432</jdbc-url>
-      <libraries />
     </data-source>
     <data-source source="LOCAL" name="PostgreSQL - blazers_fans_staging@http://104.131.92.186/" uuid="de76f602-a29d-4813-8bbf-85dd76fe2333">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://http://104.131.92.186/:80/blazers_fans_staging</jdbc-url>
-      <libraries />
     </data-source>
   </component>
 </project>
