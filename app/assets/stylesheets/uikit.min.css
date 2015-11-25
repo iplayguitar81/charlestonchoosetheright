@@ -1417,7 +1417,7 @@ ul.uk-nav-sub {
 
 .uk-nav-navbar > li > a {
     color: #444
-    font-family: Ripper;
+    font-family: 'Ripper';
 }
 
 .uk-nav-navbar > li > a:focus, .uk-nav-navbar > li > a:hover {
