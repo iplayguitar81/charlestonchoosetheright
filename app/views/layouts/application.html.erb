@@ -4,7 +4,6 @@
   <title>TrailBlazersFans.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <%= csrf_meta_tags %>
@@ -23,17 +22,11 @@
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=590306801102510";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
-
-
 <header id="top" role="banner">
 
   <%= image_tag("new-logo-uikit.png", alt: "trailblazersfans.com")%>
 
 </header>
-
-
-
 
 
 <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
@@ -202,11 +195,8 @@
   <!--</nav>-->
 
 
-
-
   <div class="uk-grid" data-uk-grid-margin>
     <div class="uk-width-medium-3-4">
-
 
 
       <%= yield %>
