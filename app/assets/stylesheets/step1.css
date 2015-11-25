@@ -386,7 +386,7 @@ input#email {
     border-bottom: 3px solid #FFFFFF; }
 
 #nav ul {
-    *zoom: 1;
+    zoom: 1;
     display: block; }
 
 #nav ul:before, #nav ul:after {
@@ -876,7 +876,7 @@ td.logo_box {
     text-shadow: 1px 1px #000000;
 }
 
-.header_last_game{
+.header_last_game {
     border: 1px inset #000000;
     float:right;
     margin-right: 5%;
