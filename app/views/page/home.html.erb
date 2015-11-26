@@ -91,7 +91,7 @@
       <p class="uk-clearfix">
 
         <%= image_tag(x.image.url, class: "uk-thumbnail-medium uk-align-medium-right" ) %>
-        <span class="article-texterson"><%= truncate(strip_tags(x.story.html_safe).html_safe, length:100).html_safe%></span>
+        <span class="article-texterson"><%= raw truncate(strip_tags(x.story.html_safe).html_safe, length:100).html_safe%></span>
         <br/>
         <br/>
 
