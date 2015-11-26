@@ -1470,7 +1470,7 @@ font-family: 'Ripper';
 }
 
 html .uk-nav.uk-nav-offcanvas > li.uk-active > a {
-    background: #1a1a1a;
+    background: #D73F3F;
     color: #fff;
 font-family: 'Ripper';
 }
@@ -6401,7 +6401,7 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
     z-index: 1001;
     width: 270px;
     max-width: 100%;
-    background: #333;
+    background: #4d5465;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     -webkit-transition: -webkit-transform .3s ease-in-out;
