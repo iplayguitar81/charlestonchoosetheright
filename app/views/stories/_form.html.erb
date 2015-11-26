@@ -35,7 +35,10 @@
 
     <div class="field">
     <%= f.label :image %><br>
-    <%= f.file_field :image %>
+      Current Image:
+      <%= image_tag(:image.url, class: "uk-thumbnail-medium uk-align-medium-right" ) %>
+
+      <%= f.file_field :image %>
   </div>
 
     <div class="field">
