@@ -1137,3 +1137,9 @@ a.boxscore_link {
 #boxscore_buttons a {
     margin-top: 1em;
 }
+
+iframe {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
