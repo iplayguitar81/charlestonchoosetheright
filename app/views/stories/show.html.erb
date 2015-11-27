@@ -4,7 +4,7 @@
 <div id="news_show_organize3">
   <h2><%= @story.title %><br/><span class="uk-article-meta">by <%= @story.author %><br/><%= date_time.strftime("%B #{date_time.day.ordinalize} %Y ")%></h2></span>
 
-  <%= image_tag @story.image.url, class: "uk-thumbnail" %>
+  <%= image_tag @story.image.url, class: "uk-thumbnail uk-align-center" %>
   <p>
     <strong>Caption:</strong>
     <%= @story.caption %>
