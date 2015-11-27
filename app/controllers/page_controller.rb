@@ -1,5 +1,10 @@
 class PageController < ApplicationController
 
+
+  def calendar
+    
+  end
+
   def contact
 
     @name = params['name']
@@ -26,6 +31,7 @@ class PageController < ApplicationController
 
   def news
   end
+
 
   def recaps
   end
