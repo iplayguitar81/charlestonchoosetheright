@@ -1143,3 +1143,9 @@ iframe {
     margin-left: 5%;
     margin-right: 5%;
 }
+
+.slider_score{
+    line-height:1em;
+    font-size:1.5em;
+    font-weight: 500;
+}
