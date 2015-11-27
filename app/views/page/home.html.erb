@@ -29,7 +29,7 @@
                 <div class="uk-clearfix">
                   <table class="header_last_game">
                     <tr><th colspan="3"><%= date_time.strftime("%b #{date_time.day.ordinalize} %Y ")%></th></tr>
-                    <tr><td><%= image_tag(home_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.h_initials %><br/><%=c.htotal%></td><td><%= versus_or_at.html_safe%><br/><br/><%=win_or_loss.html_safe%></td><td><%= image_tag(away_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.a_initials %><br/><%=c.atotal%></td></tr>
+                    <tr><td><%= image_tag(home_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.h_initials %><br/><span class='slider_score'><%=c.htotal%></span></td><td><%= versus_or_at.html_safe%><br/><br/><%=win_or_loss.html_safe%></td><td><%= image_tag(away_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.a_initials %><br/><span class='slider_score'><%=c.atotal%></span></td></tr>
                     <tr><td colspan="3"><div data-uk-button-radio><%= link_to 'Box Score', c, class: "uk-button uk-button-mini" %>  </div></td></tr>
                   </table>
                 </div>
@@ -54,7 +54,7 @@
                 <div class="uk-clearfix">
                   <table class="header_last_game">
                     <tr><th colspan="3"><%= date_time.strftime("%b #{date_time.day.ordinalize} %Y ")%></th></tr>
-                    <tr><td><%= image_tag(away_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.a_initials %><br/><%=c.atotal%></td><td><%= versus_or_at.html_safe%><br/><br/><%=win_or_loss.html_safe%></td><td><%= image_tag(home_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.h_initials %><br/><%=c.htotal%></td></tr>
+                    <tr><td><%= image_tag(away_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.a_initials %><br/><span class='slider_score'><%=c.atotal%></span></td><td><%= versus_or_at.html_safe%><br/><br/><%=win_or_loss.html_safe%></td><td><%= image_tag(home_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.h_initials %><br/><span class='slider_score'><%=c.htotal%></span></td></tr>
                     <tr><td colspan="3"><div data-uk-button-radio><%= link_to 'Box Score', c, class: "uk-button uk-button-mini" %>  </div></td></tr>
                   </table>
                 </div>
@@ -87,19 +87,13 @@
     <article class="uk-article">
       <h1 class="uk-article-title"><%= link_to x.title, x, class: "uk-article-title-a" %></h1>
       <p class="uk-article-meta"><%= "written by "+x.author %> <br/><%=" on "+ date_time2.strftime("%B #{date_time2.day.ordinalize} %Y ") %> </p>
-
       <p class="uk-clearfix">
-
         <% story=(x.story.html_safe.to_s)
-
            story2=strip_tags(story)
-
-
         %>
            <%= image_tag(x.image.url, class: "uk-thumbnail-medium uk-align-medium-right" ) %>
         <span class="article-texterson"><%= sanitize(story2, :tags=>[]).truncate(100, :separator => " ").html_safe%></span>
         <br/>
-
         <br/>
 
         <%= link_to 'Continue Reading', x, class: "uk-button uk-button-danger" %>
