@@ -90,9 +90,16 @@
 
       <p class="uk-clearfix">
 
-        <%= image_tag(x.image.url, class: "uk-thumbnail-medium uk-align-medium-right" ) %>
-        <span class="article-texterson"><%=  truncate(strip_tags(x.story.html_safe).html_safe, length:100).html_safe%></span>
+        <% story=(x.story.html_safe.to_s)
+
+           story2=strip_tags(story)
+
+
+        %>
+           <%= image_tag(x.image.url, class: "uk-thumbnail-medium uk-align-medium-right" ) %>
+        <span class="article-texterson"><%= sanitize(story2, :tags=>[]).truncate(100, :separator => " ").html_safe%></span>
         <br/>
+
         <br/>
 
         <%= link_to 'Continue Reading', x, class: "uk-button uk-button-danger" %>
