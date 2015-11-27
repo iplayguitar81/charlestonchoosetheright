@@ -92,7 +92,7 @@
            story2=strip_tags(story)
         %>
            <%= image_tag(x.image.url, class: "uk-thumbnail-medium uk-align-medium-right" ) %>
-        <span><p class="article-texterson"><%= sanitize(story2, :tags=>[]).truncate(100, :separator => " ").html_safe%></p></span>
+        <span class="article-texterson"><%= sanitize(story2, :tags=>[]).truncate(100, :separator => " ").html_safe%></span>
         <br/>
         <br/>
 
