@@ -2,7 +2,8 @@ class PageController < ApplicationController
 
 
   def calendar
-    
+    @season15_16 = GameRecap.where("datey BETWEEN '2015-10-20T00:00:00-00:00' AND '2016-06-30T00:00:00-00:00' ").order("datey DESC")
+
   end
 
   def contact
