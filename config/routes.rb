@@ -34,6 +34,8 @@ Tblazersfans::Application.routes.draw do
   get "forum" => "page#forum"
   get "recaps" => "page#recaps"
   get "store" => "page#store"
+  get "calendar" => "page#calendar"
+
 
 
 
