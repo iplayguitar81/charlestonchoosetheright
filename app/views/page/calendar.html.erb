@@ -1,11 +1,12 @@
-<h1>Recaps</h1>
+<h1>Digital Pocket Schedule?</h1>
 
 <div id="articles">
-<% @season15_16.each do |matchup| %>
-<h2><%= link_to matchup.game_string, matchup%></h2>
-    <p class="info"><%=matchup.atotal%></p>
+<%= calendar do |date| %>
 
+  <%= date.day %>
 
-<%end %>
+  <% end %>
 
 </div>
+
+
