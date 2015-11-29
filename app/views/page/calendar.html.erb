@@ -1,12 +1,48 @@
-<h1>Digital Pocket Schedule?</h1>
+<h1>Future Digital Pocket Schedule</h1>
 
 <div id="articles">
-<%= calendar do |date| %>
 
-  <%= date.day %>
+  <h2 id="month">
+  <%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %> <%= link_to ">", date: @date.next_month %></h2>
+
+
+  <%= calendar @date do |datey| %>
+
+<%# .strftime("%m/%d/%Y") %>
+  <%= datey.day %>
+      <% if @season15_16_by_date[datey.strftime("%Y-%m-%d")] %>
+
+
+      <ul>
+        <% @season15_16_by_date[datey.strftime("%Y-%m-%d")].each do |matchup| %>
+
+        <li><%= link_to (""+matchup.a_nick+"<br/> @ <br/>"+ matchup.h_nick).html_safe, matchup %></li>
+        <%end %>
+
+      </ul>
+
+      <%end%>
 
   <% end %>
 
 </div>
+
+
+<% #MM/DD/YYYY %>
+<% @season15_16.each do |matchup| %>
+
+
+    <h2><%= link_to ""+matchup.a_nick+" vs. "+ matchup.h_nick, matchup%></h2>
+<p><%=matchup.datey%></p>
+
+
+<p class="info"><%= matchup.atotal%></p>
+
+
+
+<% end %>
+
+
 
 
