@@ -4,8 +4,7 @@ class PageController < ApplicationController
   def calendar
     @season15_16 = GameRecap.where("datey BETWEEN '2015-10-20T00:00:00-00:00' AND '2016-06-30T00:00:00-00:00' ").order("datey DESC")
     @season15_16_by_date = @season15_16.group_by(&:datey)
-    @date = Date.today
-
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
   end
 
