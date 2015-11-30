@@ -1,3 +1,5 @@
+
+
 <h1>Future Recap Calendar</h1>
 
 <div id="calendar">
@@ -8,7 +10,7 @@
 
 
   <%= calendar @date do |datey| %>
-
+      <%versus_or_at="" %>
 <%# .strftime("%m/%d/%Y") %>
   <%= datey.day %>
       <% if @season15_16_by_date[datey.strftime("%Y-%m-%d")] %>
@@ -17,7 +19,34 @@
       <ul>
         <% @season15_16_by_date[datey.strftime("%Y-%m-%d")].each do |matchup| %>
 
-        <li><%= link_to (""+matchup.a_initials+" "+ matchup.atotal+"<br/> @ <br/>"+ matchup.h_initials+" "+ matchup.htotal).html_safe, matchup %></li>
+            <% if matchup.h_initials=='POR' %>
+
+
+                <% if matchup.htotal.to_i > matchup.atotal.to_i %>
+                <%win_or_loss="W" %>
+
+                <% elsif matchup.htotal.to_i < matchup.atotal.to_i %>
+                <% win_or_loss="L" %>
+
+
+                    <% end %>
+
+
+            <% end %>
+
+            <% if matchup.a_initials=='POR' %>
+                <% if matchup.atotal.to_i > matchup.htotal.to_i %>
+                    <%win_or_loss="W" %>
+                    <% elsif matchup.atotal.to_i < matchup.htotal.to_i%>
+                    <%win_or_loss="L" %>
+
+
+                <% end %>
+
+            <%end %>
+
+
+        <li><%= link_to (""+matchup.a_initials+" "+ matchup.atotal+"<br/> @ <br/>"+ matchup.h_initials+" "+ matchup.htotal+"<br/>"+win_or_loss.to_s).html_safe, matchup %></li>
         <%end %>
 
       </ul>
