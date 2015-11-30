@@ -1,12 +1,13 @@
 
 
-<h1>Future Recap Calendar</h1>
+<h1>Boxscores &amp; Game Calendar</h1>
 
 <div id="calendar">
 
   <h2 id="month">
   <%= link_to "<", date: @date.prev_month %>
     <%= @date.strftime("%B %Y") %> <%= link_to ">", date: @date.next_month %></h2>
+
 
 
   <%= calendar @date do |datey| %>
@@ -56,7 +57,16 @@
   <% end %>
 
 </div>
+<br/>
+<br/>
+<div id="calendar_key">
+  <h2>calendar key</h2>
+  <table>
+    <tr><td><div class="todays_date">Today's Date: <%= @date %></div></td><td><div class="home_key">Home</div></td><td><div class="away_key">Away</div></td></tr>
 
+  </table>
+
+</div>
 
 <% #MM/DD/YYYY %>
 <% @season15_16.each do |matchup| %>
