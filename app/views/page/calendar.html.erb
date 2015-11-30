@@ -17,7 +17,7 @@
       <ul>
         <% @season15_16_by_date[datey.strftime("%Y-%m-%d")].each do |matchup| %>
 
-        <li><%= link_to (""+matchup.a_initials+"<br/> @ <br/>"+ matchup.h_initials).html_safe, matchup %></li>
+        <li><%= link_to (""+matchup.a_initials+" "+ matchup.atotal+"<br/> @ <br/>"+ matchup.h_initials+" "+ matchup.htotal).html_safe, matchup %></li>
         <%end %>
 
       </ul>
