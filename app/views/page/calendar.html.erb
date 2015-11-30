@@ -1,19 +1,15 @@
-
-
 <h1>Boxscores &amp; Game Calendar</h1>
 
 <div id="calendar">
-
   <h2 id="month">
   <%= link_to "<", date: @date.prev_month %>
     <%= @date.strftime("%B %Y") %> <%= link_to ">", date: @date.next_month %></h2>
 
 
-
   <%= calendar @date do |datey| %>
       <%versus_or_at="" %>
-<%# .strftime("%m/%d/%Y") %>
-  <%= datey.day %>
+
+      <%= datey.day %>
       <% if @season15_16_by_date[datey.strftime("%Y-%m-%d")] %>
 
 
@@ -62,7 +58,7 @@
 <div id="calendar_key">
   <h2>calendar key</h2>
   <table>
-    <tr><td><div class="todays_date">Today's Date: <%= @date %></div></td><td><div class="home_key"><span href="" class="uk-icon-justify uk-icon-home"></span>Home</div></td><td><div class="away_key"><span href="" class="uk-icon-justify uk-icon-plane"></span>Away</div></td></tr>
+    <tr><td><div class="todays_date">Today</div></td><td><div class="home_key"><span href="" class="uk-icon-justify uk-icon-home"></span>Home</div></td><td><div class="away_key"><span href="" class="uk-icon-justify uk-icon-plane"></span>Away</div></td></tr>
 
   </table>
 
