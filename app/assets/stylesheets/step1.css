@@ -1251,10 +1251,12 @@ span.article-texterson:first-letter{
     margin-left: 10%;
     margin-right: 15%;
     width: 100%;
+    color: #FFFFFF;
 }
 
 .away_key {
 background-color: #D73F3F;
     margin-left: 15%;
     width: 100%;
+    color: #FFFFFF;
 }
