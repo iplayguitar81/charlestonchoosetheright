@@ -9,7 +9,6 @@ class PageController < ApplicationController
   end
 
   def contact
-
     @name = params['name']
     if @name ==''
     @error_msg='Must enter your name!!!'
@@ -63,7 +62,6 @@ class PageController < ApplicationController
   end
 
   def recaps13_14
-
 
     @season13_14 = GameRecap.where("datey BETWEEN '2013-10-30T00:00:00-00:00' AND '2014-06-30T00:00:00-00:00' ").order("datey DESC")
     @topic = GameRecap.where("datey BETWEEN '2013-10-30T00:00:00-00:00' AND '2014-06-30T00:00:00-00:00' ").order("datey DESC")
