@@ -1204,6 +1204,7 @@ span.article-texterson:first-letter{
 
 #calendar .today {
     background-color: forestgreen;
+    color: yellow;
 }
 
 #calendar ul {
