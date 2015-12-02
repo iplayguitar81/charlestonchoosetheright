@@ -1240,7 +1240,7 @@ span.article-texterson:first-letter{
 }
 
 .todays_date{
-    background-color: #D7F2FF;
+    background-color: gold;
     border: 1px inset #000000;
     margin-left: 1%;
     width: 100%;
@@ -1248,8 +1248,6 @@ span.article-texterson:first-letter{
 
 .home_key {
     background-color: #777777;
-    margin-left: 10%;
-    margin-right: 15%;
     width: 100%;
     color: #FFFFFF;
 }
@@ -1275,8 +1273,7 @@ span.article-texterson:first-letter{
 
 
 .away_key {
-background-color: #D73F3F;
-    margin-left: 15%;
+    background-color: #D73F3F;
     width: 100%;
     color: #FFFFFF;
 }
