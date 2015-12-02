@@ -1203,7 +1203,7 @@ span.article-texterson:first-letter{
 }
 
 #calendar .today {
-    background-color: gold;
+    background-color: forestgreen;
 }
 
 #calendar ul {
@@ -1240,7 +1240,7 @@ span.article-texterson:first-letter{
 }
 
 .todays_date{
-    background-color: gold;
+    background-color: forestgreen;
     border: 1px inset #000000;
     margin-left: 1%;
     width: 100%;
