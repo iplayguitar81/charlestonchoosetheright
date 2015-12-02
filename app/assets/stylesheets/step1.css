@@ -1186,7 +1186,7 @@ span.article-texterson:first-letter{
 }
 
 #calendar .notmonth {
-    color: #CCC;
+    color: maroon;
 }
 
 #calendar #month {
@@ -1245,13 +1245,17 @@ span.article-texterson:first-letter{
     margin-left: 1%;
     width: 100%;
     color: #FFFFFF;
+    text-align:center;
+
 }
 
 .home_key {
     background-color: #777777;
     width: 100%;
     color: #FFFFFF;
+    text-align:center;
 }
+
 .home_key a {
     color: #FFFFFF;
 }
@@ -1277,4 +1281,5 @@ span.article-texterson:first-letter{
     background-color: #D73F3F;
     width: 100%;
     color: #FFFFFF;
+    text-align:center;
 }
