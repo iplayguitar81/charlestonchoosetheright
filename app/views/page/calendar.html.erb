@@ -1,5 +1,5 @@
 <h1>Boxscores &amp; Game Calendar</h1>
-
+<% calendar_color="" %>
 <div id="calendar">
   <h2 id="month">
   <%= link_to "<", date: @date.prev_month %>
@@ -17,6 +17,7 @@
         <% @season15_16_by_date[datey.strftime("%Y-%m-%d")].each do |matchup| %>
 
             <% if matchup.h_initials=='POR' %>
+                <% calendar_color='home_key' %>
 
 
                 <% if matchup.htotal.to_i > matchup.atotal.to_i %>
@@ -32,6 +33,7 @@
             <% end %>
 
             <% if matchup.a_initials=='POR' %>
+                <% calendar_color='away_key' %>
                 <% if matchup.atotal.to_i > matchup.htotal.to_i %>
                     <%win_or_loss="W" %>
                     <% elsif matchup.atotal.to_i < matchup.htotal.to_i%>
@@ -43,7 +45,7 @@
             <%end %>
 
 
-        <li><%= link_to (""+matchup.a_initials+" "+ matchup.atotal+"<br/> @ <br/>"+ matchup.h_initials+" "+ matchup.htotal+"<br/>"+win_or_loss.to_s).html_safe, matchup %></li>
+        <li class="<%=calendar_color %>"><%= link_to (""+matchup.a_initials+" "+ matchup.atotal+"<br/> @ <br/>"+ matchup.h_initials+" "+ matchup.htotal+"<br/>"+win_or_loss.to_s).html_safe, matchup %></li>
         <%end %>
 
       </ul>
