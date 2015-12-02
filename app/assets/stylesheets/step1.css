@@ -1253,6 +1253,26 @@ span.article-texterson:first-letter{
     width: 100%;
     color: #FFFFFF;
 }
+.home_key a {
+    color: #FFFFFF;
+}
+.home_key a:hover {
+    color: #FFFFFF;
+}
+.home_key a:visited {
+    color: #FFFFFF;
+}
+
+.away_key a {
+    color: #FFFFFF;
+}
+.away_key a:hover {
+    color: #FFFFFF;
+}
+.away_key a:visited {
+    color: #FFFFFF;
+}
+
 
 .away_key {
 background-color: #D73F3F;
