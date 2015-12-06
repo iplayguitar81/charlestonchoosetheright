@@ -3,6 +3,8 @@ Tblazersfans::Application.routes.draw do
 
 
 
+  resources :highlights
+
   resources :game_recaps do
 
     collection { post :import}
