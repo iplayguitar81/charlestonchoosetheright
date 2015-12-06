@@ -1,0 +1,33 @@
+<h1>Listing highlights</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Caption</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @highlights.each do |highlight| %>
+      <tr>
+        <td><%= highlight.title %></td>
+        <td><%= highlight.date %></td>
+        <td><%= highlight.caption %></td>
+        <td><%= highlight.image %></td>
+        <td><%= link_to 'Show', highlight %></td>
+        <td><%= link_to 'Edit', edit_highlight_path(highlight) %></td>
+        <td><%= link_to 'Destroy', highlight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Highlight', new_highlight_path %>
