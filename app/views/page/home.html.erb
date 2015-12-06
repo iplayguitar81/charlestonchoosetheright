@@ -115,12 +115,13 @@
 
   <div class="uk-slider-container">
     <ul class="uk-slider uk-grid-width-medium-1-4">
-      <li><iframe width="240" height="180" src="https://www.youtube.com/embed/-bnthaM1kCY" frameborder="0" allowfullscreen></iframe></li>
-      <li><iframe width="240" height="180" src="https://www.youtube.com/embed/-bnthaM1kCY" frameborder="0" allowfullscreen></iframe></li>
-      <li><iframe width="240" height="180" src="https://www.youtube.com/embed/-bnthaM1kCY" frameborder="0" allowfullscreen></iframe></li>
+      <% @last_videos.each do |x| %>
+      <li><%= x.image.html_safe %></li>
       <li><iframe width="240" height="180" src="https://www.youtube.com/embed/-bnthaM1kCY" frameborder="0" allowfullscreen></iframe></li>
 
+
     </ul>
+          <% end %>
   </div>
 
   <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous"></a>
