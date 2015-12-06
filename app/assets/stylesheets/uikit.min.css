@@ -5468,7 +5468,9 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
 
 .uk-overlay-slide-bottom {
     -webkit-transform: translateY(100%);
-    transform: translateY(100%)
+    transform: translateY(100%);
+    color: red;
+    background-color: #000000;
 }
 
 .uk-overlay-slide-left {
