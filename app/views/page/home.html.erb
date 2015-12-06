@@ -116,7 +116,11 @@
   <div class="uk-slider-container">
     <ul class="uk-slider uk-grid-width-medium-1-4">
       <% @last_videos.each do |x| %>
-      <li><%= x.image.html_safe %></li>
+      <li>
+        <div class="uk-clearfix">
+        <%= x.image.html_safe %>
+          </div>
+      </li>
       <% end %>
           </ul>
 
