@@ -5323,7 +5323,12 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
     vertical-align: middle;
     overflow: hidden;
     -webkit-transform: translateZ(0);
-    margin: 0
+    margin: 0;
+    color: #FFFFFF;
+    background-color: #000000;
+    text-align:center;
+    text-shadow: red 1px 1px 1px;
+    font-family: Ripper;
 }
 
 .uk-overlay.uk-border-circle {
@@ -5469,8 +5474,8 @@ a.uk-thumbnail:focus, a.uk-thumbnail:hover {
 .uk-overlay-slide-bottom {
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
-    color: red;
-    background-color: #000000;
+
+
 }
 
 .uk-overlay-slide-left {
