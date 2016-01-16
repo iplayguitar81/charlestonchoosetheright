@@ -1155,6 +1155,8 @@ span.article-texterson:first-letter{
 
     color: red;
     font-size: 1.7em;
+    text-shadow: 1px 1px 1px #000;
+    padding-right: .1em;
 }
 
 
