@@ -582,9 +582,11 @@ h1.main-title {
     font-family: Ripper;
     color: #D73F3F;
     background-color: #000000;
+    opacity: .3;
     text-align: center;
     border-top: 2px solid #6d7173;
     padding-top: 1.5%;
+    background-image: url("clipcitytestbg.jpg");
 }
 
 
@@ -1287,4 +1289,11 @@ span.article-texterson:first-letter{
     width: 100%;
     color: #FFFFFF;
     text-align:center;
+}
+
+.tbfans-contain{
+    border-right: 1px solid #000000 !important;
+    border-left: 1px solid #000000;
+    border-top: 1px solid #000000;
+    background-color: #FFFFFF;
 }
