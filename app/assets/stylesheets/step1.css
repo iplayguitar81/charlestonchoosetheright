@@ -582,12 +582,24 @@ h1.main-title {
     font-family: Ripper;
     color: #D73F3F;
     background-color: #000000;
-    opacity: .3;
+
+    text-align: center;
+    border-top: 2px solid #6d7173;
+    padding-top: 1.5%;
+
+}
+
+#news_show_organize4 h2 {
+    font-family: Ripper;
+    color: #D73F3F;
+    background-color: #000000;
+    opacity: .4;
     text-align: center;
     border-top: 2px solid #6d7173;
     padding-top: 1.5%;
     background-image: url("clipcitytestbg.jpg");
 }
+
 
 
 h2.story_h2 {
