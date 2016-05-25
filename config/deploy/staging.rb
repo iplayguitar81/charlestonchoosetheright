@@ -39,7 +39,7 @@ set :deploy_to, "/var/www/blazers_fans_staging"
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
-
+config.assets.js_compressor = Uglifier.new(copyright: false)
 
 # Custom SSH Options
 # ==================
