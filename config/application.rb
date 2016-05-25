@@ -22,6 +22,6 @@ module Tblazersfans
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    Rails.application.config.assets.precompile += %w( jquery2.js uikit.min.js slideshow-fx.min.js tinymce-jquery.js step1.css uikit.almost-flat.min.css uikit.min.css )
+    Rails.application.config.assets.precompile += %w( jquery2.js uikit.min.js tinymce-jquery.js step1.css uikit.almost-flat.min.css uikit.min.css )
   end
 end
