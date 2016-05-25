@@ -40,11 +40,6 @@ set :deploy_to, "/var/www/blazers_fans_staging"
 # Feel free to add new variables to customise your setup.
 
 
-Rails.application.configure do
-  config.assets.js_compressor = Uglifier.new(output: { comments: :none })
-
-
-end
 
 
 # Custom SSH Options
