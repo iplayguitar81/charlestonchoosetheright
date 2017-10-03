@@ -23,8 +23,6 @@
           <%= label_tag @contact, "Preferred Method of Contact: " %>
           <%= radio_button_tag :contact, "Phone", @phone %>   <%= label_tag @phone, "Phone" %>
           <%= radio_button_tag :contact, "Email", @email_method %> <%= label_tag @email_method, "Email" %><br/> <br/>
-          <% products_array = Product.all.map { |product| [product.name, product.name] } %>
-          <%= label_tag :product, "Product/Topic of Discussion " %> <%=  select_tag :product, options_for_select(products_array)  %>
 
           <br/>
 
@@ -51,7 +49,6 @@
         <p><span class="recap_format">Newsletter :</span> <%= @newsletter %> </p>
         <p><span class="recap_format">Free Song :</span> <%= @song %> </p>
         <p><span class="recap_format">Preferred Contact :</span> <%= @contact %> </p>
-        <p><span class="recap_format">Product/ Topic of Concern :</span> <%= @product %> </p>
       </div>
       <br/>
       <br/>
