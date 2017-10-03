@@ -8,16 +8,92 @@ class PageController < ApplicationController
 
   end
 
-  def contact
-    @name = params['name']
-    if @name ==''
-    @error_msg='Must enter your name!!!'
+
+  def contact_us
+    @submitted =params["commit"]
+    @form_error = false
+    #flash[:notice] ="Hey you can't do that!"
+    @name = params["name"]
+    @email = params["email"]
+    @song = params["song"] == "song"
+    @phone = params["phone"]
+    @question = params["question"]
+    @newsletter = params["newsletter"] == "newsletter"  #checks if it is true or false
+    @contact = params["contact"]
+    @phone_num = @contact == "Phone"  #true or false
+    @email_method = @contact == "Email" #true or false
+    @product = params["product"]
+
+    def thank_you
+      UserMailer.thank_you(params[:email]).deliver
     end
 
-    @email = params["email"]
-    if @email ==''
-      @error_msg2='Must enter your name!!!'
+    def contact_us2
+      admin=Baller.where(:admin => true)
+      admin.each do |admin|
+        # name, email, phone, contact, product, question, newsletter, song
+        UserMailer.contact_us(admin.email,params[:name],params[:email],params[:phone],params[:contact],params[:product],params[:question],params[:newsletter],params[:song]).deliver
+
+      end
+
     end
+    #this is where this code goes to submit...
+    if params[:commit]
+
+
+      #Almost figured out the logic on this one.... maybe talk to Vascoe.. see what he thinks
+
+      if (@email.empty? && @name.empty? && @question.empty?)
+        flash.now[:error] = "Try again Bud!  You must enter your name, email address and question."
+        @form_error = true
+      elsif  (@email.nil? && @name.nil? && @question.nil?)
+        flash.now[:error] = "Try again Bud!  You must enter your name, email address and question."
+        @form_error = true
+
+      elsif (@email.nil? && @question.nil? && @name!="")
+        flash.now[:error] = "Try again Bud!  You must enter your email address and a question."
+        @form_error = true
+
+      elsif  (@email.empty? && @name.empty? )
+        flash.now[:error] = "Try again Bud!  You must enter both your name and email address."
+        @form_error = true
+
+      elsif (@email.nil? && @name.nil? )
+        flash.now[:error] = "Try again Bud!  You must enter both your name and email address."
+        @form_error = true
+
+      elsif @email.nil? || @email.empty?
+        flash.now[ :error ] = "Try again Bud! You must enter an email address bud!"
+        @form_error = true
+
+      elsif
+
+      @name.nil? || @name.empty?
+        flash.now[ :error ] = "You must enter your name Bud!"
+        @form_error = true
+
+      elsif
+
+      @question.nil? || @question.empty?
+        flash.now[ :error ] = "You must enter your question for us Bud!"
+        @form_error = true
+
+      else
+        contact_us2
+        thank_you
+
+      end
+
+
+
+
+
+
+
+    end
+
+
+
 
   end
 
