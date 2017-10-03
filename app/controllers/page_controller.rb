@@ -22,7 +22,6 @@ class PageController < ApplicationController
     @contact = params["contact"]
     @phone_num = @contact == "Phone"  #true or false
     @email_method = @contact == "Email" #true or false
-    @product = params["product"]
 
     def thank_you
       UserMailer.thank_you(params[:email]).deliver
