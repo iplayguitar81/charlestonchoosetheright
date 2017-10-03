@@ -27,12 +27,12 @@ Tblazersfans::Application.routes.draw do
 
   end
 
-  # get "contact" => "page#contact"
-  # post "contact" => "page#contact"
+  get "contact" => "page#contact"
+  post "contact" => "page#contact"
   #DRYER WAY TO GO:
 
 
-  match "contact_us" => "page#contact", :via => [:post, :get]
+  #match "contact" => "page#contact", :via => [:post, :get]
 
   get "home" => "page#home"
   get "news" => "page#news"
