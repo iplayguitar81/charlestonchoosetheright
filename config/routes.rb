@@ -42,6 +42,7 @@ Tblazersfans::Application.routes.draw do
   get "calendar" => "page#calendar"
 
 
+  get "home/mail" => "home#mail", :as =>'mail_contact'
 
 
 
