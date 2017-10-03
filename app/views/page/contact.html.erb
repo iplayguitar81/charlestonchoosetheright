@@ -3,7 +3,7 @@
   <% if ! @submitted || @form_error %>
       <h1 class="typical_headers">Contact Us</h1>
       <%= @error_msg %>
-      <%= form_for contact_path, :class => "contact_form", :controller =>"page", :action => "mail_contact", :method => "POST" do %>
+      <%= form_for contact_us_path, :class => "contact_form", :controller =>"page", :action => "mail_contact", :method => "POST" do %>
           <br/>
           <%= label_tag :name, "Enter Your Full Name: " %>
           <%= text_field_tag :name, @name, :autofocus => "autofocus", :placeholder => "Enter your name" %><br/><br/>
