@@ -1,5 +1,5 @@
 class GameRecapsController < ApplicationController
-  before_action :set_game_recap, only: [:show, :edit, :update, :destroy]
+  before_action :set_game_recap, only: [:show, :edit, :update, :destroy, :mail, :spam  ]
 
   respond_to :html
 
@@ -9,6 +9,31 @@ class GameRecapsController < ApplicationController
     #@recappers = Recapper.all
     @game_recaps = GameRecap.page(@page).order(:datey => :desc)
   end
+
+
+  def mail    # mail_game_recap_path
+
+    UserMailer.newsletter(@game_recap, current_user).deliver
+    redirect_to(@game_recap, notice: 'Boxscore email was sent')
+
+  end
+
+
+  def spam    # spam game_recap_path
+    @game_recap = GameRecap.find_by_game_string(params[:id])
+    #get all the Users...
+    #loop through and send an email to each one..
+
+    users = Baller.all
+    users.each do | user|
+      UserMailer.newsletter(@game_recap, user).deliver
+
+    end
+
+    redirect_to(game_recaps_path, notice: 'Boxscore email was sent')
+
+  end
+
 
   def show
     #respond_with(@game_recap)
