@@ -14,7 +14,6 @@ class UserMailer < ActionMailer::Base
     @email=email
     @phone=phone
     @contact=contact
-    @product=product
     @question=question
     @newsletter=newsletter
     @song=song
