@@ -31,7 +31,7 @@ class PageController < ApplicationController
       admin=Baller.where(:admin => true)
       admin.each do |admin|
         # name, email, phone, contact, product, question, newsletter, song
-        UserMailer.contact_us(admin.email,params[:name],params[:email],params[:phone],params[:contact],params[:product],params[:question],params[:newsletter],params[:song]).deliver
+        UserMailer.contact_us(admin.email,params[:name],params[:email],params[:phone],params[:contact],params[:question],params[:newsletter],params[:song]).deliver
 
       end
 
