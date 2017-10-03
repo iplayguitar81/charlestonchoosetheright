@@ -1,7 +1,9 @@
 Tblazersfans::Application.routes.draw do
 
 
+get "game_recaps/:id/mail" => "game_recaps#mail", :as => 'mail_recap'
 
+get "game_recaps/:id/spam" => "game_recaps#spam", :as => 'spam_recap'
 
   resources :highlights
 
