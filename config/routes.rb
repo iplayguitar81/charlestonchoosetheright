@@ -29,8 +29,8 @@ get "game_recaps/:id/spam" => "game_recaps#spam", :as => 'spam_recap'
 
   end
 
-  get "contact" => "page#contact"
-  post "contact" => "page#contact"
+  get "contact_us" => "page#contact_us"
+  post "contact_us" => "page#contact_us"
   #DRYER WAY TO GO:
 
 
