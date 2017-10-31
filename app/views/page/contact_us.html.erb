@@ -1,0 +1,58 @@
+<div id="news_show_organize3">
+  <!--<h2>contact us</h2>-->
+  <% if ! @submitted || @form_error %>
+      <h1 class="typical_headers">Contact Us</h1>
+      <%= @error_msg %>
+      <%= form_for contact_us_path, :class => "contact_form", :controller =>"page", :action => "mail_contact", :method => "POST" do %>
+          <br/>
+          <%= label_tag :name, "Enter Your Full Name: " %>
+          <%= text_field_tag :name, @name, :autofocus => "autofocus", :placeholder => "Enter your name" %><br/><br/>
+
+          <%= label_tag :email, "Enter Your Valid Email Address: " %>
+          <%= email_field_tag :email, @email, :placeholder => "you@domain.com" %><br/><br/>
+          <%= label_tag :phone, "Enter Your Phone : " %>
+          <%= phone_field_tag :phone, @phone, :placeholder => "555-555-5555" %><br/>  <br/>
+          <%= label_tag :question, "Please Enter Your Question(s), Comment(s) or Concern(s): " %>  <br/> <br/>
+          <%= text_area_tag :question, @question, :size => "70x10" %>
+          <br/>
+          <br/>
+          <%= check_box_tag :newsletter, "newsletter", @newsletter %>
+          <%= label_tag :newsletter, "Subscribe To Our Newsletter?" %><br/> <br/>
+          <%= check_box_tag :song, "song", @song %>
+          <%= label_tag :song, "Free Song?" %><br/> <br/>
+          <%= label_tag @contact, "Preferred Method of Contact: " %>
+          <%= radio_button_tag :contact, "Phone", @phone %>   <%= label_tag @phone, "Phone" %>
+          <%= radio_button_tag :contact, "Email", @email_method %> <%= label_tag @email_method, "Email" %><br/> <br/>
+
+          <br/>
+
+
+          <br/>
+          <br/>
+          <div id="submit_it">
+            <%= submit_tag "Mail" %>
+          </div>
+          <br/>
+          <br/>
+      <% end %>
+      <br/>
+      <br/>
+  <% else %>
+      <h1 class="typical_headers">Thanks for your info!</h1>
+      <div id="contact_recap">
+
+        <span class="recap_format"><p>Here's a quick recap of what you submitted: </p></span>
+        <p><span class="recap_format">Your Name:</span> <%= @name %> </p>
+        <p><span class="recap_format">Your Email Address:</span> <%= @email %> </p>
+        <p><span class="recap_format">Your Phone #:</span> <%= @phone %> </p>
+        <p><span class="recap_format">Your Question/Comment/Concern:</span> <%= @question %> </p>
+        <p><span class="recap_format">Newsletter :</span> <%= @newsletter %> </p>
+        <p><span class="recap_format">Free Song :</span> <%= @song %> </p>
+        <p><span class="recap_format">Preferred Contact :</span> <%= @contact %> </p>
+      </div>
+      <br/>
+      <br/>
+  <% end %>
+  <br/>
+
+</div>
