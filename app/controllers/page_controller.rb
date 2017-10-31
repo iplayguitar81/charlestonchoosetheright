@@ -22,16 +22,17 @@ class PageController < ApplicationController
     @contact = params["contact"]
     @phone_num = @contact == "Phone"  #true or false
     @email_method = @contact == "Email" #true or false
+    @product = params["product"]
 
     def thank_you
       UserMailer.thank_you(params[:email]).deliver
     end
 
     def contact_us2
-      admin=Baller.where(:admin => 1)
+      admin=User.where(:admin => true)
       admin.each do |admin|
-        # name, email, phone, contact, question, newsletter, song
-        UserMailer.contact_us(admin.email,params[:name],params[:email],params[:phone],params[:contact],params[:question],params[:newsletter],params[:song]).deliver
+        # name, email, phone, contact, product, question, newsletter, song
+        UserMailer.contact_us(admin.email,params[:name],params[:email],params[:phone],params[:contact],params[:product],params[:question],params[:newsletter],params[:song]).deliver
 
       end
 
