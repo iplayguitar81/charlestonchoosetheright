@@ -89,11 +89,11 @@
       <% if action_name =="contact"%>
 
           <li class="uk-active">
-            <%= link_to("contact", contact_path)%>
+            <%= link_to("contact", contact_us_path)%>
           </li>
       <%else %>
           <li>
-            <%= link_to("contact", contact_path)%>
+            <%= link_to("contact", contact_us_path)%>
           </li>
       <%end%>
 
@@ -178,9 +178,9 @@
   <!--</li>-->
   <!--<li>-->
   <!--<% if action_name =="contact"%>-->
-      <!--<%= link_to("contact", contact_path, class: "current_page")%>-->
+      <!--<%= link_to("contact", contact_us_path, class: "current_page")%>-->
       <!--<%else%>-->
-      <!--<%= link_to("contact", contact_path)%>-->
+      <!--<%= link_to("contact", contact_us_path)%>-->
       <!--<%end%>-->
 
   <!--</li>-->
@@ -258,7 +258,7 @@
         <%= link_to("store", store_path)%>
       </li>
       <li>
-        <%= link_to("contact", contact_path)%>
+        <%= link_to("contact", contact_us_path)%>
       </li>
       <% if baller_signed_in? %>
 
