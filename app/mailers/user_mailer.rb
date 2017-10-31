@@ -8,13 +8,13 @@ class UserMailer < ActionMailer::Base
   #
 
 
-  def contact_us( admin, name, email, phone, contact, product, question, newsletter, song )
+  def contact_us( admin, name, email, phone, contact, question, newsletter, song )
     @greeting = "Howdy"
     @name=name
     @email=email
     @phone=phone
     @contact=contact
-    @product=product
+    #@product=product
     @question=question
     @newsletter=newsletter
     @song=song
