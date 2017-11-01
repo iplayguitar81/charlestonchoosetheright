@@ -102,7 +102,7 @@ class PageController < ApplicationController
 
   def home
 
-    @last_recapper2 = GameRecap.where("datey BETWEEN '2015-10-20T00:00:00-00:00' AND '2016-06-30T00:00:00-00:00' ").order("datey DESC").limit(10)
+    @last_recapper2 = GameRecap.where("datey BETWEEN '2017-10-17T00:00:00-00:00' AND '2017-06-30T00:00:00-00:00' ").order("datey DESC").limit(10)
     @last_articles = Story.order("date DESC").limit(5)
    # @last_videos = Highlight.order("date DESC").limit(5)
 
