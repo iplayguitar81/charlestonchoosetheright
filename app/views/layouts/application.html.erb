@@ -78,11 +78,11 @@
       <% if action_name =="store"%>
 
           <li class="uk-active">
-            <%= link_to("store", store_path)%>
+            <%= link_to("calendar", calendar_path)%>
           </li>
       <%else %>
           <li>
-            <%= link_to("store", store_path)%>
+            <%= link_to("calendar", calendar_path)%>
           </li>
       <%end%>
 
@@ -170,9 +170,9 @@
   <!--&ndash;&gt;<li>-->
 
   <!--<% if action_name =="store"%>-->
-      <!--<%= link_to("store", store_path, class: "current_page")%>-->
+      <!--<%= link_to("calendar", calendar_path, class: "current_page")%>-->
       <!--<% else %>-->
-      <!--<%= link_to("store", store_path)%>-->
+      <!--<%= link_to("calendar", calendar_path)%>-->
       <!--<%end %>-->
 
   <!--</li>-->
@@ -255,7 +255,7 @@
         <%= link_to("forum", forum_path)%>
       </li>
       <li>
-        <%= link_to("store", store_path)%>
+        <%= link_to("calendar", calendar_path)%>
       </li>
       <li>
         <%= link_to("contact", contact_us_path)%>
