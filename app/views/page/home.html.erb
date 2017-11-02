@@ -14,7 +14,7 @@
           <% away_nick_dash=c.afname.parameterize+'.png' %>
           <% home_nick_dash=c.hfname.parameterize+'.png' %>
           <%# c.a_nick %>
-          <% date_time =Time.parse(c.datey.to_s) %>
+
 
           <% #I can build this out with logic and then make portland away or memphis above in the logic sir. nice work.%>
 
@@ -34,7 +34,7 @@
               <li>
                 <div class="uk-clearfix">
                   <table class="header_last_game">
-                    <tr><th colspan="3"><%= date_time.strftime("%b #{date_time.day.ordinalize} %Y ")%></th></tr>
+                    <tr><th colspan="3"><%= date_format_string(c.datey.to_s) %></th></tr>
                     <tr><td><%= image_tag(home_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.h_initials %><br/><span class='slider_score'><%=c.htotal%></span></td><td><%= versus_or_at.html_safe%><br/><br/><%=win_or_loss.html_safe%></td><td><%= image_tag(away_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.a_initials %><br/><span class='slider_score'><%=c.atotal%></span></td></tr>
                     <tr><td colspan="3"><div data-uk-button-radio><%= link_to 'Box Score', c, class: "uk-button uk-button-mini" %>  </div></td></tr>
                   </table>
@@ -59,7 +59,7 @@
               <li>
                 <div class="uk-clearfix">
                   <table class="header_last_game">
-                    <tr><th colspan="3"><%= date_time.strftime("%b #{date_time.day.ordinalize} %Y ")%></th></tr>
+                    <tr><th colspan="3"><%= date_format_string(c.datey) %></th></tr>
                     <tr><td><%= image_tag(away_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.a_initials %><br/><span class='slider_score'><%=c.atotal%></span></td><td><%= versus_or_at.html_safe%><br/><br/><%=win_or_loss.html_safe%></td><td><%= image_tag(home_nick_dash, style: "", class: "uk-img-preserve")%><br/> <%=c.h_initials %><br/><span class='slider_score'><%=c.htotal%></span></td></tr>
                     <tr><td colspan="3"><div data-uk-button-radio><%= link_to 'Box Score', c, class: "uk-button uk-button-mini" %>  </div></td></tr>
                   </table>
