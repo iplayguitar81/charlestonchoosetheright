@@ -447,7 +447,7 @@
     <!--<th>Hometpf</th>-->
     <!--<th>Awaytto</th>-->
     <!--<th>Awaytpf</th>-->
-    <% if current_baller.try(:admin?) %>
+    <% if is_admin? %>
     <th></th>
     <th></th>
         <%else %>
@@ -914,7 +914,7 @@
         <!--<td><%= recapper.awaytto %></td>-->
         <!--<td><%= recapper.awaytpf %></td>-->
         <td><%= link_to 'Show', recapper %></td>
-        <% if current_baller.try(:admin?)%>
+        <% if is_admin? %>
         <td><%= link_to 'Edit', edit_recapper_path(recapper) %></td>
         <td><%= link_to 'Destroy', recapper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% else %>
@@ -929,7 +929,7 @@
 <%= paginate @recappers %>
 <br>
 
-<% if current_baller.try(:admin?) %>
+<% if is_admin? %>
 
 
 <h3>Import Recap(s)</h3>
