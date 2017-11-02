@@ -32,4 +32,16 @@ end
 
   end
 
+
+
+  def snippet(body)
+     story=(body.html_safe.to_s)
+    story2 =strip_tags(story)
+
+   story2=  sanitize(story2, :tags=>[]).truncate(100, :separator => " ").html_safe
+
+    return story2
+
+  end
+
 end
