@@ -28,7 +28,7 @@ end
 
   def is_admin?
 
-    return current_user.try(:admin?)
+    return current_baller.try(:admin?)
 
   end
 
