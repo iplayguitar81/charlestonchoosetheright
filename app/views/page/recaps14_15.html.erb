@@ -458,9 +458,7 @@
       <tr>
         <td><%= link_to recapper.game_string, recapper %></td>
 
-        <% date_time =Time.parse(recapper.datey) %>
-        <td><%= date_time.strftime("%A %B #{date_time.day.ordinalize} %Y %l:%M%P")%></td>
-
+        <td><%= date_format(recapper.datey) %></td>
         <!--<td><%= recapper.dashy_date %></td>-->
         <!--<td><%= recapper.afname %></td>-->
         <!--<td><%= recapper.hfname %></td>-->
