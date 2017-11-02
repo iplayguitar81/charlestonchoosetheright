@@ -209,9 +209,6 @@
 <%else %>
 <% end %>
 
-
-
-<% date_time =Time.parse(@recapper.datey) %>
 <p id="notice"><%= notice %></p>
 
 <% away_total_to=@recapper.ap1_to.to_i+@recapper.ap2_to.to_i+@recapper.ap3_to.to_i+@recapper.ap4_to.to_i+@recapper.ap5_to.to_i+@recapper.ap6_to.to_i+@recapper.ap7_to.to_i+@recapper.ap8_to.to_i+@recapper.ap9_to.to_i+@recapper.ap10_to.to_i+@recapper.ap11_to.to_i+@recapper.ap12_to.to_i+@recapper.ap13_to.to_i %>
@@ -219,7 +216,7 @@
 <% home_total_to=@recapper.hp1_to.to_i+@recapper.hp2_to.to_i+@recapper.hp3_to.to_i+@recapper.hp4_to.to_i+@recapper.hp5_to.to_i+@recapper.hp6_to.to_i+@recapper.hp7_to.to_i+@recapper.hp8_to.to_i+@recapper.hp9_to.to_i+@recapper.hp10_to.to_i+@recapper.hp11_to.to_i+@recapper.hp12_to.to_i+@recapper.hp13_to.to_i %>
 
 
-<div class='box_score'><h2 class='story_h2'><span class='article_title'><%=home_or_away.html_safe %>  </span><br/><span class='box_arena_h2'><%=@recapper.arena %> | </span><span class='box_start_date_h2'><%= date_time.strftime("%A %B #{date_time.day.ordinalize} %Y %l:%M%P")%></span><br/><%=win_or_loss.html_safe%></h2>
+<div class='box_score'><h2 class='story_h2'><span class='article_title'><%=home_or_away.html_safe %>  </span><br/><span class='box_arena_h2'><%=@recapper.arena %> | </span><span class='box_start_date_h2'><%= date_format(@recapper.datey)%></span><br/><%=win_or_loss.html_safe%></h2>
 
   <table id='last_game_period_box'>
     <% away_nick_dash=@recapper.afname.parameterize+'.png' %>
