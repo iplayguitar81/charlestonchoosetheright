@@ -7,7 +7,7 @@
       <th>Author</th>
       <th>Date</th>
       <th>Story</th>
-      <% if is_admin? %>
+      <% if current_baller.try(:admin?) %>
       <th></th>
       <th></th>
           <%else %>
@@ -24,7 +24,7 @@
         <td><%= story.author %></td>
         <td><%= date_format(story.date) %></td>
         <td><%= link_to 'Show', story %></td>
-        <% if is_admin? %>
+        <% if current_baller.try(:admin?) %>
         <td><%= link_to 'Edit', edit_story_path(story) %></td>
         <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
@@ -38,7 +38,7 @@
 </table>
 
 <br>
-<% if is_admin? %>
+<% if current_baller.try(:admin?) %>
 <%= link_to 'New Story', new_story_path %>
 
 <% else %>
