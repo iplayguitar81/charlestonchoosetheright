@@ -6,8 +6,6 @@ class PageController < ApplicationController
     @season15_16_by_date = @season15_16.group_by(&:dashy_date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
-
-
   end
 
 
