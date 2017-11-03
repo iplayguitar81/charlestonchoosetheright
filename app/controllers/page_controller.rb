@@ -37,6 +37,7 @@ class PageController < ApplicationController
       end
 
     end
+
     #this is where this code goes to submit...
     if params[:commit]
 
