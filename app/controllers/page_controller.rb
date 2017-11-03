@@ -6,23 +6,21 @@ class PageController < ApplicationController
     @season15_16_by_date = @season15_16.group_by(&:dashy_date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
-    # @time = Time.now
-    # @month = params[:month].to_i
-    # @year = params[:year].to_i
-    #
-    # @date = params[:date] ? Date.parse(params[:month], params[:year]) : Date.today
-    #
-    # if(!(@month >= 1 && @month <=12))
-    #
-    #   @month = @time.strftime("%m").to_i
-    #
-    # end
-    #
-    # if(@year <= 0)
-    #   @year = @time.strftime("%Y").to_i
-    #
-    #
-    # end
+    @time = Time.now
+    @month = params[:month].to_i
+    @year = params['year'].to_i
+
+    if(!(@month >= 1 && @month <=12))
+
+      @month = @time.strftime("%m").to_i
+
+    end
+
+    if(@year <= 0)
+      @year = @time.strftime("%Y").to_i
+
+
+    end
 
 
 
@@ -52,7 +50,7 @@ class PageController < ApplicationController
       admin=Baller.where(:admin => true)
       admin.each do |admin|
         # name, email, phone, contact, product, question, newsletter, song
-        UserMailer.contact_us(admin.email,params[:name],params[:email],params[:phone],params[:contact],params[:question],params[:newsletter]).deliver
+        UserMailer.contact_us(admin.email,params[:name],params[:email],params[:phone],params[:contact],params[:question],params[:newsletter],params[:song]).deliver
 
       end
 
