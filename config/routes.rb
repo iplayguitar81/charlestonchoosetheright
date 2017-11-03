@@ -46,8 +46,8 @@ get "game_recaps/:id/spam" => "game_recaps#spam", :as => 'spam_recap'
 
   get "home/mail" => "home#mail", :as =>'mail_contact'
 
-
-
+  get "page/recaps17_18"
+  get "page/recaps16_17"
   get "page/recaps15_16"
   get "page/recaps14_15"
   get "page/recaps13_14"
