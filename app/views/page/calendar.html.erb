@@ -1,14 +1,8 @@
-<h1>Boxscores &amp; Calendar</h1>
+<h1>Boxscores &amp; Game Calendar</h1>
 <% calendar_color="" %>
 <div id="calendar">
   <h2 id="month">
-
-
-
   <%= link_to "<", date: @date.prev_month %>
-
-
-
     <%= @date.strftime("%B %Y") %> <%= link_to ">", date: @date.next_month %></h2>
 
 
