@@ -18,6 +18,8 @@
           <br/>
           <%= check_box_tag :newsletter, "newsletter", @newsletter %>
           <%= label_tag :newsletter, "Subscribe To Our Newsletter?" %><br/> <br/>
+          <%= check_box_tag :song, "song", @song %>
+          <%= label_tag :song, "Free Song?" %><br/> <br/>
           <%= label_tag @contact, "Preferred Method of Contact: " %>
           <%= radio_button_tag :contact, "Phone", @phone %>   <%= label_tag @phone, "Phone" %>
           <%= radio_button_tag :contact, "Email", @email_method %> <%= label_tag @email_method, "Email" %><br/> <br/>
@@ -28,7 +30,7 @@
           <br/>
           <br/>
           <div id="submit_it">
-            <%= submit_tag "Send Us Mail" %>
+            <%= submit_tag "Mail" %>
           </div>
           <br/>
           <br/>
@@ -45,6 +47,7 @@
         <p><span class="recap_format">Your Phone #:</span> <%= @phone %> </p>
         <p><span class="recap_format">Your Question/Comment/Concern:</span> <%= @question %> </p>
         <p><span class="recap_format">Newsletter :</span> <%= @newsletter %> </p>
+        <p><span class="recap_format">Free Song :</span> <%= @song %> </p>
         <p><span class="recap_format">Preferred Contact :</span> <%= @contact %> </p>
       </div>
       <br/>
