@@ -13,10 +13,9 @@
 
           <% away_nick_dash=c.afname.parameterize+'.png' %>
           <% home_nick_dash=c.hfname.parameterize+'.png' %>
-          <%# c.a_nick %>
 
 
-          <% #I can build this out with logic and then make portland away or memphis above in the logic sir. nice work.%>
+
 
           <% if c.h_initials=='POR' %>
               <%versus_or_at="VS." %>
@@ -81,7 +80,7 @@
 </div>
 <br/>
 <div id="boxscore_buttons">
-  <%= link_to 'All 2015-2016 Boxcores', page_recaps15_16_path, class: "uk-button uk-button" %>
+  <%= link_to 'All 2017-2018 Boxcores', page_recaps17_18_path, class: "uk-button uk-button" %>
   <%= link_to 'All Historical Boxscores', game_recaps_path, class: "uk-button uk-button" %>
 </div>
 
