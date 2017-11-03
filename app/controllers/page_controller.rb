@@ -31,17 +31,15 @@ class PageController < ApplicationController
     def contact_us2
       admin=Baller.where(:admin => true)
       admin.each do |admin|
-        # name, email, phone, contact, product, question, newsletter, song
+
         UserMailer.contact_us(admin.email,params[:name],params[:email],params[:phone],params[:contact],params[:question],params[:newsletter]).deliver
 
       end
 
     end
-    #this is where this code goes to submit...
+
     if params[:commit]
 
-
-      #Almost figured out the logic on this one.... maybe talk to Vascoe.. see what he thinks
 
       if (@email.empty? && @name.empty? && @question.empty?)
         flash.now[:error] = "Try again Bud!  You must enter your name, email address and question."
@@ -104,10 +102,9 @@ class PageController < ApplicationController
 
     @last_recapper2 = GameRecap.where("datey BETWEEN '2017-10-18T00:00:00-00:00' AND '2018-06-30T00:00:00-00:00' ").order("datey DESC").limit(10)
     @last_articles = Story.order("date DESC").limit(5)
-   # @last_videos = Highlight.order("date DESC").limit(5)
 
     @last_videos = Highlight.all
-    #respond_with(@highlights)
+
 
   end
 
@@ -125,7 +122,6 @@ class PageController < ApplicationController
 
     @season15_16 = GameRecap.where("datey BETWEEN '2015-10-20T00:00:00-00:00' AND '2016-06-30T00:00:00-00:00' ").order("datey DESC")
     @topic = GameRecap.where("datey BETWEEN '2015-10-20T00:00:00-00:00' AND '2016-06-30T00:00:00-00:00' ").order("datey DESC")
-    # @paginatable_array=Kaminari.paginate_array(@topic).page(params[:page]).per(10)
     @posts = @topic.page(params[:page])
 
   end
@@ -135,8 +131,6 @@ class PageController < ApplicationController
 
     @season14_15 = GameRecap.where("datey BETWEEN '2014-10-20T00:00:00-00:00' AND '2015-06-30T00:00:00-00:00' ").order("datey DESC")
     @topic = GameRecap.where("datey BETWEEN '2013-10-20T00:00:00-00:00' AND '2015-06-30T00:00:00-00:00' ").order("datey DESC")
-    # @paginatable_array=Kaminari.paginate_array(@topic).page(params[:page]).per(10)
-
     @posts = @topic.page(params[:page])
 
   end
@@ -145,8 +139,6 @@ class PageController < ApplicationController
 
     @season13_14 = GameRecap.where("datey BETWEEN '2013-10-30T00:00:00-00:00' AND '2014-06-30T00:00:00-00:00' ").order("datey DESC")
     @topic = GameRecap.where("datey BETWEEN '2013-10-30T00:00:00-00:00' AND '2014-06-30T00:00:00-00:00' ").order("datey DESC")
-    # @paginatable_array=Kaminari.paginate_array(@topic).page(params[:page]).per(10)
-
     @posts = @topic.page(params[:page])
 
   end
