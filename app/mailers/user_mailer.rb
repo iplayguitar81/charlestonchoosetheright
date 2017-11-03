@@ -8,16 +8,14 @@ class UserMailer < ActionMailer::Base
   #
 
 
-  def contact_us( admin, name, email, phone, contact, question, newsletter, song )
+  def contact_us( admin, name, email, phone, contact, question, newsletter )
     @greeting = "Howdy"
     @name=name
     @email=email
     @phone=phone
     @contact=contact
-    #@product=product
     @question=question
     @newsletter=newsletter
-    @song=song
 
     mail to: "#{admin}",
          from: "\"TrailBlazersFans.com Visitor Message\" <admin@trailblazersfans.com>",
