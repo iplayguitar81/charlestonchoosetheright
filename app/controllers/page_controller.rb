@@ -122,6 +122,28 @@ class PageController < ApplicationController
   def store
   end
 
+
+
+  def recaps17_18
+
+    @season17_18 = GameRecap.where("datey BETWEEN '2017-10-20T00:00:00-00:00' AND '2018-06-30T00:00:00-00:00' ").order("datey DESC")
+    @topic = GameRecap.where("datey BETWEEN '2017-10-20T00:00:00-00:00' AND '2018-06-30T00:00:00-00:00' ").order("datey DESC")
+    # @paginatable_array=Kaminari.paginate_array(@topic).page(params[:page]).per(10)
+    @posts = @topic.page(params[:page])
+
+  end
+
+
+  def recaps16_17
+
+    @season16_17 = GameRecap.where("datey BETWEEN '2016-10-20T00:00:00-00:00' AND '2017-06-30T00:00:00-00:00' ").order("datey DESC")
+    @topic = GameRecap.where("datey BETWEEN '2016-10-20T00:00:00-00:00' AND '2017-06-30T00:00:00-00:00' ").order("datey DESC")
+    # @paginatable_array=Kaminari.paginate_array(@topic).page(params[:page]).per(10)
+    @posts = @topic.page(params[:page])
+
+  end
+
+
   def recaps15_16
 
     @season15_16 = GameRecap.where("datey BETWEEN '2015-10-20T00:00:00-00:00' AND '2016-06-30T00:00:00-00:00' ").order("datey DESC")
