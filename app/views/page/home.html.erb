@@ -13,8 +13,10 @@
 
           <% away_nick_dash=c.afname.parameterize+'.png' %>
           <% home_nick_dash=c.hfname.parameterize+'.png' %>
+          <%# c.a_nick %>
 
 
+          <% #I can build this out with logic and then make portland away or memphis above in the logic sir. nice work.%>
 
           <% if c.h_initials=='POR' %>
               <%versus_or_at="VS." %>
@@ -87,16 +89,16 @@
 <hr>
 
 <% @last_articles.each do |x| %>
-
+    <% date_time2 =Time.parse(x.date.to_s) %>
     <article class="uk-article">
       <h1 class="uk-article-title"><%= link_to x.title, x, class: "uk-article-title-a" %></h1>
-      <p class="uk-article-meta"><%= "written by "+x.author %> <br/><%=" on "+ date_format_string(x.date) %> </p>
+      <p class="uk-article-meta"><%= "written by "+x.author %> <br/><%=" on "+ date_time2.strftime("%B #{date_time2.day.ordinalize} %Y ") %> </p>
       <p class="uk-clearfix">
         <% story=(x.story.html_safe.to_s)
            story2=strip_tags(story)
         %>
            <%= image_tag(x.image.url, class: "uk-thumbnail-medium uk-align-medium-right" ) %>
-        <span class="article-texterson"><%= snippet(x.story)  %></span>
+        <span class="article-texterson"><%= sanitize(story2, :tags=>[]).truncate(100, :separator => " ").html_safe%></span>
         <br/>
         <br/>
 
