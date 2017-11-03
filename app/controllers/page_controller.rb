@@ -6,23 +6,23 @@ class PageController < ApplicationController
     @season15_16_by_date = @season15_16.group_by(&:dashy_date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
+
+
+
   end
 
 
   def contact_us
     @submitted =params["commit"]
     @form_error = false
-    #flash[:notice] ="Hey you can't do that!"
     @name = params["name"]
     @email = params["email"]
-    @song = params["song"] == "song"
     @phone = params["phone"]
     @question = params["question"]
     @newsletter = params["newsletter"] == "newsletter"  #checks if it is true or false
     @contact = params["contact"]
     @phone_num = @contact == "Phone"  #true or false
     @email_method = @contact == "Email" #true or false
-    #@product = params["product"]
 
     def thank_you
       UserMailer.thank_you(params[:email]).deliver
@@ -32,7 +32,7 @@ class PageController < ApplicationController
       admin=Baller.where(:admin => true)
       admin.each do |admin|
         # name, email, phone, contact, product, question, newsletter, song
-        UserMailer.contact_us(admin.email,params[:name],params[:email],params[:phone],params[:contact],params[:question],params[:newsletter],params[:song]).deliver
+        UserMailer.contact_us(admin.email,params[:name],params[:email],params[:phone],params[:contact],params[:question],params[:newsletter]).deliver
 
       end
 
