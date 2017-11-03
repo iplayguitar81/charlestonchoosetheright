@@ -1,0 +1,912 @@
+<%= paginate @posts %>
+<h1>2015-2016 Game Boxscores</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Game Link</th>
+    <th>Date</th>
+    <!--<th>Dashy date</th>-->
+    <!--<th>Afname</th>-->
+    <!--<th>Hfname</th>-->
+    <!--<th>Atotal</th>-->
+    <!--<th>Htotal</th>-->
+    <!--<th>Arena</th>-->
+    <!--<th>Capacity</th>-->
+    <!--<th>Attendance</th>-->
+    <!--<th>Ref1</th>-->
+    <!--<th>Ref2</th>-->
+    <!--<th>Ref3</th>-->
+    <!--<th>Hp1 name</th>-->
+    <!--<th>Hp1 min</th>-->
+    <!--<th>Hp1 pts</th>-->
+    <!--<th>Hp1 fgma</th>-->
+    <!--<th>Hp1 3pma</th>-->
+    <!--<th>Hp1 ftma</th>-->
+    <!--<th>Hp1 oreb</th>-->
+    <!--<th>Hp1 dreb</th>-->
+    <!--<th>Hp1 reb</th>-->
+    <!--<th>Hp1 ast</th>-->
+    <!--<th>Hp1 stl</th>-->
+    <!--<th>Hp1 blk</th>-->
+    <!--<th>Hp1 to</th>-->
+    <!--<th>Hp1 pf</th>-->
+    <!--<th>Hp1 starter</th>-->
+    <!--<th>Hp2 name</th>-->
+    <!--<th>Hp2 min</th>-->
+    <!--<th>Hp2 pts</th>-->
+    <!--<th>Hp2 fgma</th>-->
+    <!--<th>Hp2 3pma</th>-->
+    <!--<th>Hp2 ftma</th>-->
+    <!--<th>Hp2 oreb</th>-->
+    <!--<th>Hp2 dreb</th>-->
+    <!--<th>Hp2 reb</th>-->
+    <!--<th>Hp2 ast</th>-->
+    <!--<th>Hp2 stl</th>-->
+    <!--<th>Hp2 blk</th>-->
+    <!--<th>Hp2 to</th>-->
+    <!--<th>Hp2 pf</th>-->
+    <!--<th>Hp2 starter</th>-->
+    <!--<th>Hp3 name</th>-->
+    <!--<th>Hp3 min</th>-->
+    <!--<th>Hp3 pts</th>-->
+    <!--<th>Hp3 fgma</th>-->
+    <!--<th>Hp3 3pma</th>-->
+    <!--<th>Hp3 ftma</th>-->
+    <!--<th>Hp3 oreb</th>-->
+    <!--<th>Hp3 dreb</th>-->
+    <!--<th>Hp3 reb</th>-->
+    <!--<th>Hp3 ast</th>-->
+    <!--<th>Hp3 stl</th>-->
+    <!--<th>Hp3 blk</th>-->
+    <!--<th>Hp3 to</th>-->
+    <!--<th>Hp3 pf</th>-->
+    <!--<th>Hp3 starter</th>-->
+    <!--<th>Hp4 name</th>-->
+    <!--<th>Hp4 min</th>-->
+    <!--<th>Hp4 pts</th>-->
+    <!--<th>Hp4 fgma</th>-->
+    <!--<th>Hp4 3pma</th>-->
+    <!--<th>Hp4 ftma</th>-->
+    <!--<th>Hp4 oreb</th>-->
+    <!--<th>Hp4 dreb</th>-->
+    <!--<th>Hp4 reb</th>-->
+    <!--<th>Hp4 ast</th>-->
+    <!--<th>Hp4 stl</th>-->
+    <!--<th>Hp4 blk</th>-->
+    <!--<th>Hp4 to</th>-->
+    <!--<th>Hp4 pf</th>-->
+    <!--<th>Hp4 starter</th>-->
+    <!--<th>Hp5 name</th>-->
+    <!--<th>Hp5 min</th>-->
+    <!--<th>Hp5 pts</th>-->
+    <!--<th>Hp5 fgma</th>-->
+    <!--<th>Hp5 3pma</th>-->
+    <!--<th>Hp5 ftma</th>-->
+    <!--<th>Hp5 oreb</th>-->
+    <!--<th>Hp5 dreb</th>-->
+    <!--<th>Hp5 reb</th>-->
+    <!--<th>Hp5 ast</th>-->
+    <!--<th>Hp5 stl</th>-->
+    <!--<th>Hp5 blk</th>-->
+    <!--<th>Hp5 to</th>-->
+    <!--<th>Hp5 pf</th>-->
+    <!--<th>Hp5 starter</th>-->
+    <!--<th>Hp6 name</th>-->
+    <!--<th>Hp6 min</th>-->
+    <!--<th>Hp6 pts</th>-->
+    <!--<th>Hp6 fgma</th>-->
+    <!--<th>Hp6 3pma</th>-->
+    <!--<th>Hp6 ftma</th>-->
+    <!--<th>Hp6 oreb</th>-->
+    <!--<th>Hp6 dreb</th>-->
+    <!--<th>Hp6 reb</th>-->
+    <!--<th>Hp6 ast</th>-->
+    <!--<th>Hp6 stl</th>-->
+    <!--<th>Hp6 blk</th>-->
+    <!--<th>Hp6 to</th>-->
+    <!--<th>Hp6 pf</th>-->
+    <!--<th>Hp6 starter</th>-->
+    <!--<th>Hp7 name</th>-->
+    <!--<th>Hp7 min</th>-->
+    <!--<th>Hp7 pts</th>-->
+    <!--<th>Hp7 fgma</th>-->
+    <!--<th>Hp7 3pma</th>-->
+    <!--<th>Hp7 ftma</th>-->
+    <!--<th>Hp7 oreb</th>-->
+    <!--<th>Hp7 dreb</th>-->
+    <!--<th>Hp7 reb</th>-->
+    <!--<th>Hp7 ast</th>-->
+    <!--<th>Hp7 stl</th>-->
+    <!--<th>Hp7 blk</th>-->
+    <!--<th>Hp7 to</th>-->
+    <!--<th>Hp7 pf</th>-->
+    <!--<th>Hp7 starter</th>-->
+    <!--<th>Hp8 name</th>-->
+    <!--<th>Hp8 min</th>-->
+    <!--<th>Hp8 pts</th>-->
+    <!--<th>Hp8 fgma</th>-->
+    <!--<th>Hp8 3pma</th>-->
+    <!--<th>Hp8 ftma</th>-->
+    <!--<th>Hp8 oreb</th>-->
+    <!--<th>Hp8 dreb</th>-->
+    <!--<th>Hp8 reb</th>-->
+    <!--<th>Hp8 ast</th>-->
+    <!--<th>Hp8 stl</th>-->
+    <!--<th>Hp8 blk</th>-->
+    <!--<th>Hp8 to</th>-->
+    <!--<th>Hp8 pf</th>-->
+    <!--<th>Hp8 starter</th>-->
+    <!--<th>Hp9 name</th>-->
+    <!--<th>Hp9 min</th>-->
+    <!--<th>Hp9 pts</th>-->
+    <!--<th>Hp9 fgma</th>-->
+    <!--<th>Hp9 3pma</th>-->
+    <!--<th>Hp9 ftma</th>-->
+    <!--<th>Hp9 oreb</th>-->
+    <!--<th>Hp9 dreb</th>-->
+    <!--<th>Hp9 reb</th>-->
+    <!--<th>Hp9 ast</th>-->
+    <!--<th>Hp9 stl</th>-->
+    <!--<th>Hp9 blk</th>-->
+    <!--<th>Hp9 to</th>-->
+    <!--<th>Hp9 pf</th>-->
+    <!--<th>Hp9 starter</th>-->
+    <!--<th>Hp10 name</th>-->
+    <!--<th>Hp10 min</th>-->
+    <!--<th>Hp10 pts</th>-->
+    <!--<th>Hp10 fgma</th>-->
+    <!--<th>Hp10 3pma</th>-->
+    <!--<th>Hp10 ftma</th>-->
+    <!--<th>Hp10 oreb</th>-->
+    <!--<th>Hp10 dreb</th>-->
+    <!--<th>Hp10 reb</th>-->
+    <!--<th>Hp10 ast</th>-->
+    <!--<th>Hp10 stl</th>-->
+    <!--<th>Hp10 blk</th>-->
+    <!--<th>Hp10 to</th>-->
+    <!--<th>Hp10 pf</th>-->
+    <!--<th>Hp10 starter</th>-->
+    <!--<th>Hp11 name</th>-->
+    <!--<th>Hp11 min</th>-->
+    <!--<th>Hp11 pts</th>-->
+    <!--<th>Hp11 fgma</th>-->
+    <!--<th>Hp11 3pma</th>-->
+    <!--<th>Hp11 ftma</th>-->
+    <!--<th>Hp11 oreb</th>-->
+    <!--<th>Hp11 dreb</th>-->
+    <!--<th>Hp11 reb</th>-->
+    <!--<th>Hp11 ast</th>-->
+    <!--<th>Hp11 stl</th>-->
+    <!--<th>Hp11 blk</th>-->
+    <!--<th>Hp11 to</th>-->
+    <!--<th>Hp11 pf</th>-->
+    <!--<th>Hp11 starter</th>-->
+    <!--<th>Hp12 name</th>-->
+    <!--<th>Hp12 min</th>-->
+    <!--<th>Hp12 pts</th>-->
+    <!--<th>Hp12 fgma</th>-->
+    <!--<th>Hp12 3pma</th>-->
+    <!--<th>Hp12 ftma</th>-->
+    <!--<th>Hp12 oreb</th>-->
+    <!--<th>Hp12 dreb</th>-->
+    <!--<th>Hp12 reb</th>-->
+    <!--<th>Hp12 ast</th>-->
+    <!--<th>Hp12 stl</th>-->
+    <!--<th>Hp12 blk</th>-->
+    <!--<th>Hp12 to</th>-->
+    <!--<th>Hp12 pf</th>-->
+    <!--<th>Hp12 starter</th>-->
+    <!--<th>Hp13 name</th>-->
+    <!--<th>Hp13 min</th>-->
+    <!--<th>Hp13 pts</th>-->
+    <!--<th>Hp13 fgma</th>-->
+    <!--<th>Hp13 3pma</th>-->
+    <!--<th>Hp13 ftma</th>-->
+    <!--<th>Hp13 oreb</th>-->
+    <!--<th>Hp13 dreb</th>-->
+    <!--<th>Hp13 reb</th>-->
+    <!--<th>Hp13 ast</th>-->
+    <!--<th>Hp13 stl</th>-->
+    <!--<th>Hp13 blk</th>-->
+    <!--<th>Hp13 to</th>-->
+    <!--<th>Hp13 pf</th>-->
+    <!--<th>Hp13 starter</th>-->
+    <!--<th>Ap1 name</th>-->
+    <!--<th>Ap1 min</th>-->
+    <!--<th>Ap1 pts</th>-->
+    <!--<th>Ap1 fgma</th>-->
+    <!--<th>Ap1 3pma</th>-->
+    <!--<th>Ap1 ftma</th>-->
+    <!--<th>Ap1 oreb</th>-->
+    <!--<th>Ap1 dreb</th>-->
+    <!--<th>Ap1 reb</th>-->
+    <!--<th>Ap1 ast</th>-->
+    <!--<th>Ap1 stl</th>-->
+    <!--<th>Ap1 blk</th>-->
+    <!--<th>Ap1 to</th>-->
+    <!--<th>Ap1 pf</th>-->
+    <!--<th>Ap1 starter</th>-->
+    <!--<th>Ap2 name</th>-->
+    <!--<th>Ap2 min</th>-->
+    <!--<th>Ap2 pts</th>-->
+    <!--<th>Ap2 fgma</th>-->
+    <!--<th>Ap2 3pma</th>-->
+    <!--<th>Ap2 ftma</th>-->
+    <!--<th>Ap2 oreb</th>-->
+    <!--<th>Ap2 dreb</th>-->
+    <!--<th>Ap2 reb</th>-->
+    <!--<th>Ap2 ast</th>-->
+    <!--<th>Ap2 stl</th>-->
+    <!--<th>Ap2 blk</th>-->
+    <!--<th>Ap2 to</th>-->
+    <!--<th>Ap2 pf</th>-->
+    <!--<th>Ap2 starter</th>-->
+    <!--<th>Ap3 name</th>-->
+    <!--<th>Ap3 min</th>-->
+    <!--<th>Ap3 pts</th>-->
+    <!--<th>Ap3 fgma</th>-->
+    <!--<th>Ap3 3pma</th>-->
+    <!--<th>Ap3 ftma</th>-->
+    <!--<th>Ap3 oreb</th>-->
+    <!--<th>Ap3 dreb</th>-->
+    <!--<th>Ap3 reb</th>-->
+    <!--<th>Ap3 ast</th>-->
+    <!--<th>Ap3 stl</th>-->
+    <!--<th>Ap3 blk</th>-->
+    <!--<th>Ap3 to</th>-->
+    <!--<th>Ap3 pf</th>-->
+    <!--<th>Ap3 starter</th>-->
+    <!--<th>Ap4 name</th>-->
+    <!--<th>Ap4 min</th>-->
+    <!--<th>Ap4 pts</th>-->
+    <!--<th>Ap4 fgma</th>-->
+    <!--<th>Ap4 3pma</th>-->
+    <!--<th>Ap4 ftma</th>-->
+    <!--<th>Ap4 oreb</th>-->
+    <!--<th>Ap4 dreb</th>-->
+    <!--<th>Ap4 reb</th>-->
+    <!--<th>Ap4 ast</th>-->
+    <!--<th>Ap4 stl</th>-->
+    <!--<th>Ap4 blk</th>-->
+    <!--<th>Ap4 to</th>-->
+    <!--<th>Ap4 pf</th>-->
+    <!--<th>Ap4 starter</th>-->
+    <!--<th>Ap5 name</th>-->
+    <!--<th>Ap5 min</th>-->
+    <!--<th>Ap5 pts</th>-->
+    <!--<th>Ap5 fgma</th>-->
+    <!--<th>Ap5 3pma</th>-->
+    <!--<th>Ap5 ftma</th>-->
+    <!--<th>Ap5 oreb</th>-->
+    <!--<th>Ap5 dreb</th>-->
+    <!--<th>Ap5 reb</th>-->
+    <!--<th>Ap5 ast</th>-->
+    <!--<th>Ap5 stl</th>-->
+    <!--<th>Ap5 blk</th>-->
+    <!--<th>Ap5 to</th>-->
+    <!--<th>Ap5 pf</th>-->
+    <!--<th>Ap5 starter</th>-->
+    <!--<th>Ap6 name</th>-->
+    <!--<th>Ap6 min</th>-->
+    <!--<th>Ap6 pts</th>-->
+    <!--<th>Ap6 fgma</th>-->
+    <!--<th>Ap6 3pma</th>-->
+    <!--<th>Ap6 ftma</th>-->
+    <!--<th>Ap6 oreb</th>-->
+    <!--<th>Ap6 dreb</th>-->
+    <!--<th>Ap6 reb</th>-->
+    <!--<th>Ap6 ast</th>-->
+    <!--<th>Ap6 stl</th>-->
+    <!--<th>Ap6 blk</th>-->
+    <!--<th>Ap6 to</th>-->
+    <!--<th>Ap6 pf</th>-->
+    <!--<th>Ap6 starter</th>-->
+    <!--<th>Ap7 name</th>-->
+    <!--<th>Ap7 min</th>-->
+    <!--<th>Ap7 pts</th>-->
+    <!--<th>Ap7 fgma</th>-->
+    <!--<th>Ap7 3pma</th>-->
+    <!--<th>Ap7 ftma</th>-->
+    <!--<th>Ap7 oreb</th>-->
+    <!--<th>Ap7 dreb</th>-->
+    <!--<th>Ap7 reb</th>-->
+    <!--<th>Ap7 ast</th>-->
+    <!--<th>Ap7 stl</th>-->
+    <!--<th>Ap7 blk</th>-->
+    <!--<th>Ap7 to</th>-->
+    <!--<th>Ap7 pf</th>-->
+    <!--<th>Ap7 starter</th>-->
+    <!--<th>Ap8 name</th>-->
+    <!--<th>Ap8 min</th>-->
+    <!--<th>Ap8 pts</th>-->
+    <!--<th>Ap8 fgma</th>-->
+    <!--<th>Ap8 3pma</th>-->
+    <!--<th>Ap8 ftma</th>-->
+    <!--<th>Ap8 oreb</th>-->
+    <!--<th>Ap8 dreb</th>-->
+    <!--<th>Ap8 reb</th>-->
+    <!--<th>Ap8 ast</th>-->
+    <!--<th>Ap8 stl</th>-->
+    <!--<th>Ap8 blk</th>-->
+    <!--<th>Ap8 to</th>-->
+    <!--<th>Ap8 pf</th>-->
+    <!--<th>Ap8 starter</th>-->
+    <!--<th>Ap9 name</th>-->
+    <!--<th>Ap9 min</th>-->
+    <!--<th>Ap9 pts</th>-->
+    <!--<th>Ap9 fgma</th>-->
+    <!--<th>Ap9 3pma</th>-->
+    <!--<th>Ap9 ftma</th>-->
+    <!--<th>Ap9 oreb</th>-->
+    <!--<th>Ap9 dreb</th>-->
+    <!--<th>Ap9 reb</th>-->
+    <!--<th>Ap9 ast</th>-->
+    <!--<th>Ap9 stl</th>-->
+    <!--<th>Ap9 blk</th>-->
+    <!--<th>Ap9 to</th>-->
+    <!--<th>Ap9 pf</th>-->
+    <!--<th>Ap9 starter</th>-->
+    <!--<th>Ap10 name</th>-->
+    <!--<th>Ap10 min</th>-->
+    <!--<th>Ap10 pts</th>-->
+    <!--<th>Ap10 fgma</th>-->
+    <!--<th>Ap10 3pma</th>-->
+    <!--<th>Ap10 ftma</th>-->
+    <!--<th>Ap10 oreb</th>-->
+    <!--<th>Ap10 dreb</th>-->
+    <!--<th>Ap10 reb</th>-->
+    <!--<th>Ap10 ast</th>-->
+    <!--<th>Ap10 stl</th>-->
+    <!--<th>Ap10 blk</th>-->
+    <!--<th>Ap10 to</th>-->
+    <!--<th>Ap10 pf</th>-->
+    <!--<th>Ap10 starter</th>-->
+    <!--<th>Ap11 name</th>-->
+    <!--<th>Ap11 min</th>-->
+    <!--<th>Ap11 pts</th>-->
+    <!--<th>Ap11 fgma</th>-->
+    <!--<th>Ap11 3pma</th>-->
+    <!--<th>Ap11 ftma</th>-->
+    <!--<th>Ap11 oreb</th>-->
+    <!--<th>Ap11 dreb</th>-->
+    <!--<th>Ap11 reb</th>-->
+    <!--<th>Ap11 ast</th>-->
+    <!--<th>Ap11 stl</th>-->
+    <!--<th>Ap11 blk</th>-->
+    <!--<th>Ap11 to</th>-->
+    <!--<th>Ap11 pf</th>-->
+    <!--<th>Ap11 starter</th>-->
+    <!--<th>Ap12 name</th>-->
+    <!--<th>Ap12 min</th>-->
+    <!--<th>Ap12 pts</th>-->
+    <!--<th>Ap12 fgma</th>-->
+    <!--<th>Ap12 3pma</th>-->
+    <!--<th>Ap12 ftma</th>-->
+    <!--<th>Ap12 oreb</th>-->
+    <!--<th>Ap12 dreb</th>-->
+    <!--<th>Ap12 reb</th>-->
+    <!--<th>Ap12 ast</th>-->
+    <!--<th>Ap12 stl</th>-->
+    <!--<th>Ap12 blk</th>-->
+    <!--<th>Ap12 to</th>-->
+    <!--<th>Ap12 pf</th>-->
+    <!--<th>Ap12 starter</th>-->
+    <!--<th>Ap13 name</th>-->
+    <!--<th>Ap13 min</th>-->
+    <!--<th>Ap13 pts</th>-->
+    <!--<th>Ap13 fgma</th>-->
+    <!--<th>Ap13 3pma</th>-->
+    <!--<th>Ap13 ftma</th>-->
+    <!--<th>Ap13 oreb</th>-->
+    <!--<th>Ap13 dreb</th>-->
+    <!--<th>Ap13 reb</th>-->
+    <!--<th>Ap13 ast</th>-->
+    <!--<th>Ap13 stl</th>-->
+    <!--<th>Ap13 blk</th>-->
+    <!--<th>Ap13 to</th>-->
+    <!--<th>Ap13 pf</th>-->
+    <!--<th>Ap13 starter</th>-->
+    <!--<th>H nick</th>-->
+    <!--<th>A nick</th>-->
+    <!--<th>H initials</th>-->
+    <!--<th>A initials</th>-->
+    <!--<th>Aq1</th>-->
+    <!--<th>Aq2</th>-->
+    <!--<th>Aq3</th>-->
+    <!--<th>Aq4</th>-->
+    <!--<th>Hq1</th>-->
+    <!--<th>Hq2</th>-->
+    <!--<th>Hq3</th>-->
+    <!--<th>Hq4</th>-->
+    <!--<th>Afgp</th>-->
+    <!--<th>Aftp</th>-->
+    <!--<th>A3ptp</th>-->
+    <!--<th>Arebt</th>-->
+    <!--<th>Aastt</th>-->
+    <!--<th>Astlt</th>-->
+    <!--<th>Ablkt</th>-->
+    <!--<th>Hfgp</th>-->
+    <!--<th>Hftp</th>-->
+    <!--<th>H3ptp</th>-->
+    <!--<th>Hrebt</th>-->
+    <!--<th>Hastt</th>-->
+    <!--<th>Hstlt</th>-->
+    <!--<th>Hblkt</th>-->
+    <!--<th>Awaytfgma</th>-->
+    <!--<th>Awaytftma</th>-->
+    <!--<th>Awayt3fgma</th>-->
+    <!--<th>Hometfgma</th>-->
+    <!--<th>Hometftma</th>-->
+    <!--<th>Homet3fgma</th>-->
+    <!--<th>Hometoreb</th>-->
+    <!--<th>Hometdreb</th>-->
+    <!--<th>Awaytoreb</th>-->
+    <!--<th>Awaytdreb</th>-->
+    <!--<th>Hometto</th>-->
+    <!--<th>Hometpf</th>-->
+    <!--<th>Awaytto</th>-->
+    <!--<th>Awaytpf</th>-->
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @posts.each do |recapper| %>
+
+      <tr>
+        <td><%= link_to recapper.game_string, recapper %></td>
+
+        <td><%= date_format(recapper.datey) %></td>
+
+        <!--<td><%= recapper.dashy_date %></td>-->
+        <!--<td><%= recapper.afname %></td>-->
+        <!--<td><%= recapper.hfname %></td>-->
+        <!--<td><%= recapper.atotal %></td>-->
+        <!--<td><%= recapper.htotal %></td>-->
+        <!--<td><%= recapper.arena %></td>-->
+        <!--<td><%= recapper.capacity %></td>-->
+        <!--<td><%= recapper.attendance %></td>-->
+        <!--<td><%= recapper.ref1 %></td>-->
+        <!--<td><%= recapper.ref2 %></td>-->
+        <!--<td><%= recapper.ref3 %></td>-->
+        <!--<td><%= recapper.hp1_name %></td>-->
+        <!--<td><%= recapper.hp1_min %></td>-->
+        <!--<td><%= recapper.hp1_pts %></td>-->
+        <!--<td><%= recapper.hp1_fgma %></td>-->
+        <!--<td><%= recapper.hp1_3pma %></td>-->
+        <!--<td><%= recapper.hp1_ftma %></td>-->
+        <!--<td><%= recapper.hp1_oreb %></td>-->
+        <!--<td><%= recapper.hp1_dreb %></td>-->
+        <!--<td><%= recapper.hp1_reb %></td>-->
+        <!--<td><%= recapper.hp1_ast %></td>-->
+        <!--<td><%= recapper.hp1_stl %></td>-->
+        <!--<td><%= recapper.hp1_blk %></td>-->
+        <!--<td><%= recapper.hp1_to %></td>-->
+        <!--<td><%= recapper.hp1_pf %></td>-->
+        <!--<td><%= recapper.hp1_starter %></td>-->
+        <!--<td><%= recapper.hp2_name %></td>-->
+        <!--<td><%= recapper.hp2_min %></td>-->
+        <!--<td><%= recapper.hp2_pts %></td>-->
+        <!--<td><%= recapper.hp2_fgma %></td>-->
+        <!--<td><%= recapper.hp2_3pma %></td>-->
+        <!--<td><%= recapper.hp2_ftma %></td>-->
+        <!--<td><%= recapper.hp2_oreb %></td>-->
+        <!--<td><%= recapper.hp2_dreb %></td>-->
+        <!--<td><%= recapper.hp2_reb %></td>-->
+        <!--<td><%= recapper.hp2_ast %></td>-->
+        <!--<td><%= recapper.hp2_stl %></td>-->
+        <!--<td><%= recapper.hp2_blk %></td>-->
+        <!--<td><%= recapper.hp2_to %></td>-->
+        <!--<td><%= recapper.hp2_pf %></td>-->
+        <!--<td><%= recapper.hp2_starter %></td>-->
+        <!--<td><%= recapper.hp3_name %></td>-->
+        <!--<td><%= recapper.hp3_min %></td>-->
+        <!--<td><%= recapper.hp3_pts %></td>-->
+        <!--<td><%= recapper.hp3_fgma %></td>-->
+        <!--<td><%= recapper.hp3_3pma %></td>-->
+        <!--<td><%= recapper.hp3_ftma %></td>-->
+        <!--<td><%= recapper.hp3_oreb %></td>-->
+        <!--<td><%= recapper.hp3_dreb %></td>-->
+        <!--<td><%= recapper.hp3_reb %></td>-->
+        <!--<td><%= recapper.hp3_ast %></td>-->
+        <!--<td><%= recapper.hp3_stl %></td>-->
+        <!--<td><%= recapper.hp3_blk %></td>-->
+        <!--<td><%= recapper.hp3_to %></td>-->
+        <!--<td><%= recapper.hp3_pf %></td>-->
+        <!--<td><%= recapper.hp3_starter %></td>-->
+        <!--<td><%= recapper.hp4_name %></td>-->
+        <!--<td><%= recapper.hp4_min %></td>-->
+        <!--<td><%= recapper.hp4_pts %></td>-->
+        <!--<td><%= recapper.hp4_fgma %></td>-->
+        <!--<td><%= recapper.hp4_3pma %></td>-->
+        <!--<td><%= recapper.hp4_ftma %></td>-->
+        <!--<td><%= recapper.hp4_oreb %></td>-->
+        <!--<td><%= recapper.hp4_dreb %></td>-->
+        <!--<td><%= recapper.hp4_reb %></td>-->
+        <!--<td><%= recapper.hp4_ast %></td>-->
+        <!--<td><%= recapper.hp4_stl %></td>-->
+        <!--<td><%= recapper.hp4_blk %></td>-->
+        <!--<td><%= recapper.hp4_to %></td>-->
+        <!--<td><%= recapper.hp4_pf %></td>-->
+        <!--<td><%= recapper.hp4_starter %></td>-->
+        <!--<td><%= recapper.hp5_name %></td>-->
+        <!--<td><%= recapper.hp5_min %></td>-->
+        <!--<td><%= recapper.hp5_pts %></td>-->
+        <!--<td><%= recapper.hp5_fgma %></td>-->
+        <!--<td><%= recapper.hp5_3pma %></td>-->
+        <!--<td><%= recapper.hp5_ftma %></td>-->
+        <!--<td><%= recapper.hp5_oreb %></td>-->
+        <!--<td><%= recapper.hp5_dreb %></td>-->
+        <!--<td><%= recapper.hp5_reb %></td>-->
+        <!--<td><%= recapper.hp5_ast %></td>-->
+        <!--<td><%= recapper.hp5_stl %></td>-->
+        <!--<td><%= recapper.hp5_blk %></td>-->
+        <!--<td><%= recapper.hp5_to %></td>-->
+        <!--<td><%= recapper.hp5_pf %></td>-->
+        <!--<td><%= recapper.hp5_starter %></td>-->
+        <!--<td><%= recapper.hp6_name %></td>-->
+        <!--<td><%= recapper.hp6_min %></td>-->
+        <!--<td><%= recapper.hp6_pts %></td>-->
+        <!--<td><%= recapper.hp6_fgma %></td>-->
+        <!--<td><%= recapper.hp6_3pma %></td>-->
+        <!--<td><%= recapper.hp6_ftma %></td>-->
+        <!--<td><%= recapper.hp6_oreb %></td>-->
+        <!--<td><%= recapper.hp6_dreb %></td>-->
+        <!--<td><%= recapper.hp6_reb %></td>-->
+        <!--<td><%= recapper.hp6_ast %></td>-->
+        <!--<td><%= recapper.hp6_stl %></td>-->
+        <!--<td><%= recapper.hp6_blk %></td>-->
+        <!--<td><%= recapper.hp6_to %></td>-->
+        <!--<td><%= recapper.hp6_pf %></td>-->
+        <!--<td><%= recapper.hp6_starter %></td>-->
+        <!--<td><%= recapper.hp7_name %></td>-->
+        <!--<td><%= recapper.hp7_min %></td>-->
+        <!--<td><%= recapper.hp7_pts %></td>-->
+        <!--<td><%= recapper.hp7_fgma %></td>-->
+        <!--<td><%= recapper.hp7_3pma %></td>-->
+        <!--<td><%= recapper.hp7_ftma %></td>-->
+        <!--<td><%= recapper.hp7_oreb %></td>-->
+        <!--<td><%= recapper.hp7_dreb %></td>-->
+        <!--<td><%= recapper.hp7_reb %></td>-->
+        <!--<td><%= recapper.hp7_ast %></td>-->
+        <!--<td><%= recapper.hp7_stl %></td>-->
+        <!--<td><%= recapper.hp7_blk %></td>-->
+        <!--<td><%= recapper.hp7_to %></td>-->
+        <!--<td><%= recapper.hp7_pf %></td>-->
+        <!--<td><%= recapper.hp7_starter %></td>-->
+        <!--<td><%= recapper.hp8_name %></td>-->
+        <!--<td><%= recapper.hp8_min %></td>-->
+        <!--<td><%= recapper.hp8_pts %></td>-->
+        <!--<td><%= recapper.hp8_fgma %></td>-->
+        <!--<td><%= recapper.hp8_3pma %></td>-->
+        <!--<td><%= recapper.hp8_ftma %></td>-->
+        <!--<td><%= recapper.hp8_oreb %></td>-->
+        <!--<td><%= recapper.hp8_dreb %></td>-->
+        <!--<td><%= recapper.hp8_reb %></td>-->
+        <!--<td><%= recapper.hp8_ast %></td>-->
+        <!--<td><%= recapper.hp8_stl %></td>-->
+        <!--<td><%= recapper.hp8_blk %></td>-->
+        <!--<td><%= recapper.hp8_to %></td>-->
+        <!--<td><%= recapper.hp8_pf %></td>-->
+        <!--<td><%= recapper.hp8_starter %></td>-->
+        <!--<td><%= recapper.hp9_name %></td>-->
+        <!--<td><%= recapper.hp9_min %></td>-->
+        <!--<td><%= recapper.hp9_pts %></td>-->
+        <!--<td><%= recapper.hp9_fgma %></td>-->
+        <!--<td><%= recapper.hp9_3pma %></td>-->
+        <!--<td><%= recapper.hp9_ftma %></td>-->
+        <!--<td><%= recapper.hp9_oreb %></td>-->
+        <!--<td><%= recapper.hp9_dreb %></td>-->
+        <!--<td><%= recapper.hp9_reb %></td>-->
+        <!--<td><%= recapper.hp9_ast %></td>-->
+        <!--<td><%= recapper.hp9_stl %></td>-->
+        <!--<td><%= recapper.hp9_blk %></td>-->
+        <!--<td><%= recapper.hp9_to %></td>-->
+        <!--<td><%= recapper.hp9_pf %></td>-->
+        <!--<td><%= recapper.hp9_starter %></td>-->
+        <!--<td><%= recapper.hp10_name %></td>-->
+        <!--<td><%= recapper.hp10_min %></td>-->
+        <!--<td><%= recapper.hp10_pts %></td>-->
+        <!--<td><%= recapper.hp10_fgma %></td>-->
+        <!--<td><%= recapper.hp10_3pma %></td>-->
+        <!--<td><%= recapper.hp10_ftma %></td>-->
+        <!--<td><%= recapper.hp10_oreb %></td>-->
+        <!--<td><%= recapper.hp10_dreb %></td>-->
+        <!--<td><%= recapper.hp10_reb %></td>-->
+        <!--<td><%= recapper.hp10_ast %></td>-->
+        <!--<td><%= recapper.hp10_stl %></td>-->
+        <!--<td><%= recapper.hp10_blk %></td>-->
+        <!--<td><%= recapper.hp10_to %></td>-->
+        <!--<td><%= recapper.hp10_pf %></td>-->
+        <!--<td><%= recapper.hp10_starter %></td>-->
+        <!--<td><%= recapper.hp11_name %></td>-->
+        <!--<td><%= recapper.hp11_min %></td>-->
+        <!--<td><%= recapper.hp11_pts %></td>-->
+        <!--<td><%= recapper.hp11_fgma %></td>-->
+        <!--<td><%= recapper.hp11_3pma %></td>-->
+        <!--<td><%= recapper.hp11_ftma %></td>-->
+        <!--<td><%= recapper.hp11_oreb %></td>-->
+        <!--<td><%= recapper.hp11_dreb %></td>-->
+        <!--<td><%= recapper.hp11_reb %></td>-->
+        <!--<td><%= recapper.hp11_ast %></td>-->
+        <!--<td><%= recapper.hp11_stl %></td>-->
+        <!--<td><%= recapper.hp11_blk %></td>-->
+        <!--<td><%= recapper.hp11_to %></td>-->
+        <!--<td><%= recapper.hp11_pf %></td>-->
+        <!--<td><%= recapper.hp11_starter %></td>-->
+        <!--<td><%= recapper.hp12_name %></td>-->
+        <!--<td><%= recapper.hp12_min %></td>-->
+        <!--<td><%= recapper.hp12_pts %></td>-->
+        <!--<td><%= recapper.hp12_fgma %></td>-->
+        <!--<td><%= recapper.hp12_3pma %></td>-->
+        <!--<td><%= recapper.hp12_ftma %></td>-->
+        <!--<td><%= recapper.hp12_oreb %></td>-->
+        <!--<td><%= recapper.hp12_dreb %></td>-->
+        <!--<td><%= recapper.hp12_reb %></td>-->
+        <!--<td><%= recapper.hp12_ast %></td>-->
+        <!--<td><%= recapper.hp12_stl %></td>-->
+        <!--<td><%= recapper.hp12_blk %></td>-->
+        <!--<td><%= recapper.hp12_to %></td>-->
+        <!--<td><%= recapper.hp12_pf %></td>-->
+        <!--<td><%= recapper.hp12_starter %></td>-->
+        <!--<td><%= recapper.hp13_name %></td>-->
+        <!--<td><%= recapper.hp13_min %></td>-->
+        <!--<td><%= recapper.hp13_pts %></td>-->
+        <!--<td><%= recapper.hp13_fgma %></td>-->
+        <!--<td><%= recapper.hp13_3pma %></td>-->
+        <!--<td><%= recapper.hp13_ftma %></td>-->
+        <!--<td><%= recapper.hp13_oreb %></td>-->
+        <!--<td><%= recapper.hp13_dreb %></td>-->
+        <!--<td><%= recapper.hp13_reb %></td>-->
+        <!--<td><%= recapper.hp13_ast %></td>-->
+        <!--<td><%= recapper.hp13_stl %></td>-->
+        <!--<td><%= recapper.hp13_blk %></td>-->
+        <!--<td><%= recapper.hp13_to %></td>-->
+        <!--<td><%= recapper.hp13_pf %></td>-->
+        <!--<td><%= recapper.hp13_starter %></td>-->
+        <!--<td><%= recapper.ap1_name %></td>-->
+        <!--<td><%= recapper.ap1_min %></td>-->
+        <!--<td><%= recapper.ap1_pts %></td>-->
+        <!--<td><%= recapper.ap1_fgma %></td>-->
+        <!--<td><%= recapper.ap1_3pma %></td>-->
+        <!--<td><%= recapper.ap1_ftma %></td>-->
+        <!--<td><%= recapper.ap1_oreb %></td>-->
+        <!--<td><%= recapper.ap1_dreb %></td>-->
+        <!--<td><%= recapper.ap1_reb %></td>-->
+        <!--<td><%= recapper.ap1_ast %></td>-->
+        <!--<td><%= recapper.ap1_stl %></td>-->
+        <!--<td><%= recapper.ap1_blk %></td>-->
+        <!--<td><%= recapper.ap1_to %></td>-->
+        <!--<td><%= recapper.ap1_pf %></td>-->
+        <!--<td><%= recapper.ap1_starter %></td>-->
+        <!--<td><%= recapper.ap2_name %></td>-->
+        <!--<td><%= recapper.ap2_min %></td>-->
+        <!--<td><%= recapper.ap2_pts %></td>-->
+        <!--<td><%= recapper.ap2_fgma %></td>-->
+        <!--<td><%= recapper.ap2_3pma %></td>-->
+        <!--<td><%= recapper.ap2_ftma %></td>-->
+        <!--<td><%= recapper.ap2_oreb %></td>-->
+        <!--<td><%= recapper.ap2_dreb %></td>-->
+        <!--<td><%= recapper.ap2_reb %></td>-->
+        <!--<td><%= recapper.ap2_ast %></td>-->
+        <!--<td><%= recapper.ap2_stl %></td>-->
+        <!--<td><%= recapper.ap2_blk %></td>-->
+        <!--<td><%= recapper.ap2_to %></td>-->
+        <!--<td><%= recapper.ap2_pf %></td>-->
+        <!--<td><%= recapper.ap2_starter %></td>-->
+        <!--<td><%= recapper.ap3_name %></td>-->
+        <!--<td><%= recapper.ap3_min %></td>-->
+        <!--<td><%= recapper.ap3_pts %></td>-->
+        <!--<td><%= recapper.ap3_fgma %></td>-->
+        <!--<td><%= recapper.ap3_3pma %></td>-->
+        <!--<td><%= recapper.ap3_ftma %></td>-->
+        <!--<td><%= recapper.ap3_oreb %></td>-->
+        <!--<td><%= recapper.ap3_dreb %></td>-->
+        <!--<td><%= recapper.ap3_reb %></td>-->
+        <!--<td><%= recapper.ap3_ast %></td>-->
+        <!--<td><%= recapper.ap3_stl %></td>-->
+        <!--<td><%= recapper.ap3_blk %></td>-->
+        <!--<td><%= recapper.ap3_to %></td>-->
+        <!--<td><%= recapper.ap3_pf %></td>-->
+        <!--<td><%= recapper.ap3_starter %></td>-->
+        <!--<td><%= recapper.ap4_name %></td>-->
+        <!--<td><%= recapper.ap4_min %></td>-->
+        <!--<td><%= recapper.ap4_pts %></td>-->
+        <!--<td><%= recapper.ap4_fgma %></td>-->
+        <!--<td><%= recapper.ap4_3pma %></td>-->
+        <!--<td><%= recapper.ap4_ftma %></td>-->
+        <!--<td><%= recapper.ap4_oreb %></td>-->
+        <!--<td><%= recapper.ap4_dreb %></td>-->
+        <!--<td><%= recapper.ap4_reb %></td>-->
+        <!--<td><%= recapper.ap4_ast %></td>-->
+        <!--<td><%= recapper.ap4_stl %></td>-->
+        <!--<td><%= recapper.ap4_blk %></td>-->
+        <!--<td><%= recapper.ap4_to %></td>-->
+        <!--<td><%= recapper.ap4_pf %></td>-->
+        <!--<td><%= recapper.ap4_starter %></td>-->
+        <!--<td><%= recapper.ap5_name %></td>-->
+        <!--<td><%= recapper.ap5_min %></td>-->
+        <!--<td><%= recapper.ap5_pts %></td>-->
+        <!--<td><%= recapper.ap5_fgma %></td>-->
+        <!--<td><%= recapper.ap5_3pma %></td>-->
+        <!--<td><%= recapper.ap5_ftma %></td>-->
+        <!--<td><%= recapper.ap5_oreb %></td>-->
+        <!--<td><%= recapper.ap5_dreb %></td>-->
+        <!--<td><%= recapper.ap5_reb %></td>-->
+        <!--<td><%= recapper.ap5_ast %></td>-->
+        <!--<td><%= recapper.ap5_stl %></td>-->
+        <!--<td><%= recapper.ap5_blk %></td>-->
+        <!--<td><%= recapper.ap5_to %></td>-->
+        <!--<td><%= recapper.ap5_pf %></td>-->
+        <!--<td><%= recapper.ap5_starter %></td>-->
+        <!--<td><%= recapper.ap6_name %></td>-->
+        <!--<td><%= recapper.ap6_min %></td>-->
+        <!--<td><%= recapper.ap6_pts %></td>-->
+        <!--<td><%= recapper.ap6_fgma %></td>-->
+        <!--<td><%= recapper.ap6_3pma %></td>-->
+        <!--<td><%= recapper.ap6_ftma %></td>-->
+        <!--<td><%= recapper.ap6_oreb %></td>-->
+        <!--<td><%= recapper.ap6_dreb %></td>-->
+        <!--<td><%= recapper.ap6_reb %></td>-->
+        <!--<td><%= recapper.ap6_ast %></td>-->
+        <!--<td><%= recapper.ap6_stl %></td>-->
+        <!--<td><%= recapper.ap6_blk %></td>-->
+        <!--<td><%= recapper.ap6_to %></td>-->
+        <!--<td><%= recapper.ap6_pf %></td>-->
+        <!--<td><%= recapper.ap6_starter %></td>-->
+        <!--<td><%= recapper.ap7_name %></td>-->
+        <!--<td><%= recapper.ap7_min %></td>-->
+        <!--<td><%= recapper.ap7_pts %></td>-->
+        <!--<td><%= recapper.ap7_fgma %></td>-->
+        <!--<td><%= recapper.ap7_3pma %></td>-->
+        <!--<td><%= recapper.ap7_ftma %></td>-->
+        <!--<td><%= recapper.ap7_oreb %></td>-->
+        <!--<td><%= recapper.ap7_dreb %></td>-->
+        <!--<td><%= recapper.ap7_reb %></td>-->
+        <!--<td><%= recapper.ap7_ast %></td>-->
+        <!--<td><%= recapper.ap7_stl %></td>-->
+        <!--<td><%= recapper.ap7_blk %></td>-->
+        <!--<td><%= recapper.ap7_to %></td>-->
+        <!--<td><%= recapper.ap7_pf %></td>-->
+        <!--<td><%= recapper.ap7_starter %></td>-->
+        <!--<td><%= recapper.ap8_name %></td>-->
+        <!--<td><%= recapper.ap8_min %></td>-->
+        <!--<td><%= recapper.ap8_pts %></td>-->
+        <!--<td><%= recapper.ap8_fgma %></td>-->
+        <!--<td><%= recapper.ap8_3pma %></td>-->
+        <!--<td><%= recapper.ap8_ftma %></td>-->
+        <!--<td><%= recapper.ap8_oreb %></td>-->
+        <!--<td><%= recapper.ap8_dreb %></td>-->
+        <!--<td><%= recapper.ap8_reb %></td>-->
+        <!--<td><%= recapper.ap8_ast %></td>-->
+        <!--<td><%= recapper.ap8_stl %></td>-->
+        <!--<td><%= recapper.ap8_blk %></td>-->
+        <!--<td><%= recapper.ap8_to %></td>-->
+        <!--<td><%= recapper.ap8_pf %></td>-->
+        <!--<td><%= recapper.ap8_starter %></td>-->
+        <!--<td><%= recapper.ap9_name %></td>-->
+        <!--<td><%= recapper.ap9_min %></td>-->
+        <!--<td><%= recapper.ap9_pts %></td>-->
+        <!--<td><%= recapper.ap9_fgma %></td>-->
+        <!--<td><%= recapper.ap9_3pma %></td>-->
+        <!--<td><%= recapper.ap9_ftma %></td>-->
+        <!--<td><%= recapper.ap9_oreb %></td>-->
+        <!--<td><%= recapper.ap9_dreb %></td>-->
+        <!--<td><%= recapper.ap9_reb %></td>-->
+        <!--<td><%= recapper.ap9_ast %></td>-->
+        <!--<td><%= recapper.ap9_stl %></td>-->
+        <!--<td><%= recapper.ap9_blk %></td>-->
+        <!--<td><%= recapper.ap9_to %></td>-->
+        <!--<td><%= recapper.ap9_pf %></td>-->
+        <!--<td><%= recapper.ap9_starter %></td>-->
+        <!--<td><%= recapper.ap10_name %></td>-->
+        <!--<td><%= recapper.ap10_min %></td>-->
+        <!--<td><%= recapper.ap10_pts %></td>-->
+        <!--<td><%= recapper.ap10_fgma %></td>-->
+        <!--<td><%= recapper.ap10_3pma %></td>-->
+        <!--<td><%= recapper.ap10_ftma %></td>-->
+        <!--<td><%= recapper.ap10_oreb %></td>-->
+        <!--<td><%= recapper.ap10_dreb %></td>-->
+        <!--<td><%= recapper.ap10_reb %></td>-->
+        <!--<td><%= recapper.ap10_ast %></td>-->
+        <!--<td><%= recapper.ap10_stl %></td>-->
+        <!--<td><%= recapper.ap10_blk %></td>-->
+        <!--<td><%= recapper.ap10_to %></td>-->
+        <!--<td><%= recapper.ap10_pf %></td>-->
+        <!--<td><%= recapper.ap10_starter %></td>-->
+        <!--<td><%= recapper.ap11_name %></td>-->
+        <!--<td><%= recapper.ap11_min %></td>-->
+        <!--<td><%= recapper.ap11_pts %></td>-->
+        <!--<td><%= recapper.ap11_fgma %></td>-->
+        <!--<td><%= recapper.ap11_3pma %></td>-->
+        <!--<td><%= recapper.ap11_ftma %></td>-->
+        <!--<td><%= recapper.ap11_oreb %></td>-->
+        <!--<td><%= recapper.ap11_dreb %></td>-->
+        <!--<td><%= recapper.ap11_reb %></td>-->
+        <!--<td><%= recapper.ap11_ast %></td>-->
+        <!--<td><%= recapper.ap11_stl %></td>-->
+        <!--<td><%= recapper.ap11_blk %></td>-->
+        <!--<td><%= recapper.ap11_to %></td>-->
+        <!--<td><%= recapper.ap11_pf %></td>-->
+        <!--<td><%= recapper.ap11_starter %></td>-->
+        <!--<td><%= recapper.ap12_name %></td>-->
+        <!--<td><%= recapper.ap12_min %></td>-->
+        <!--<td><%= recapper.ap12_pts %></td>-->
+        <!--<td><%= recapper.ap12_fgma %></td>-->
+        <!--<td><%= recapper.ap12_3pma %></td>-->
+        <!--<td><%= recapper.ap12_ftma %></td>-->
+        <!--<td><%= recapper.ap12_oreb %></td>-->
+        <!--<td><%= recapper.ap12_dreb %></td>-->
+        <!--<td><%= recapper.ap12_reb %></td>-->
+        <!--<td><%= recapper.ap12_ast %></td>-->
+        <!--<td><%= recapper.ap12_stl %></td>-->
+        <!--<td><%= recapper.ap12_blk %></td>-->
+        <!--<td><%= recapper.ap12_to %></td>-->
+        <!--<td><%= recapper.ap12_pf %></td>-->
+        <!--<td><%= recapper.ap12_starter %></td>-->
+        <!--<td><%= recapper.ap13_name %></td>-->
+        <!--<td><%= recapper.ap13_min %></td>-->
+        <!--<td><%= recapper.ap13_pts %></td>-->
+        <!--<td><%= recapper.ap13_fgma %></td>-->
+        <!--<td><%= recapper.ap13_3pma %></td>-->
+        <!--<td><%= recapper.ap13_ftma %></td>-->
+        <!--<td><%= recapper.ap13_oreb %></td>-->
+        <!--<td><%= recapper.ap13_dreb %></td>-->
+        <!--<td><%= recapper.ap13_reb %></td>-->
+        <!--<td><%= recapper.ap13_ast %></td>-->
+        <!--<td><%= recapper.ap13_stl %></td>-->
+        <!--<td><%= recapper.ap13_blk %></td>-->
+        <!--<td><%= recapper.ap13_to %></td>-->
+        <!--<td><%= recapper.ap13_pf %></td>-->
+        <!--<td><%= recapper.ap13_starter %></td>-->
+        <!--<td><%= recapper.h_nick %></td>-->
+        <!--<td><%= recapper.a_nick %></td>-->
+        <!--<td><%= recapper.h_initials %></td>-->
+        <!--<td><%= recapper.a_initials %></td>-->
+        <!--<td><%= recapper.aq1 %></td>-->
+        <!--<td><%= recapper.aq2 %></td>-->
+        <!--<td><%= recapper.aq3 %></td>-->
+        <!--<td><%= recapper.aq4 %></td>-->
+        <!--<td><%= recapper.hq1 %></td>-->
+        <!--<td><%= recapper.hq2 %></td>-->
+        <!--<td><%= recapper.hq3 %></td>-->
+        <!--<td><%= recapper.hq4 %></td>-->
+        <!--<td><%= recapper.afgp %></td>-->
+        <!--<td><%= recapper.aftp %></td>-->
+        <!--<td><%= recapper.a3ptp %></td>-->
+        <!--<td><%= recapper.arebt %></td>-->
+        <!--<td><%= recapper.aastt %></td>-->
+        <!--<td><%= recapper.astlt %></td>-->
+        <!--<td><%= recapper.ablkt %></td>-->
+        <!--<td><%= recapper.hfgp %></td>-->
+        <!--<td><%= recapper.hftp %></td>-->
+        <!--<td><%= recapper.h3ptp %></td>-->
+        <!--<td><%= recapper.hrebt %></td>-->
+        <!--<td><%= recapper.hastt %></td>-->
+        <!--<td><%= recapper.hstlt %></td>-->
+        <!--<td><%= recapper.hblkt %></td>-->
+        <!--<td><%= recapper.awaytfgma %></td>-->
+        <!--<td><%= recapper.awaytftma %></td>-->
+        <!--<td><%= recapper.awayt3fgma %></td>-->
+        <!--<td><%= recapper.hometfgma %></td>-->
+        <!--<td><%= recapper.hometftma %></td>-->
+        <!--<td><%= recapper.homet3fgma %></td>-->
+        <!--<td><%= recapper.hometoreb %></td>-->
+        <!--<td><%= recapper.hometdreb %></td>-->
+        <!--<td><%= recapper.awaytoreb %></td>-->
+        <!--<td><%= recapper.awaytdreb %></td>-->
+        <!--<td><%= recapper.hometto %></td>-->
+        <!--<td><%= recapper.hometpf %></td>-->
+        <!--<td><%= recapper.awaytto %></td>-->
+        <!--<td><%= recapper.awaytpf %></td>-->
+        <td><%= link_to 'Show', recapper %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<br/>
+
+<%= paginate @posts %>
+
