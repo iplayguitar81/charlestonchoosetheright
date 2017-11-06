@@ -36,4 +36,14 @@ module GameRecapsHelper
 
   end
 
+
+
+  def show_summary
+
+  return  game_summary_snippet(@game_recap.h_initials, @game_recap.a_initials, @game_recap.a_nick, @game_recap.h_nick, @game_recap.hometfgma, @game_recap.awaytfgma, @game_recap.hfgp, @game_recap.afgp, @game_recap.hometftma, @game_recap.awaytftma, @game_recap.hftp, @game_recap.aftp, @game_recap.homet3fgma, @game_recap.awayt3fgma, @game_recap.h3ptp, @game_recap.a3ptp, @game_recap.hometoreb, @game_recap.awaytoreb, @game_recap.hometdreb, @game_recap.awaytdreb, @game_recap.hrebt, @game_recap.arebt, @game_recap.hastt, @game_recap.aastt, @game_recap.hstlt, @game_recap.astlt, @game_recap.hblkt, @game_recap.ablkt, @game_recap.hometto, @game_recap.awaytto, @game_recap.ref1, @game_recap.ref2, @game_recap.ref3, @game_recap.attendance, @game_recap.capacity, @game_recap.arena )
+
+
+  end
+
+
 end
