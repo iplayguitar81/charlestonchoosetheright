@@ -11,8 +11,9 @@
     <% if @game_recap.htotal.to_i < @game_recap.atotal.to_i %>
         <% win_or_loss ="<span class='win_loss_box_show_loss'>L</span>" %>
     <%else %>
+
     <% end %>
-    <% game_box_recap="The Trail Blazers made "+ @game_recap.hometfgma + " shots they attempted resulting in a total team field goal percentage of "+ @game_recap.hfgp+"% for the game.  Meanwhile, the "+ @game_recap.a_nick+"  made "+ @game_recap.awaytfgma+" shots that they attempted resulting in a total team field goal percentage of "+ @game_recap.afgp+ "% for the game.  The Trail Blazers hit "+@game_recap.hometftma+ " free throws shooting " + @game_recap.hftp + "% from the free throw line and the " + @game_recap.a_nick+ " hit "+@game_recap.awaytftma+" free throws shooting "+ @game_recap.aftp+"% from the free throw line.  The Trail Blazers made "+@game_recap.homet3fgma+" of the 3-pointers they shot resulting in a total team 3 point field goal percentage of "+@game_recap.h3ptp+"% and the "+@game_recap.a_nick+" made "+@game_recap.awayt3fgma+ " of the 3-pointers they shot resulting in a total team 3 pint field goal percentage of "+@game_recap.a3ptp+"%.  The Blazers collected "+ @game_recap.hometoreb + " offensive rebounds, "+ @game_recap.hometdreb + " defensive rebounds for a total of "+ @game_recap.hrebt+" rebounds and the "+@game_recap.a_nick+ " scooped up "+@game_recap.awaytoreb+" offensive rebounds, "+@game_recap.awaytdreb+" defensive rebounds for a total of "+@game_recap.arebt+" rebounds.  The Blazers dished out "+@game_recap.hastt+" assists while the "+ @game_recap.a_nick + " dished out "+@game_recap.aastt+".  The Blazers collected "+@game_recap.hstlt+" steals and the "+@game_recap.a_nick+" collected "+@game_recap.astlt+ " steals.  The Blazers blocked "+@game_recap.hblkt+" of the "+@game_recap.a_nick+" shots.  the "+@game_recap.a_nick+" blocked "+@game_recap.ablkt+" of the Blazers shots.  The Blazers turned the ball over "+@game_recap.hometto+" times.  The"+@game_recap.a_nick+" turned the ball over "+@game_recap.awaytto+" times."+"  <br/><br/>  The game was officiated by "+@game_recap.ref1+", "+@game_recap.ref2+" and "+@game_recap.ref3+"<br/><br/> There were "+@game_recap.attendance+ " out of a possible "+@game_recap.capacity+" fans in attendace.  This means that "+@game_recap.arena+" was " + attendance_percentage.to_s + "% filled to capacity."%>
+
 <% end %>
 <% if @game_recap.a_initials=='POR' %>
     <% home_or_away ="portland trail blazers <span class='box_total_h2'>"+@game_recap.atotal+"</span> <br/>at</br> "+@game_recap.hfname.downcase+ " <span class='box_total_h2'>"+@game_recap.htotal+"</span>" %>
@@ -22,7 +23,6 @@
     <% if @game_recap.atotal.to_i < @game_recap.htotal.to_i %>
         <% win_or_loss ="<span class='win_loss_box_show_loss'>L</span>" %>
     <% end %>
-    <% game_box_recap="The Trail Blazers made "+ @game_recap.awaytfgma + " shots they attempted resulting in a total team field goal percentage of "+ @game_recap.afgp+"% for the game.  Meanwhile, the "+ @game_recap.h_nick+"  made "+ @game_recap.hometfgma+" shots that they attempted resulting in a total team field goal percentage of "+ @game_recap.hfgp+ "% for the game.  The Trail Blazers hit "+@game_recap.awaytftma+ " free throws shooting " + @game_recap.aftp + "% from the free throw line and the " + @game_recap.h_nick+ " hit "+@game_recap.hometftma+" free throws shooting "+ @game_recap.hftp+"% from the free throw line.  The Trail Blazers made "+@game_recap.awayt3fgma+" of the 3-pointers they shot resulting in a total team 3 point field goal percentage of "+@game_recap.a3ptp+"% and the "+@game_recap.h_nick+" made "+@game_recap.homet3fgma+ " of the 3-pointers they shot resulting in a total team 3 point field goal percentage of "+@game_recap.h3ptp+"%.  The Blazers collected "+ @game_recap.awaytoreb + " offensive rebounds and "+ @game_recap.awaytdreb + " defensive rebounds for a total of "+ @game_recap.arebt+" rebounds and the "+@game_recap.h_nick+ " scooped up "+@game_recap.hometoreb+" offensive rebounds and "+@game_recap.hometdreb+" defensive rebounds for a total of "+@game_recap.hrebt+" rebounds.  The Blazers dished out "+@game_recap.aastt+" assists while the "+ @game_recap.h_nick + " dished out "+@game_recap.hastt+".  The Blazers collected "+@game_recap.astlt+" steals and the "+@game_recap.h_nick+" collected "+@game_recap.hstlt+ " steals.  The Blazers blocked "+@game_recap.ablkt+" of the "+@game_recap.h_nick+" shots.  The "+@game_recap.h_nick+" blocked "+@game_recap.hblkt+" of the Blazers shots.  The Blazers turned the ball over "+@game_recap.awaytto+" times.  The "+@game_recap.h_nick+ " turned the ball over "+@game_recap.hometto+" times.<br/><br/>  The game was officiated by "+@game_recap.ref1+", "+@game_recap.ref2+" and "+@game_recap.ref3+"<br/><br/> There were "+@game_recap.attendance+ " out of a possible "+@game_recap.capacity+" fans in attendace.  This means that "+@game_recap.arena+" was " + attendance_percentage.to_s + "% filled to capacity."%>
 <% end %>
 
 <% astart_class1='' %>
@@ -382,7 +382,10 @@
 
   <div id="boxscore_writeup_container">
     <h2 class="story_h2_summary">Box Score Summary</h2>
-    <%= game_box_recap.html_safe %>
+
+    <%= game_summary_snippet(@game_recap.h_initials, @game_recap.a_initials, @game_recap.a_nick, @game_recap.h_nick, @game_recap.hometfgma, @game_recap.awaytfgma, @game_recap.hfgp, @game_recap.afgp, @game_recap.hometftma, @game_recap.awaytftma, @game_recap.hftp, @game_recap.aftp, @game_recap.homet3fgma, @game_recap.awayt3fgma, @game_recap.h3ptp, @game_recap.a3ptp, @game_recap.hometoreb, @game_recap.awaytoreb, @game_recap.hometdreb, @game_recap.awaytdreb, @game_recap.hrebt, @game_recap.arebt, @game_recap.hastt, @game_recap.aastt, @game_recap.hstlt, @game_recap.astlt, @game_recap.hblkt, @game_recap.ablkt, @game_recap.hometto, @game_recap.awaytto, @game_recap.ref1, @game_recap.ref2, @game_recap.ref3, @game_recap.attendance, @game_recap.capacity, @game_recap.arena ).html_safe %>
+
+
   </div>
   <br/>
   <br/>
@@ -390,7 +393,7 @@
 
 
 
-  <% if current_baller.try(:admin?) %>
+  <% if is_admin? %>
 
   <%= link_to 'Edit', edit_game_recap_path(@game_recap) %> |
 
