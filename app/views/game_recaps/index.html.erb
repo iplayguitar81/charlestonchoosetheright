@@ -472,8 +472,8 @@
       <tr>
       <td><%= link_to game_recap.game_string, game_recap %></td>
 
-        <% date_time =Time.parse(game_recap.datey) %>
-        <td><%= date_time.strftime("%A %B #{date_time.day.ordinalize} %Y %l:%M%P")%></td>
+
+        <td><%= date_format(game_recap.datey) %></td>
 
 
         <!--<td><%= game_recap.dashy_date %></td>-->
