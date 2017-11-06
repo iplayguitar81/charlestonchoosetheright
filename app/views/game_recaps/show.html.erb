@@ -1,29 +1,6 @@
 <% require 'active_support'%>
-<% attendance_percentage=((@game_recap.attendance.to_f/@game_recap.capacity.strip.to_f)*100).round(2) %>
-<% game_box_recap="" %>
-<% if @game_recap.h_initials=='POR' %>
-    <% home_or_away = @game_recap.afname.downcase+'<span class="box_total_h2"> '+@game_recap.atotal+"</span><br/>at<br/> portland trail blazers <span class='box_total_h2'>"+@game_recap.htotal+"</span>" %>
-    <% if @game_recap.htotal.to_i > @game_recap.atotal.to_i %>
-        <% win_or_loss ="<span class='win_loss_box_show_win'>W</span>" %>
-    <%else %>
-        <% win_or_loss =""%>
-    <%end%>
-    <% if @game_recap.htotal.to_i < @game_recap.atotal.to_i %>
-        <% win_or_loss ="<span class='win_loss_box_show_loss'>L</span>" %>
-    <%else %>
 
-    <% end %>
 
-<% end %>
-<% if @game_recap.a_initials=='POR' %>
-    <% home_or_away ="portland trail blazers <span class='box_total_h2'>"+@game_recap.atotal+"</span> <br/>at</br> "+@game_recap.hfname.downcase+ " <span class='box_total_h2'>"+@game_recap.htotal+"</span>" %>
-    <% if @game_recap.atotal.to_i > @game_recap.htotal.to_i %>
-        <% win_or_loss ="<span class='win_loss_box_show_win'>W</span>" %>
-    <%end%>
-    <% if @game_recap.atotal.to_i < @game_recap.htotal.to_i %>
-        <% win_or_loss ="<span class='win_loss_box_show_loss'>L</span>" %>
-    <% end %>
-<% end %>
 
 <% astart_class1='' %>
 <% astart_class2='' %>
@@ -219,7 +196,7 @@
 <% home_total_to=@game_recap.hp1_to.to_i+@game_recap.hp2_to.to_i+@game_recap.hp3_to.to_i+@game_recap.hp4_to.to_i+@game_recap.hp5_to.to_i+@game_recap.hp6_to.to_i+@game_recap.hp7_to.to_i+@game_recap.hp8_to.to_i+@game_recap.hp9_to.to_i+@game_recap.hp10_to.to_i+@game_recap.hp11_to.to_i+@game_recap.hp12_to.to_i+@game_recap.hp13_to.to_i %>
 
 
-<div class='box_score'><h2 class='story_h2'><span class='article_title'><%=home_or_away.html_safe %>  </span><br/><span class='box_arena_h2'><%=@game_recap.arena %> | </span><span class='box_start_date_h2'><%= date_time.strftime("%A %B #{date_time.day.ordinalize} %Y %l:%M%P")%></span><br/><%=win_or_loss.html_safe%></h2>
+<div class='box_score'><h2 class='story_h2'><span class='article_title'><%=home_or_away.html_safe %>  </span><br/><span class='box_arena_h2'><%=@game_recap.arena %> | </span><span class='box_start_date_h2'><%= date_time.strftime("%A %B #{date_time.day.ordinalize} %Y %l:%M%P")%></span><br/><%= win_or_loss.html_safe %></h2>
 
   <table id='last_game_period_box'>
     <% away_nick_dash=@game_recap.afname.parameterize+'.png' %>
