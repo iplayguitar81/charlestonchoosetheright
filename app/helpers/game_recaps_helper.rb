@@ -46,4 +46,90 @@ module GameRecapsHelper
   end
 
 
+
+  def win_or_loss
+
+    win_or_lose = ''
+
+    if(@game_recap.h_initials == 'POR')
+
+      if @game_recap.htotal.to_i > @game_recap.atotal.to_i
+
+        win_or_lose = "<span class='win_loss_box_show_win'>W</span>"
+
+      elsif (@game_recap.htotal.to_i < @game_recap.atotal.to_i)
+
+        win_or_lose = "<span class='win_loss_box_show_win'>L</span>"
+
+      end
+
+
+
+    elsif (@game_recap.a_initials == 'POR')
+
+
+      if ( @game_recap.atotal.to_i > @game_recap.htotal.to_i )
+
+        win_or_lose = "<span class='win_loss_box_show_win'>W</span>"
+
+      elsif( @game_recap.atotal.to_i < @game_recap.htotal.to_i )
+
+        win_or_lose = "<span class='win_loss_box_show_win'>L</span>"
+
+
+      end
+
+
+    end
+
+
+    return win_or_lose
+
+
+
+
+  end
+
+
+
+  def home_or_away
+
+
+    at_or_away = ''
+
+    if(@game_recap.h_initials == 'POR')
+
+      at_or_away = @game_recap.afname.downcase+'<span class="box_total_h2"> '+@game_recap.atotal+"</span><br/>at<br/> portland trail blazers <span class='box_total_h2'>"+@game_recap.htotal+"</span>"
+
+    end
+
+
+
+    if (@game_recap.a_initials == 'POR')
+
+      at_or_away = "portland trail blazers <span class='box_total_h2'>"+@game_recap.atotal+"</span> <br/>at</br> "+@game_recap.hfname.downcase+ " <span class='box_total_h2'>"+@game_recap.htotal+"</span>"
+
+    end
+
+
+    return at_or_away
+
+
+
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end
