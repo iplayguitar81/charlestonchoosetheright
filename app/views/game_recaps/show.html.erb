@@ -187,8 +187,6 @@
 <% end %>
 
 
-
-<% date_time =Time.parse(@game_recap.datey) %>
 <p id="notice"><%= notice %></p>
 
 <% away_total_to=@game_recap.ap1_to.to_i+@game_recap.ap2_to.to_i+@game_recap.ap3_to.to_i+@game_recap.ap4_to.to_i+@game_recap.ap5_to.to_i+@game_recap.ap6_to.to_i+@game_recap.ap7_to.to_i+@game_recap.ap8_to.to_i+@game_recap.ap9_to.to_i+@game_recap.ap10_to.to_i+@game_recap.ap11_to.to_i+@game_recap.ap12_to.to_i+@game_recap.ap13_to.to_i %>
@@ -196,7 +194,7 @@
 <% home_total_to=@game_recap.hp1_to.to_i+@game_recap.hp2_to.to_i+@game_recap.hp3_to.to_i+@game_recap.hp4_to.to_i+@game_recap.hp5_to.to_i+@game_recap.hp6_to.to_i+@game_recap.hp7_to.to_i+@game_recap.hp8_to.to_i+@game_recap.hp9_to.to_i+@game_recap.hp10_to.to_i+@game_recap.hp11_to.to_i+@game_recap.hp12_to.to_i+@game_recap.hp13_to.to_i %>
 
 
-<div class='box_score'><h2 class='story_h2'><span class='article_title'><%=home_or_away.html_safe %>  </span><br/><span class='box_arena_h2'><%=@game_recap.arena %> | </span><span class='box_start_date_h2'><%= date_time.strftime("%A %B #{date_time.day.ordinalize} %Y %l:%M%P")%></span><br/><%= win_or_loss.html_safe %></h2>
+<div class='box_score'><h2 class='story_h2'><span class='article_title'><%=home_or_away.html_safe %>  </span><br/><span class='box_arena_h2'><%=@game_recap.arena %> | </span><span class='box_start_date_h2'><%= date_format(@game_recap.datey) %></span><br/><%= win_or_loss.html_safe %></h2>
 
   <table id='last_game_period_box'>
     <% away_nick_dash=@game_recap.afname.parameterize+'.png' %>
