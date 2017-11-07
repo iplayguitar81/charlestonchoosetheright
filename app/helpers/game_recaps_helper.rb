@@ -27,8 +27,6 @@ module GameRecapsHelper
 
 
 
-
-
     return game_box_recap
 
 
@@ -121,7 +119,295 @@ module GameRecapsHelper
 
 
 
+  def starter
 
+
+
+
+    starters_or_not = {"astart_class1" => "", "astart_class2" => "", "astart_class3" => "",
+                       "astart_class4" => "", "astart_class5" => "", "astart_class6" => "",
+                       "astart_class7" => "", "astart_class8" => "", "astart_class9" => "",
+                       "astart_class10" => "", "astart_class11" => "", "astart_class12" => "",
+                       "astart_class13" => "", "hstart_class1" => "", "hstart_class2" => "", "hstart_class3" => "",
+                       "hstart_class4" => "", "hstart_class5" => "", "hstart_class6" => "",
+                       "hstart_class7" => "", "hstart_class8" => "", "hstart_class9" => "",
+                       "hstart_class10" => "", "hstart_class11" => "","hstart_class12" => "",
+                       "hstart_class13" => ""
+
+                      }
+
+
+    if (@game_recap.ap1_starter =='1')
+
+      starters_or_not["astart_class1"] = "starter"
+
+
+    else
+
+    end
+
+
+    if (@game_recap.ap2_starter =='1')
+
+      starters_or_not["astart_class2"] = "starter"
+
+
+    else
+
+    end
+
+    if (@game_recap.ap3_starter =='1')
+
+      starters_or_not["astart_class3"] = "starter"
+
+
+    else
+
+    end
+
+
+    if (@game_recap.ap4_starter =='1')
+
+      starters_or_not["astart_class4"] = "starter"
+
+
+    else
+
+    end
+
+
+
+    if (@game_recap.ap5_starter =='1')
+
+      starters_or_not["astart_class5"] = "starter"
+
+
+    else
+
+    end
+
+
+
+    if (@game_recap.ap6_starter =='1')
+
+      starters_or_not["astart_class6"] = "starter"
+
+
+    else
+
+    end
+
+
+
+
+    if (@game_recap.ap7_starter =='1')
+
+      starters_or_not["astart_class7"] = "starter"
+
+
+    else
+
+    end
+
+
+
+    if (@game_recap.ap8_starter =='1')
+
+      starters_or_not["astart_class8"] = "starter"
+
+
+    else
+
+    end
+
+
+    if (@game_recap.ap9_starter =='1')
+
+      starters_or_not["astart_class9"] = "starter"
+
+
+    else
+
+    end
+
+
+
+    if (@game_recap.ap10_starter =='1')
+
+      starters_or_not["astart_class10"] = "starter"
+
+
+    else
+
+    end
+
+
+
+
+    if (@game_recap.ap11_starter =='1')
+
+      starters_or_not["astart_class11"] = "starter"
+
+
+    else
+
+    end
+
+
+    if (@game_recap.ap12_starter =='1')
+
+      starters_or_not["astart_class12"] = "starter"
+
+
+    else
+
+    end
+
+
+
+
+    if (@game_recap.ap13_starter =='1')
+
+      starters_or_not["astart_class13"] = "starter"
+
+
+    else
+
+    end
+
+
+
+    if (@game_recap.hp1_starter =='1')
+
+      starters_or_not["hstart_class1"] = "starter"
+
+
+    else
+
+    end
+
+
+    if (@game_recap.hp2_starter =='1')
+
+      starters_or_not["hstart_class2"] = "starter"
+
+
+    else
+
+    end
+
+    if (@game_recap.hp3_starter =='1')
+
+      starters_or_not["hstart_class3"] = "starter"
+
+
+    else
+
+    end
+
+
+    if (@game_recap.hp4_starter =='1')
+
+      starters_or_not["hstart_class4"] = "starter"
+
+
+    else
+
+    end
+
+
+    if (@game_recap.hp5_starter =='1')
+
+      starters_or_not["hstart_class5"] = "starter"
+
+
+    else
+
+    end
+
+
+
+    if (@game_recap.hp6_starter =='1')
+
+      starters_or_not["hstart_class6"] = "starter"
+
+
+    else
+
+    end
+
+
+
+    if (@game_recap.hp7_starter =='1')
+
+      starters_or_not["hstart_class7"] = "starter"
+
+
+    else
+
+    end
+
+
+    if (@game_recap.hp8_starter =='1')
+
+      starters_or_not["hstart_class8"] = "starter"
+
+
+    else
+
+    end
+
+
+    if (@game_recap.hp9_starter =='1')
+
+      starters_or_not["hstart_class9"] = "starter"
+
+
+    else
+
+    end
+
+
+    if (@game_recap.hp10_starter =='1')
+
+      starters_or_not["hstart_class10"] = "starter"
+
+
+    else
+
+    end
+
+    if (@game_recap.hp11_starter =='1')
+
+      starters_or_not["hstart_class11"] = "starter"
+
+
+    else
+
+    end
+
+    if (@game_recap.hp12_starter =='1')
+
+      starters_or_not["hstart_class12"] = "starter"
+
+
+    else
+
+    end
+
+
+    if (@game_recap.hp13_starter =='1')
+
+      starters_or_not["hstart_class13"] = "starter"
+
+
+    else
+
+    end
+
+    return starters_or_not
+
+  end
 
 
 
