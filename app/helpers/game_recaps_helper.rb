@@ -413,6 +413,224 @@ module GameRecapsHelper
 
 
 
+  def team_totals
+
+
+ away_total_to = (@game_recap.ap1_to.to_i+@game_recap.ap2_to.to_i+@game_recap.ap3_to.to_i+@game_recap.ap4_to.to_i+@game_recap.ap5_to.to_i+@game_recap.ap6_to.to_i+@game_recap.ap7_to.to_i+@game_recap.ap8_to.to_i+@game_recap.ap9_to.to_i+@game_recap.ap10_to.to_i+@game_recap.ap11_to.to_i+@game_recap.ap12_to.to_i+@game_recap.ap13_to.to_i)
+
+ home_total_to = (@game_recap.hp1_to.to_i+@game_recap.hp2_to.to_i+@game_recap.hp3_to.to_i+@game_recap.hp4_to.to_i+@game_recap.hp5_to.to_i+@game_recap.hp6_to.to_i+@game_recap.hp7_to.to_i+@game_recap.hp8_to.to_i+@game_recap.hp9_to.to_i+@game_recap.hp10_to.to_i+@game_recap.hp11_to.to_i+@game_recap.hp12_to.to_i+@game_recap.hp13_to.to_i)
+
+
+    # <table id="box_team_total_percentages">
+    # <tbody><tr style="border: 1px inset #000;"><th colspan="11" style="border: 1px inset #000;">totals</th></tr>
+    # <tr style="border: 1px inset #000;font-weight:800;"><td style="border: 1px inset #000;"> </td><td style="border: 1px inset #000;">PTS</td><td style="border: 1px inset #000;">FG%</td><td style="border: 1px inset #000;">FT%</td><td>3PT%</td><td style="border: 1px inset #000;">REB</td><td style="border: 1px inset #000;">AST</td><td style="border: 1px inset #000;">STL</td><td style="border: 1px inset #000;">BLK</td><td style="border: 1px inset #000;">TO</td><td style="border: 1px inset #000;">PF</td></tr>
+    # <tr style="border: 1px inset #000;"><td style="border: 1px inset #000;font-weight:800;"><%= @game_recap.a_nick %></td><td style="border: 1px inset #000;"><%= @game_recap.atotal %></td><td style="border: 1px inset #000;"><%= @game_recap.afgp %></td><td style="border: 1px inset #000;"><%= @game_recap.aftp %></td><td style="border: 1px inset #000;"><%= @game_recap.a3ptp %></td><td style="border: 1px inset #000;"><%= @game_recap.arebt %></td><td style="border: 1px inset #000;"><%= @game_recap.aastt %></td><td style="border: 1px inset #000;"><%= @game_recap.astlt %></td><td style="border: 1px inset #000;"><%= @game_recap.ablkt %></td><td style="border: 1px inset #000;"><%= away_total_to %></td><td style="border: 1px inset #000;"><%= @game_recap.awaytpf %></td></tr>
+    # <tr style="border: 1px inset #000;"><td style="border: 1px inset #000;font-weight:800;"><%= @game_recap.h_nick %></td><td style="border: 1px inset #000;"><%= @game_recap.htotal %></td><td style="border: 1px inset #000;"><%= @game_recap.hfgp %></td><td style="border: 1px inset #000;"><%= @game_recap.hftp %></td><td style="border: 1px inset #000;"><%= @game_recap.h3ptp %></td><td style="border: 1px inset #000;"><%= @game_recap.hrebt %></td><td style="border: 1px inset #000;"><%= @game_recap.hastt %></td><td style="border: 1px inset #000;"><%= @game_recap.hstlt %></td><td style="border: 1px inset #000;"><%= @game_recap.hblkt %></td><td style="border: 1px inset #000;"><%= home_total_to %></td><td style="border: 1px inset #000;"><%= @game_recap.hometpf %></td></tr>
+    # </tbody></table>
+
+    str_totals = ""
+    str_totals += "<table id='box_team_total_percentages'>"
+    str_totals += "<tbody><tr style='border: 1px inset #000;'><th colspan='11' style='border: 1px inset #000;'>totals</th></tr>"
+    str_totals += "<tr style='border: 1px inset #000;font-weight:800;'><td style='border: 1px inset #000;'> </td><td style='border: 1px inset #000;'>PTS</td><td style='border: 1px inset #000;'>FG%</td><td style='border: 1px inset #000;'>FT%</td><td>3PT%</td><td style='border: 1px inset #000;'>REB</td><td style='border: 1px inset #000;'>AST</td><td style='border: 1px inset #000;'>STL</td><td style='border: 1px inset #000;'>BLK</td><td style='border: 1px inset #000;'>TO</td><td style='border: 1px inset #000;'>PF</td></tr>"
+    str_totals += "<tr style='border: 1px inset #000;'><td style='border: 1px inset #000;font-weight:800;'> #{@game_recap.a_nick} </td><td style='border: 1px inset #000;'> #{@game_recap.atotal} </td><td style='border: 1px inset #000;'>#{@game_recap.afgp}</td><td style='border: 1px inset #000;'>#{@game_recap.aftp}</td><td style='border: 1px inset #000;'> #{@game_recap.a3ptp}</td><td style='border: 1px inset #000;'> #{@game_recap.arebt}</td><td style='border: 1px inset #000;'> #{@game_recap.aastt} </td><td style='border: 1px inset #000;'>#{@game_recap.astlt}</td><td style='border: 1px inset #000;'> #{@game_recap.ablkt}</td><td style='border: 1px inset #000;'> #{away_total_to}</td><td style='border: 1px inset #000;'> #{@game_recap.awaytpf}</td></tr>"
+    str_totals += "<tr style='border: 1px inset #000;'><td style='border: 1px inset #000;font-weight:800;'>#{@game_recap.h_nick} </td><td style='border: 1px inset #000;'>#{@game_recap.htotal} </td><td style='border: 1px inset #000;'> #{@game_recap.hfgp}</td><td style='border: 1px inset #000;'>#{@game_recap.hftp}</td><td style='border: 1px inset #000;'>#{@game_recap.h3ptp}</td><td style='border: 1px inset #000;'> #{@game_recap.hrebt}</td><td style='border: 1px inset #000;'>#{@game_recap.hastt}</td><td style='border: 1px inset #000;'>#{@game_recap.hstlt}</td><td style='border: 1px inset #000;'>#{@game_recap.hblkt}</td><td style='border: 1px inset #000;'> #{home_total_to}</td><td style='border: 1px inset #000;'>#{@game_recap.hometpf}</td></tr>"
+    str_totals += "</tbody></table>"
+
+    return str_totals
+
+  end
+
+  def quarter_breakdown
+
+
+    away_nick_dash= "#{@game_recap.afname.parameterize}.png"
+    home_nick_dash = "#{@game_recap.hfname.parameterize}.png"
+
+    by_the_quarter =""
+
+    by_the_quarter +=  "<table id='last_game_period_box'>"
+
+
+    by_the_quarter +="<tr><th>&nbsp;</th><th>&nbsp;</th><th>1</th><th>2</th><th>3</th><th>4</th>"
+
+
+
+    if( @game_recap.aq5.to_s.strip.length == 0 || @game_recap.aq5.to_s == '' )
+
+    else
+
+      by_the_quarter += "<th>OT1</th>"
+
+    end
+
+
+    if( @game_recap.aq6.to_s.strip.length == 0 || @game_recap.aq6.to_s == '' )
+
+    else
+
+      by_the_quarter += "<th>OT2</th>"
+
+    end
+
+
+    if( @game_recap.aq7.to_s.strip.length == 0 || @game_recap.aq7.to_s == '' )
+
+    else
+
+      by_the_quarter += "<th>OT3</th>"
+
+    end
+
+
+    if( @game_recap.aq8.to_s.strip.length == 0 || @game_recap.aq8.to_s == '' )
+
+    else
+
+      by_the_quarter += "<th>OT4</th>"
+
+    end
+
+
+    if( @game_recap.aq9.to_s.strip.length == 0 || @game_recap.aq9.to_s == '' )
+
+    else
+
+      by_the_quarter += "<th>OT5</th>"
+
+    end
+
+
+    if( @game_recap.aq10.to_s.strip.length == 0 || @game_recap.aq10.to_s == '' )
+
+    else
+
+      by_the_quarter += "<th>OT6</th>"
+
+    end
+
+
+    by_the_quarter += "<tr><td class='logo_box' > #{image_tag(away_nick_dash, style: "float:left;border-top:1px inset #777777;padding-top:10px;", class:"uk-img-preserve")}</td><td>#{@game_recap.a_initials}</td><td> #{@game_recap.aq1} <td>#{@game_recap.aq2}</td><td>#{ @game_recap.aq3}</td><td>#{@game_recap.aq4}</td>"
+
+
+    if( @game_recap.aq5.to_s.strip.length == 0 || @game_recap.aq5.to_s == '' )
+
+    else
+
+      by_the_quarter += "<td>#{@game_recap.aq5}</td>"
+
+    end
+
+
+    if( @game_recap.aq6.to_s.strip.length == 0 || @game_recap.aq6.to_s == '' )
+
+    else
+
+      by_the_quarter += "<td>#{@game_recap.aq6}</td>"
+
+    end
+
+    if( @game_recap.aq7.to_s.strip.length == 0 || @game_recap.aq7.to_s == '' )
+
+    else
+
+      by_the_quarter += "<td>#{@game_recap.aq7}</td>"
+
+    end
+
+
+    if( @game_recap.aq8.to_s.strip.length == 0 || @game_recap.aq8.to_s == '' )
+
+    else
+
+      by_the_quarter += "<td>#{@game_recap.aq8}</td>"
+
+    end
+
+
+    if( @game_recap.aq9.to_s.strip.length == 0 || @game_recap.aq9.to_s == '' )
+
+    else
+
+      by_the_quarter += "<td>#{@game_recap.aq9}</td>"
+
+    end
+
+
+    if( @game_recap.aq10.to_s.strip.length == 0 || @game_recap.aq10.to_s == '' )
+
+    else
+
+      by_the_quarter += "<td>#{@game_recap.aq10}</td>"
+
+    end
+
+
+      by_the_quarter += "<td class='quarters_total'>#{@game_recap.atotal}</td></tr>"
+
+
+      by_the_quarter +="<tr><td class='logo_box'>#{image_tag(home_nick_dash, style: "float:left;border-top:1px inset #777777;padding-top:10px;", class:"uk-img-preserve")}</td><td>#{@game_recap.h_initials}</td> <td>#{@game_recap.hq1}</td> <td>#{@game_recap.hq2}</td> <td>#{@game_recap.hq3}</td><td>#{@game_recap.hq4}</td>"
+
+
+
+    if( @game_recap.hq5.to_s.strip.length == 0 || @game_recap.hq5.to_s == '' )
+
+    else
+
+      by_the_quarter += "<td>#{@game_recap.hq5}</td>"
+
+    end
+
+
+    if( @game_recap.hq6.to_s.strip.length == 0 || @game_recap.hq6.to_s == '' )
+
+    else
+
+      by_the_quarter += "<td>#{@game_recap.hq6}</td>"
+
+    end
+
+    if( @game_recap.hq7.to_s.strip.length == 0 || @game_recap.hq7.to_s == '' )
+
+    else
+
+      by_the_quarter += "<td>#{@game_recap.hq7}</td>"
+
+    end
+
+
+    if( @game_recap.hq8.to_s.strip.length == 0 || @game_recap.hq8.to_s == '' )
+
+    else
+
+      by_the_quarter += "<td>#{@game_recap.hq8}</td>"
+
+    end
+
+
+    if( @game_recap.hq9.to_s.strip.length == 0 || @game_recap.hq9.to_s == '' )
+
+    else
+
+      by_the_quarter += "<td>#{@game_recap.hq9}</td>"
+
+    end
+
+
+    if( @game_recap.hq10.to_s.strip.length == 0 || @game_recap.hq10.to_s == '' )
+
+    else
+
+      by_the_quarter += "<td>#{@game_recap.hq10}</td>"
+
+    end
+
+
+    by_the_quarter +="<td class='quarters_total'>#{@game_recap.htotal}</td></tr></table>"
+
+
+    return by_the_quarter
+
+  end
 
 
 
