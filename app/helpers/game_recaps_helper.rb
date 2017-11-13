@@ -2,8 +2,28 @@ module GameRecapsHelper
 
 
 
+  def turn_overs
 
-  def game_summary_snippet ( h_initials, a_initials, a_nick, h_nick, hometfgma, awaytfgma, hfgp, afgp, hometftma, awaytftma, hftp, aftp, homet3fgma, awayt3fgma, h3ptp, a3ptp, hometoreb, awaytoreb, hometdreb, awaytdreb, hrebt, arebt, hastt, aastt, hstlt, astlt, hblkt, ablkt, hometto, awaytto, ref1, ref2, ref3, attendance, capacity, arena )
+
+    home_total_to = (@game_recap.hp1_to.to_i+@game_recap.hp2_to.to_i+@game_recap.hp3_to.to_i+@game_recap.hp4_to.to_i+@game_recap.hp5_to.to_i+@game_recap.hp6_to.to_i+@game_recap.hp7_to.to_i+@game_recap.hp8_to.to_i+@game_recap.hp9_to.to_i+@game_recap.hp10_to.to_i+@game_recap.hp11_to.to_i+@game_recap.hp12_to.to_i+@game_recap.hp13_to.to_i)
+    away_total_to = (@game_recap.ap1_to.to_i+@game_recap.ap2_to.to_i+@game_recap.ap3_to.to_i+@game_recap.ap4_to.to_i+@game_recap.ap5_to.to_i+@game_recap.ap6_to.to_i+@game_recap.ap7_to.to_i+@game_recap.ap8_to.to_i+@game_recap.ap9_to.to_i+@game_recap.ap10_to.to_i+@game_recap.ap11_to.to_i+@game_recap.ap12_to.to_i+@game_recap.ap13_to.to_i)
+
+
+
+    starters_or_not = {:home_total => home_total_to, :away_total => away_total_to }
+
+
+
+    return starters_or_not
+
+
+
+
+  end
+
+
+
+def game_summary_snippet ( h_initials, a_initials, a_nick, h_nick, hometfgma, awaytfgma, hfgp, afgp, hometftma, awaytftma, hftp, aftp, homet3fgma, awayt3fgma, h3ptp, a3ptp, hometoreb, awaytoreb, hometdreb, awaytdreb, hrebt, arebt, hastt, aastt, hstlt, astlt, hblkt, ablkt, hometto, awaytto, ref1, ref2, ref3, attendance, capacity, arena )
 
 
     game_box_recap = ''
@@ -25,12 +45,7 @@ module GameRecapsHelper
 
     end
 
-
-
     return game_box_recap
-
-
-
 
   end
 
@@ -38,7 +53,7 @@ module GameRecapsHelper
 
   def show_summary
 
-  return  game_summary_snippet(@game_recap.h_initials, @game_recap.a_initials, @game_recap.a_nick, @game_recap.h_nick, @game_recap.hometfgma, @game_recap.awaytfgma, @game_recap.hfgp, @game_recap.afgp, @game_recap.hometftma, @game_recap.awaytftma, @game_recap.hftp, @game_recap.aftp, @game_recap.homet3fgma, @game_recap.awayt3fgma, @game_recap.h3ptp, @game_recap.a3ptp, @game_recap.hometoreb, @game_recap.awaytoreb, @game_recap.hometdreb, @game_recap.awaytdreb, @game_recap.hrebt, @game_recap.arebt, @game_recap.hastt, @game_recap.aastt, @game_recap.hstlt, @game_recap.astlt, @game_recap.hblkt, @game_recap.ablkt, @game_recap.hometto, @game_recap.awaytto, @game_recap.ref1, @game_recap.ref2, @game_recap.ref3, @game_recap.attendance, @game_recap.capacity, @game_recap.arena )
+  return  game_summary_snippet(@game_recap.h_initials, @game_recap.a_initials, @game_recap.a_nick, @game_recap.h_nick, @game_recap.hometfgma, @game_recap.awaytfgma, @game_recap.hfgp, @game_recap.afgp, @game_recap.hometftma, @game_recap.awaytftma, @game_recap.hftp, @game_recap.aftp, @game_recap.homet3fgma, @game_recap.awayt3fgma, @game_recap.h3ptp, @game_recap.a3ptp, @game_recap.hometoreb, @game_recap.awaytoreb, @game_recap.hometdreb, @game_recap.awaytdreb, @game_recap.hrebt, @game_recap.arebt, @game_recap.hastt, @game_recap.aastt, @game_recap.hstlt, @game_recap.astlt, @game_recap.hblkt, @game_recap.ablkt,     turn_overs[:home_total].to_s, turn_overs[:away_total].to_s, @game_recap.ref1, @game_recap.ref2, @game_recap.ref3, @game_recap.attendance, @game_recap.capacity, @game_recap.arena )
 
 
   end
@@ -416,24 +431,12 @@ module GameRecapsHelper
   def team_totals
 
 
- away_total_to = (@game_recap.ap1_to.to_i+@game_recap.ap2_to.to_i+@game_recap.ap3_to.to_i+@game_recap.ap4_to.to_i+@game_recap.ap5_to.to_i+@game_recap.ap6_to.to_i+@game_recap.ap7_to.to_i+@game_recap.ap8_to.to_i+@game_recap.ap9_to.to_i+@game_recap.ap10_to.to_i+@game_recap.ap11_to.to_i+@game_recap.ap12_to.to_i+@game_recap.ap13_to.to_i)
-
- home_total_to = (@game_recap.hp1_to.to_i+@game_recap.hp2_to.to_i+@game_recap.hp3_to.to_i+@game_recap.hp4_to.to_i+@game_recap.hp5_to.to_i+@game_recap.hp6_to.to_i+@game_recap.hp7_to.to_i+@game_recap.hp8_to.to_i+@game_recap.hp9_to.to_i+@game_recap.hp10_to.to_i+@game_recap.hp11_to.to_i+@game_recap.hp12_to.to_i+@game_recap.hp13_to.to_i)
-
-
-    # <table id="box_team_total_percentages">
-    # <tbody><tr style="border: 1px inset #000;"><th colspan="11" style="border: 1px inset #000;">totals</th></tr>
-    # <tr style="border: 1px inset #000;font-weight:800;"><td style="border: 1px inset #000;"> </td><td style="border: 1px inset #000;">PTS</td><td style="border: 1px inset #000;">FG%</td><td style="border: 1px inset #000;">FT%</td><td>3PT%</td><td style="border: 1px inset #000;">REB</td><td style="border: 1px inset #000;">AST</td><td style="border: 1px inset #000;">STL</td><td style="border: 1px inset #000;">BLK</td><td style="border: 1px inset #000;">TO</td><td style="border: 1px inset #000;">PF</td></tr>
-    # <tr style="border: 1px inset #000;"><td style="border: 1px inset #000;font-weight:800;"><%= @game_recap.a_nick %></td><td style="border: 1px inset #000;"><%= @game_recap.atotal %></td><td style="border: 1px inset #000;"><%= @game_recap.afgp %></td><td style="border: 1px inset #000;"><%= @game_recap.aftp %></td><td style="border: 1px inset #000;"><%= @game_recap.a3ptp %></td><td style="border: 1px inset #000;"><%= @game_recap.arebt %></td><td style="border: 1px inset #000;"><%= @game_recap.aastt %></td><td style="border: 1px inset #000;"><%= @game_recap.astlt %></td><td style="border: 1px inset #000;"><%= @game_recap.ablkt %></td><td style="border: 1px inset #000;"><%= away_total_to %></td><td style="border: 1px inset #000;"><%= @game_recap.awaytpf %></td></tr>
-    # <tr style="border: 1px inset #000;"><td style="border: 1px inset #000;font-weight:800;"><%= @game_recap.h_nick %></td><td style="border: 1px inset #000;"><%= @game_recap.htotal %></td><td style="border: 1px inset #000;"><%= @game_recap.hfgp %></td><td style="border: 1px inset #000;"><%= @game_recap.hftp %></td><td style="border: 1px inset #000;"><%= @game_recap.h3ptp %></td><td style="border: 1px inset #000;"><%= @game_recap.hrebt %></td><td style="border: 1px inset #000;"><%= @game_recap.hastt %></td><td style="border: 1px inset #000;"><%= @game_recap.hstlt %></td><td style="border: 1px inset #000;"><%= @game_recap.hblkt %></td><td style="border: 1px inset #000;"><%= home_total_to %></td><td style="border: 1px inset #000;"><%= @game_recap.hometpf %></td></tr>
-    # </tbody></table>
-
     str_totals = ""
     str_totals += "<table id='box_team_total_percentages'>"
     str_totals += "<tbody><tr style='border: 1px inset #000;'><th colspan='11' style='border: 1px inset #000;'>totals</th></tr>"
     str_totals += "<tr style='border: 1px inset #000;font-weight:800;'><td style='border: 1px inset #000;'> </td><td style='border: 1px inset #000;'>PTS</td><td style='border: 1px inset #000;'>FG%</td><td style='border: 1px inset #000;'>FT%</td><td>3PT%</td><td style='border: 1px inset #000;'>REB</td><td style='border: 1px inset #000;'>AST</td><td style='border: 1px inset #000;'>STL</td><td style='border: 1px inset #000;'>BLK</td><td style='border: 1px inset #000;'>TO</td><td style='border: 1px inset #000;'>PF</td></tr>"
-    str_totals += "<tr style='border: 1px inset #000;'><td style='border: 1px inset #000;font-weight:800;'> #{@game_recap.a_nick} </td><td style='border: 1px inset #000;'> #{@game_recap.atotal} </td><td style='border: 1px inset #000;'>#{@game_recap.afgp}</td><td style='border: 1px inset #000;'>#{@game_recap.aftp}</td><td style='border: 1px inset #000;'> #{@game_recap.a3ptp}</td><td style='border: 1px inset #000;'> #{@game_recap.arebt}</td><td style='border: 1px inset #000;'> #{@game_recap.aastt} </td><td style='border: 1px inset #000;'>#{@game_recap.astlt}</td><td style='border: 1px inset #000;'> #{@game_recap.ablkt}</td><td style='border: 1px inset #000;'> #{away_total_to}</td><td style='border: 1px inset #000;'> #{@game_recap.awaytpf}</td></tr>"
-    str_totals += "<tr style='border: 1px inset #000;'><td style='border: 1px inset #000;font-weight:800;'>#{@game_recap.h_nick} </td><td style='border: 1px inset #000;'>#{@game_recap.htotal} </td><td style='border: 1px inset #000;'> #{@game_recap.hfgp}</td><td style='border: 1px inset #000;'>#{@game_recap.hftp}</td><td style='border: 1px inset #000;'>#{@game_recap.h3ptp}</td><td style='border: 1px inset #000;'> #{@game_recap.hrebt}</td><td style='border: 1px inset #000;'>#{@game_recap.hastt}</td><td style='border: 1px inset #000;'>#{@game_recap.hstlt}</td><td style='border: 1px inset #000;'>#{@game_recap.hblkt}</td><td style='border: 1px inset #000;'> #{home_total_to}</td><td style='border: 1px inset #000;'>#{@game_recap.hometpf}</td></tr>"
+    str_totals += "<tr style='border: 1px inset #000;'><td style='border: 1px inset #000;font-weight:800;'> #{@game_recap.a_nick} </td><td style='border: 1px inset #000;'> #{@game_recap.atotal} </td><td style='border: 1px inset #000;'>#{@game_recap.afgp}</td><td style='border: 1px inset #000;'>#{@game_recap.aftp}</td><td style='border: 1px inset #000;'> #{@game_recap.a3ptp}</td><td style='border: 1px inset #000;'> #{@game_recap.arebt}</td><td style='border: 1px inset #000;'> #{@game_recap.aastt} </td><td style='border: 1px inset #000;'>#{@game_recap.astlt}</td><td style='border: 1px inset #000;'> #{@game_recap.ablkt}</td><td style='border: 1px inset #000;'>#{turn_overs[:away_total]}</td><td style='border: 1px inset #000;'> #{@game_recap.awaytpf}</td></tr>"
+    str_totals += "<tr style='border: 1px inset #000;'><td style='border: 1px inset #000;font-weight:800;'>#{@game_recap.h_nick} </td><td style='border: 1px inset #000;'>#{@game_recap.htotal} </td><td style='border: 1px inset #000;'> #{@game_recap.hfgp}</td><td style='border: 1px inset #000;'>#{@game_recap.hftp}</td><td style='border: 1px inset #000;'>#{@game_recap.h3ptp}</td><td style='border: 1px inset #000;'> #{@game_recap.hrebt}</td><td style='border: 1px inset #000;'>#{@game_recap.hastt}</td><td style='border: 1px inset #000;'>#{@game_recap.hstlt}</td><td style='border: 1px inset #000;'>#{@game_recap.hblkt}</td><td style='border: 1px inset #000;'>#{turn_overs[:home_total]}</td><td style='border: 1px inset #000;'>#{@game_recap.hometpf}</td></tr>"
     str_totals += "</tbody></table>"
 
     return str_totals
@@ -642,7 +645,6 @@ end
 
 def away_boxscore
 
-  away_total_to = (@game_recap.ap1_to.to_i+@game_recap.ap2_to.to_i+@game_recap.ap3_to.to_i+@game_recap.ap4_to.to_i+@game_recap.ap5_to.to_i+@game_recap.ap6_to.to_i+@game_recap.ap7_to.to_i+@game_recap.ap8_to.to_i+@game_recap.ap9_to.to_i+@game_recap.ap10_to.to_i+@game_recap.ap11_to.to_i+@game_recap.ap12_to.to_i+@game_recap.ap13_to.to_i)
 
       box_away = ""
       box_away += "<table id='boxscore_away'>"
@@ -707,7 +709,7 @@ def away_boxscore
 
       end
 
-      box_away +="<tr style='border: 1px inset #000;font-weight:800;'> <td  style='border: 1px inset #000;' colspan='2'>#{@game_recap.a_nick}<br/>Totals</td><td style='border: 1px inset #000;'>#{@game_recap.atotal}</td><td style='border: 1px inset #000;'>#{@game_recap.awaytfgma}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.awayt3fgma}</td><td style='border: 1px inset #000;'>#{@game_recap.awaytftma}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.awaytoreb}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.awaytdreb}</td><td style='border: 1px inset #000;'>#{@game_recap.arebt} </td><td style='border: 1px inset #000;'>#{@game_recap.aastt}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.astlt}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.ablkt}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{away_total_to}</td><td colspan='2' style='border: 1px inset #000;'>#{@game_recap.awaytpf}</td></tr>"
+      box_away +="<tr style='border: 1px inset #000;font-weight:800;'> <td  style='border: 1px inset #000;' colspan='2'>#{@game_recap.a_nick}<br/>Totals</td><td style='border: 1px inset #000;'>#{@game_recap.atotal}</td><td style='border: 1px inset #000;'>#{@game_recap.awaytfgma}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.awayt3fgma}</td><td style='border: 1px inset #000;'>#{@game_recap.awaytftma}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.awaytoreb}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.awaytdreb}</td><td style='border: 1px inset #000;'>#{@game_recap.arebt} </td><td style='border: 1px inset #000;'>#{@game_recap.aastt}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.astlt}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.ablkt}</td><td style='border: 1px inset #000;' class='hide_box_column'> #{turn_overs[:away_total]}</td><td colspan='2' style='border: 1px inset #000;'>#{@game_recap.awaytpf}</td></tr>"
       
 
       box_away += "<table/>"
@@ -725,8 +727,6 @@ end
 
 def home_boxscore
 
-
-  home_total_to = (@game_recap.hp1_to.to_i+@game_recap.hp2_to.to_i+@game_recap.hp3_to.to_i+@game_recap.hp4_to.to_i+@game_recap.hp5_to.to_i+@game_recap.hp6_to.to_i+@game_recap.hp7_to.to_i+@game_recap.hp8_to.to_i+@game_recap.hp9_to.to_i+@game_recap.hp10_to.to_i+@game_recap.hp11_to.to_i+@game_recap.hp12_to.to_i+@game_recap.hp13_to.to_i)
 
   box_home = ""
   box_home += "<table id='boxscore_away'>"
@@ -791,7 +791,7 @@ def home_boxscore
 
   end
 
-  box_home +="<tr style='border: 1px inset #000;font-weight:800;'> <td  style='border: 1px inset #000;' colspan='2'>#{@game_recap.h_nick}<br/>Totals</td><td style='border: 1px inset #000;'>#{@game_recap.htotal}</td><td style='border: 1px inset #000;'>#{@game_recap.hometfgma}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.homet3fgma}</td><td style='border: 1px inset #000;'>#{@game_recap.hometftma}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.hometoreb}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.hometdreb}</td><td style='border: 1px inset #000;'>#{@game_recap.hrebt} </td><td style='border: 1px inset #000;'>#{@game_recap.hastt}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.hstlt}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.hblkt}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{home_total_to}</td><td colspan='2' style='border: 1px inset #000;'>#{@game_recap.hometpf}</td></tr>"
+  box_home +="<tr style='border: 1px inset #000;font-weight:800;'> <td  style='border: 1px inset #000;' colspan='2'>#{@game_recap.h_nick}<br/>Totals</td><td style='border: 1px inset #000;'>#{@game_recap.htotal}</td><td style='border: 1px inset #000;'>#{@game_recap.hometfgma}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.homet3fgma}</td><td style='border: 1px inset #000;'>#{@game_recap.hometftma}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.hometoreb}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.hometdreb}</td><td style='border: 1px inset #000;'>#{@game_recap.hrebt} </td><td style='border: 1px inset #000;'>#{@game_recap.hastt}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.hstlt}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{@game_recap.hblkt}</td><td style='border: 1px inset #000;' class='hide_box_column'>#{turn_overs[:home_total]}</td><td colspan='2' style='border: 1px inset #000;'>#{@game_recap.hometpf}</td></tr>"
 
 
   box_home += "<table/>"
